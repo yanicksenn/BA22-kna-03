@@ -14,16 +14,14 @@ public class GrabbableItems : OVRGrabbable
 
     private Material originalMaterial;
     private Renderer renderer;
-
-    // Start is called before the first frame update
+    
     protected override void Start()
     {
         base.Start();
         renderer = GetComponent<Renderer>();
         originalMaterial = renderer.material;
     }
-
-    // Update is called once per frame
+    
     public override void GrabBegin(OVRGrabber hand, Collider grabPoint)
     {
         base.GrabBegin(hand, grabPoint);
