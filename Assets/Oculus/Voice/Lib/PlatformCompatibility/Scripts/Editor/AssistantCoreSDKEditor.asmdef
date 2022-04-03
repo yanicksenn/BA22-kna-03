@@ -1,7 +1,8 @@
 {
     "name": "AssistantCoreSDKEditor",
+    "rootNamespace": "",
     "references": [
-        "GUID:a7c32ded21d3b9b42a71cdf39f2ed8da"
+        "AssistantCoreSDKRuntime"
     ],
     "includePlatforms": [
         "Editor"
