@@ -1,7 +1,8 @@
 {
     "name": "Oculus.Interaction.InterfaceSupport",
+    "rootNamespace": "",
     "references": [
-        "GUID:2a230cb87a1d3ba4a98bdc0ddae76e6c"
+        "Oculus.Interaction"
     ],
     "includePlatforms": [
         "Editor"
