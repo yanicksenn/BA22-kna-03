@@ -27,7 +27,7 @@ namespace DefaultNamespace
             _snapZone = snapZone;
 
             if (_rigidbody != null)
-                _rigidbody.isKinematic = false;
+                _rigidbody.isKinematic = true;
         }
 
         public void Unsnap()
@@ -38,7 +38,7 @@ namespace DefaultNamespace
             _snapZone = null;
             
             if (_rigidbody != null) 
-                _rigidbody.isKinematic = true;
+                _rigidbody.isKinematic = false;
         }
     }
 }
