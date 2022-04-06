@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571336, b: 0.3069219, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -135,15 +135,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1070716908}
     m_Modifications:
-    - target: {fileID: -7114127566811912541, guid: c7501f2ab440cb64f8f29a2accf1da55, type: 3}
+    - target: {fileID: 0}
       propertyPath: ObjectToSnap
       value: 
       objectReference: {fileID: 787571806}
-    - target: {fileID: -7114127566811912541, guid: c7501f2ab440cb64f8f29a2accf1da55, type: 3}
+    - target: {fileID: 0}
       propertyPath: DestinationToSnapTo
       value: 
       objectReference: {fileID: 1070716907}
-    - target: {fileID: -7114127566811912541, guid: c7501f2ab440cb64f8f29a2accf1da55, type: 3}
+    - target: {fileID: 0}
       propertyPath: SnapRotationReference
       value: 
       objectReference: {fileID: 912172134}
@@ -1241,11 +1241,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d81fa172a8774a743a61285ac6805a52, type: 2}
-    - target: {fileID: 8480939397908365165, guid: 66cdc3c9453d21e46b861e6b919998c3, type: 3}
+    - target: {fileID: 0}
       propertyPath: board
       value: 
       objectReference: {fileID: 1070716907}
-    - target: {fileID: 8480939397908365165, guid: 66cdc3c9453d21e46b861e6b919998c3, type: 3}
+    - target: {fileID: 0}
       propertyPath: SnapLocation
       value: 
       objectReference: {fileID: 366307479615236799}
@@ -1569,11 +1569,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9c3210e3f7df17340aa121bcf2058c0c, type: 2}
-    - target: {fileID: 8480939397908365165, guid: 66cdc3c9453d21e46b861e6b919998c3, type: 3}
+    - target: {fileID: 0}
       propertyPath: board
       value: 
       objectReference: {fileID: 1070716907}
-    - target: {fileID: 8480939397908365165, guid: 66cdc3c9453d21e46b861e6b919998c3, type: 3}
+    - target: {fileID: 0}
       propertyPath: SnapLocation
       value: 
       objectReference: {fileID: 366307479615236799}
@@ -1811,15 +1811,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1070716908}
     m_Modifications:
-    - target: {fileID: -7114127566811912541, guid: c7501f2ab440cb64f8f29a2accf1da55, type: 3}
+    - target: {fileID: 0}
       propertyPath: ObjectToSnap
       value: 
       objectReference: {fileID: 1859394221}
-    - target: {fileID: -7114127566811912541, guid: c7501f2ab440cb64f8f29a2accf1da55, type: 3}
+    - target: {fileID: 0}
       propertyPath: DestinationToSnapTo
       value: 
       objectReference: {fileID: 1070716907}
-    - target: {fileID: -7114127566811912541, guid: c7501f2ab440cb64f8f29a2accf1da55, type: 3}
+    - target: {fileID: 0}
       propertyPath: SnapRotationReference
       value: 
       objectReference: {fileID: 912172134}
@@ -2390,15 +2390,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1070716908}
     m_Modifications:
-    - target: {fileID: -7114127566811912541, guid: c7501f2ab440cb64f8f29a2accf1da55, type: 3}
+    - target: {fileID: 0}
       propertyPath: ObjectToSnap
       value: 
       objectReference: {fileID: 1968744718}
-    - target: {fileID: -7114127566811912541, guid: c7501f2ab440cb64f8f29a2accf1da55, type: 3}
+    - target: {fileID: 0}
       propertyPath: DestinationToSnapTo
       value: 
       objectReference: {fileID: 1070716907}
-    - target: {fileID: -7114127566811912541, guid: c7501f2ab440cb64f8f29a2accf1da55, type: 3}
+    - target: {fileID: 0}
       propertyPath: SnapRotationReference
       value: 
       objectReference: {fileID: 912172134}
@@ -2541,11 +2541,23 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a3a064741b172274c8438afa51d0a7d0, type: 2}
-    - target: {fileID: 8480939397908365165, guid: 66cdc3c9453d21e46b861e6b919998c3, type: 3}
+    - target: {fileID: 8538786596544315827, guid: 66cdc3c9453d21e46b861e6b919998c3, type: 3}
+      propertyPath: onGrab.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 735145144620578258}
+    - target: {fileID: 8538786596544315827, guid: 66cdc3c9453d21e46b861e6b919998c3, type: 3}
+      propertyPath: onGrab.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 735145144620578259}
+    - target: {fileID: 8538786596544315827, guid: 66cdc3c9453d21e46b861e6b919998c3, type: 3}
+      propertyPath: onRelease.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 735145144620578258}
+    - target: {fileID: 0}
       propertyPath: board
       value: 
       objectReference: {fileID: 1070716907}
-    - target: {fileID: 8480939397908365165, guid: 66cdc3c9453d21e46b861e6b919998c3, type: 3}
+    - target: {fileID: 0}
       propertyPath: SnapLocation
       value: 
       objectReference: {fileID: 366307479615236799}
@@ -2560,6 +2572,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2577960339206346478, guid: 66cdc3c9453d21e46b861e6b919998c3, type: 3}
   m_PrefabInstance: {fileID: 735145144620578255}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &735145144620578258 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6111606297704247857, guid: 66cdc3c9453d21e46b861e6b919998c3, type: 3}
+  m_PrefabInstance: {fileID: 735145144620578255}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968744718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bbaa8770482d244bb01c5f89e1acbab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &735145144620578259 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9055253927139553385, guid: 66cdc3c9453d21e46b861e6b919998c3, type: 3}
+  m_PrefabInstance: {fileID: 735145144620578255}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968744718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a5325181a134befb18c8ff1542f4ff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1608202879274453867
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 7436456483059377195}
   - component: {fileID: 2752858622674924453}
   - component: {fileID: 8858228607007394422}
-  - component: {fileID: 3828478500349826099}
-  - component: {fileID: 8480939397908365165}
+  - component: {fileID: 8538786596544315827}
+  - component: {fileID: 6111606297704247857}
+  - component: {fileID: 9055253927139553385}
   m_Layer: 0
   m_Name: Gatter
   m_TagString: Untagged
@@ -116,7 +117,66 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3828478500349826099
+--- !u!114 &8538786596544315827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8645041549545549641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e02a6d3a6de4f638188a62947c2c1e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_allowOffhandGrab: 1
+  m_snapPosition: 0
+  m_snapOrientation: 0
+  m_snapOffset: {fileID: 0}
+  m_grabPoints: []
+  onGrab:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Grabbable, Assembly-CSharp
+        m_MethodName: Grab
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: DefaultNamespace.Snappable, Assembly-CSharp
+        m_MethodName: Unsnap
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onRelease:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Grabbable, Assembly-CSharp
+        m_MethodName: Release
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6111606297704247857
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,13 +188,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbaa8770482d244bb01c5f89e1acbab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  m_snapOffset: {fileID: 0}
-  m_grabPoints: []
   isGrabbableMaterial: {fileID: 2100000, guid: 17f72639f8852f84ba37738afcf3a3dd, type: 2}
---- !u!114 &8480939397908365165
+--- !u!114 &9055253927139553385
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,9 +198,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8645041549545549641}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c568526322deec429078afc18863048, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a5325181a134befb18c8ff1542f4ff1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SnapLocation: {fileID: 0}
-  board: {fileID: 0}
-  isSnapped: 0

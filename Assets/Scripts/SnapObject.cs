@@ -9,14 +9,21 @@ public class SnapObject : MonoBehaviour
     [SerializeField] private GameObject SnapLocation;
     [SerializeField] private GameObject board;
     public bool isSnapped;
-    private bool objectSnapped;
-    private bool grabbed;
+
+    private OVRGrabbable _grabbable;
+    private SnapObjectToLocation _snapLocation;
+
+    private void Awake()
+    {
+        _grabbable = GetComponent<OVRGrabbable>();
+        _snapLocation = SnapLocation.GetComponent<SnapObjectToLocation>();
+    }
 
     private void Update()
     {
-        grabbed = GetComponent<OVRGrabbable>().isGrabbed;
-        objectSnapped = SnapLocation.GetComponent<SnapObjectToLocation>().snapped;
-
+        var grabbed = _grabbable.isGrabbed;
+        var objectSnapped = _snapLocation.snapped;
+        
         if (objectSnapped == true)
         {
             GetComponent<Rigidbody>().isKinematic = true;
