@@ -12,30 +12,26 @@ namespace DefaultNamespace
 
         private void OnTriggerStay(Collider other)
         {
-            if (_snappedObject != null)
-                return;
-
             var snappable = other.GetComponent<Snappable>();
             if (snappable == null)
                 return;
 
-            if (snappable.IsGrabbed)
+            if (_snappedObject == snappable && snappable.IsGrabbed)
+            {
+                _snappedObject.Unsnap();
+                _snappedObject = null;
                 return;
+            }
 
-            _snappedObject = snappable;
-            _snappedObject.Snap(this);
+            if (_snappedObject != null || snappable.IsGrabbed) 
+                return;
             
+            _snappedObject = snappable;
+            _snappedObject.Snap();
+                
             var snappedtransform = _snappedObject.transform;
             snappedtransform.position = snapReference.position;
             snappedtransform.rotation = snapReference.rotation;
-        }
-
-        public void Unsnap()
-        {
-            if (_snappedObject != null)
-                return;
-
-            _snappedObject = null;
         }
     }
 }

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8401128864276071057}
   - component: {fileID: 3458423495210034940}
   - component: {fileID: -6511008845207914125}
+  - component: {fileID: 3558872017049556239}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -127,9 +128,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbaa8770482d244bb01c5f89e1acbab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGrabbableMaterial: {fileID: 2100000, guid: 17f72639f8852f84ba37738afcf3a3dd, type: 2}
+--- !u!114 &3558872017049556239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3331881544020240731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e02a6d3a6de4f638188a62947c2c1e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_allowOffhandGrab: 1
   m_snapPosition: 0
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
-  isGrabbableMaterial: {fileID: 2100000, guid: 17f72639f8852f84ba37738afcf3a3dd, type: 2}
+  onGrab:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -6511008845207914125}
+        m_TargetAssemblyTypeName: Grabbable, Assembly-CSharp
+        m_MethodName: Grab
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onRelease:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -6511008845207914125}
+        m_TargetAssemblyTypeName: Grabbable, Assembly-CSharp
+        m_MethodName: Release
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
