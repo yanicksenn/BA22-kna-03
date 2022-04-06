@@ -12,7 +12,7 @@ namespace DefaultNamespace
 
         private void OnTriggerStay(Collider other)
         {
-            if (_snappedObject == null)
+            if (_snappedObject != null)
                 return;
 
             var snappable = other.GetComponent<Snappable>();
