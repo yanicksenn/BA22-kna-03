@@ -14,10 +14,14 @@ public class Grabbable : MonoBehaviour
 
     private Material originalMaterial;
     private Renderer renderer;
-    
+
     private void Awake()
     {
         renderer = GetComponent<Renderer>();
+    }
+
+    private void Start()
+    {
         originalMaterial = renderer.material;
     }
     
