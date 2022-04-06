@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SnapZone
+  m_Name: SnapZone2
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ShaderKeywords: _SURFACE_TYPE_TRANSPARENT
   m_LightmapFlags: 4
@@ -128,8 +128,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 0
     m_Colors:
-    - _BaseColor: {r: 0.39889708, g: 0.8301887, b: 0.22321102, a: 0.30588236}
-    - _Color: {r: 0.39889705, g: 0.8301887, b: 0.22321099, a: 0.30588236}
+    - _BaseColor: {r: 0.2235294, g: 0.83137256, b: 0.8129515, a: 0.30588236}
+    - _Color: {r: 0.22352937, g: 0.83137256, b: 0.8129515, a: 0.30588236}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
   m_BuildTextureStacks: []

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2752858622674924453}
   - component: {fileID: 8858228607007394422}
   - component: {fileID: 3828478500349826099}
+  - component: {fileID: 8480939397908365165}
   m_Layer: 0
   m_Name: Gatter
   m_TagString: Untagged
@@ -133,3 +134,18 @@ MonoBehaviour:
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
   isGrabbableMaterial: {fileID: 2100000, guid: 17f72639f8852f84ba37738afcf3a3dd, type: 2}
+--- !u!114 &8480939397908365165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8645041549545549641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c568526322deec429078afc18863048, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SnapLocation: {fileID: 0}
+  board: {fileID: 0}
+  isSnapped: 0
