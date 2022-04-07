@@ -12,8 +12,10 @@ public class SnapZone : MonoBehaviour
     }
 
 
-        private Snappable _snappedObject;
-        private GameObject _preview;
+    private Snappable _snappedObject;
+    public Snappable SnappedObject => _snappedObject;
+    
+    private GameObject _preview;
 
     private void OnTriggerEnter(Collider other)
     {
