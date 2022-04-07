@@ -14,7 +14,7 @@ namespace DefaultNamespace
         public OVRGrabbableExtension Grabbable => _grabbable;
         private Rigidbody _rigidbody;
 
-        public bool IsGrabbed => true; //_grabbable.isGrabbed;
+    public bool IsGrabbed => _grabbable.isGrabbed;
 
         private void Awake()
         {
