@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8858228607007394422}
   - component: {fileID: 8538786596544315827}
   - component: {fileID: 6111606297704247857}
-  - component: {fileID: 9055253927139553385}
+  - component: {fileID: 4953444209758612662}
   m_Layer: 0
   m_Name: Gatter
   m_TagString: Untagged
@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGrabbableMaterial: {fileID: 2100000, guid: 17f72639f8852f84ba37738afcf3a3dd, type: 2}
---- !u!114 &9055253927139553385
+--- !u!114 &4953444209758612662
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -186,7 +186,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8645041549545549641}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a5325181a134befb18c8ff1542f4ff1, type: 3}
+  m_Script: {fileID: 11500000, guid: bd3eabcbef784c9a813a574eab300761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   preview: {fileID: 8645041549545549641, guid: d27bc81f02efb4967be28706f7fc59a3, type: 3}

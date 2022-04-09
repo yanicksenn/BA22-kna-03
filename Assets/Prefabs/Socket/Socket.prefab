@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9139171570041195181}
   - component: {fileID: 24266776534239836}
-  - component: {fileID: 6671471751729842894}
+  - component: {fileID: 8493602175173750270}
   m_Layer: 0
   m_Name: Snapzone
   m_TagString: Untagged
@@ -46,7 +46,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6671471751729842894
+--- !u!114 &8493602175173750270
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55,7 +55,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2647478882093617442}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc01ae5882104cf28eb221fff9ffe186, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a0165cfbe8c4a9dbfbfda29772a80d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   snapReference: {fileID: 4287133966577938617}
