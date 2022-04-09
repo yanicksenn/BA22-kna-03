@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
@@ -42,10 +43,8 @@ public abstract class AbstractSnapZone<T> : MonoBehaviour where T : Snappable
         _snappedObject = snappable;
         _snappedObject.Grabbable.OnGrab.AddListener(OnGrab);
         _snappedObject.Snap();
-        
-        var snappedtransform = _snappedObject.transform;
-        snappedtransform.position = snapReference.position;
-        snappedtransform.rotation = snapReference.rotation;
+
+        PlaceSnappedObject();
     }
 
     private void OnTriggerExit(Collider other)
@@ -85,5 +84,21 @@ public abstract class AbstractSnapZone<T> : MonoBehaviour where T : Snappable
         
         Destroy(_preview);
         _preview = null;
+    }
+
+    private void LateUpdate()
+    {
+        if (_snappedObject != null && _snappedObject.IsGrabbed == false)
+        {
+            PlaceSnappedObject();   
+        }
+
+    }
+
+    private void PlaceSnappedObject()
+    {
+        var snappedtransform = _snappedObject.transform;
+        snappedtransform.position = snapReference.position;
+        snappedtransform.rotation = snapReference.rotation;
     }
 }
