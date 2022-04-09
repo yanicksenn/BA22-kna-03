@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
-public class SnapZone : MonoBehaviour
+public abstract class AbstractSnapZone<T> : MonoBehaviour where T : Snappable
 {
     [SerializeField] 
     private Transform snapReference;
@@ -12,8 +12,8 @@ public class SnapZone : MonoBehaviour
     }
 
 
-    private Snappable _snappedObject;
-    public Snappable SnappedObject => _snappedObject;
+    private T _snappedObject;
+    public T SnappedObject => _snappedObject;
     
     private GameObject _preview;
 
@@ -24,7 +24,7 @@ public class SnapZone : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        var snappable = other.GetComponent<Snappable>();
+        var snappable = other.GetComponent<T>();
         if (snappable == null)
             return;
 
@@ -50,7 +50,7 @@ public class SnapZone : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        var snappable = other.GetComponent<Snappable>();
+        var snappable = other.GetComponent<T>();
         if (snappable == null)
             return;
 
@@ -66,7 +66,7 @@ public class SnapZone : MonoBehaviour
         _snappedObject = null;
     }
 
-    private void ShowPreview(Snappable snappable)
+    private void ShowPreview(T snappable)
     {
         if (_preview != null)
             return;

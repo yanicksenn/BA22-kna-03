@@ -2,19 +2,19 @@ using UnityEngine;
 
 public class Socket : MonoBehaviour
 {
-    [SerializeField] 
-    private SnapZone snapZone;
-    public SnapZone SnapZone
-    {
-        get => snapZone;
-        set => snapZone = value;
-    }
-
-    public bool HasGatter()
-    {
-        if (SnapZone == null)
-            return false;
-                
-        return SnapZone.SnappedObject != null;
-    }
+    // [SerializeField] 
+    // private AbstractSnapZone abstractSnapZone;
+    // public AbstractSnapZone AbstractSnapZone
+    // {
+    //     get => abstractSnapZone;
+    //     set => abstractSnapZone = value;
+    // }
+    //
+    // public bool HasGatter()
+    // {
+    //     if (AbstractSnapZone == null)
+    //         return false;
+    //             
+    //     return AbstractSnapZone.SnappedObject != null;
+    // }
 }
