@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8351720158807880884}
   - component: {fileID: 2610821001289201580}
-  - component: {fileID: 5944729544509184304}
+  - component: {fileID: 6524745071691747393}
   m_Layer: 0
   m_Name: OutPutSnapZone
   m_TagString: Untagged
@@ -46,7 +46,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5944729544509184304
+--- !u!114 &6524745071691747393
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55,7 +55,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2227492999248436740}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 668f59c4cab44632b4b903933b04f7fb, type: 3}
+  m_Script: {fileID: 11500000, guid: f53b1272bac0460785798d05b899fbc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   snapReference: {fileID: 8351720158807880884}
@@ -69,7 +69,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7988570079188369294}
   - component: {fileID: 8315941034626267156}
-  - component: {fileID: 5602779629185882653}
+  - component: {fileID: 7619588314309522662}
   m_Layer: 0
   m_Name: InputSnapZone
   m_TagString: Untagged
@@ -105,7 +105,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5602779629185882653
+--- !u!114 &7619588314309522662
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -114,7 +114,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2603632552978306344}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 668f59c4cab44632b4b903933b04f7fb, type: 3}
+  m_Script: {fileID: 11500000, guid: faf918f059aa41db8198d3d74b3ba11d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   snapReference: {fileID: 7988570079188369294}

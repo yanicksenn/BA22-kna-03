@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6832022067539637756}
   - component: {fileID: 6816329709303986387}
   - component: {fileID: 2899355668122055820}
-  - component: {fileID: 3338631578385163453}
+  - component: {fileID: 1410042268419598640}
   m_Layer: 0
   m_Name: InputConnector
   m_TagString: Untagged
@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGrabbableMaterial: {fileID: 0}
---- !u!114 &3338631578385163453
+--- !u!114 &1410042268419598640
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -186,7 +186,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7104780081823570608}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 811e424f54fa425a8f065914c528f6e7, type: 3}
+  m_Script: {fileID: 11500000, guid: a94b8b70c2ae4b099cd3d9a213955419, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   preview: {fileID: 7104780081823570608, guid: 83dfd1a3e82650b4cb99d0913f2d1fd6, type: 3}

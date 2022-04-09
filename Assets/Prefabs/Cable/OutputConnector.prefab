@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3353951828108103112}
   - component: {fileID: 4891083744936407711}
   - component: {fileID: 8025757532658908978}
-  - component: {fileID: -5608966034378416522}
+  - component: {fileID: 3872507276887017794}
   m_Layer: 0
   m_Name: OutputConnector
   m_TagString: Untagged
@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGrabbableMaterial: {fileID: 0}
---- !u!114 &-5608966034378416522
+--- !u!114 &3872507276887017794
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -198,7 +198,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 572799144844869081}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 811e424f54fa425a8f065914c528f6e7, type: 3}
+  m_Script: {fileID: 11500000, guid: 979c7dbcad0645168d6fda3bd9703883, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   preview: {fileID: 572799144844869081, guid: 7d7e30e4de800a34f8d010c6a7cf5a62, type: 3}
