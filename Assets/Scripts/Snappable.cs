@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[RequireComponent(typeof(OVRGrabbableExtension))]
+[RequireComponent(typeof(Grabbable))]
 [RequireComponent(typeof(Rigidbody))]
 public abstract class Snappable<TS, TZ> : MonoBehaviour 
     where TS : Snappable<TS, TZ> 
@@ -11,8 +11,8 @@ public abstract class Snappable<TS, TZ> : MonoBehaviour
     public GameObject Preview => preview;
 
     [SerializeField]
-    private OVRGrabbableExtension grabbable;
-    public OVRGrabbableExtension Grabbable
+    private Grabbable grabbable;
+    public Grabbable Grabbable
     {
         get => grabbable;
         set => grabbable = value;

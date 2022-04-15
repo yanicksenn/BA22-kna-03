@@ -9,7 +9,7 @@ public class Cable : MonoBehaviour, IConductor
     private CableOutputConnector output;
 
     [SerializeField] 
-    private OVRGrabbableExtension handle;
+    private Grabbable handle;
 
     [SerializeField, Space] 
     private Transform connectionInput2Handle;

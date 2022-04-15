@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class OVRGrabbableExtension : OVRGrabbable
+public class Grabbable : OVRGrabbable
 {
     [SerializeField]
     private UnityEvent onGrab = new UnityEvent();
