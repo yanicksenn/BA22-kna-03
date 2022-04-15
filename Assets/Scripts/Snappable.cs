@@ -2,25 +2,44 @@ using UnityEngine;
 
 [RequireComponent(typeof(OVRGrabbableExtension))]
 [RequireComponent(typeof(Rigidbody))]
-public class Snappable : MonoBehaviour
+public abstract class Snappable<TS, TZ> : MonoBehaviour 
+    where TS : Snappable<TS, TZ> 
+    where TZ : AbstractSnapZone<TS, TZ>
 {
     [SerializeField]
     private GameObject preview;
     public GameObject Preview => preview;
 
-    private OVRGrabbableExtension _grabbable;
-    public OVRGrabbableExtension Grabbable => _grabbable;
-    private Rigidbody _rigidbody;
-
-    public bool IsGrabbed => _grabbable.isGrabbed;
-
-    private void Awake()
+    [SerializeField]
+    private OVRGrabbableExtension grabbable;
+    public OVRGrabbableExtension Grabbable
     {
-        _grabbable = GetComponent<OVRGrabbableExtension>();
-        _rigidbody = GetComponent<Rigidbody>();
+        get => grabbable;
+        set => grabbable = value;
     }
-    public void Snap()
+
+    [SerializeField]
+    private new Rigidbody rigidbody;
+    public Rigidbody Rigidbody
     {
-        _rigidbody.isKinematic = true;
+        get => rigidbody;
+        set => rigidbody = value;
+    }
+
+    private TZ _snapZone;
+    public TZ SnapZone => _snapZone;
+
+    public bool IsGrabbed => grabbable.isGrabbed;
+    public bool IsSnapped => _snapZone != null;
+    
+    public void Snap(TZ snapZone)
+    {
+        _snapZone = snapZone;
+        rigidbody.isKinematic = true;
+    }
+
+    public void Unsnap()
+    {
+        _snapZone = null;
     }
 }

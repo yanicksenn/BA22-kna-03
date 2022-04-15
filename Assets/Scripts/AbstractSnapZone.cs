@@ -1,8 +1,9 @@
-using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
-public abstract class AbstractSnapZone<T> : MonoBehaviour where T : Snappable
+public abstract class AbstractSnapZone<TS, TZ> : MonoBehaviour 
+    where TS : Snappable<TS, TZ> 
+    where TZ : AbstractSnapZone<TS, TZ>
 {
     [SerializeField] 
     private Transform snapReference;
@@ -12,9 +13,8 @@ public abstract class AbstractSnapZone<T> : MonoBehaviour where T : Snappable
         set => snapReference = value;
     }
 
-
-    private T _snappedObject;
-    public T SnappedObject => _snappedObject;
+    private TS _snappedObject;
+    public TS SnappedObject => _snappedObject;
     
     private GameObject _preview;
 
@@ -22,10 +22,10 @@ public abstract class AbstractSnapZone<T> : MonoBehaviour where T : Snappable
     {
         OnTriggerStay(other);
     }
-
+    
     private void OnTriggerStay(Collider other)
     {
-        var snappable = other.GetComponent<T>();
+        var snappable = other.GetComponent<TS>();
         if (snappable == null)
             return;
 
@@ -42,14 +42,14 @@ public abstract class AbstractSnapZone<T> : MonoBehaviour where T : Snappable
 
         _snappedObject = snappable;
         _snappedObject.Grabbable.OnGrab.AddListener(OnGrab);
-        _snappedObject.Snap();
+        _snappedObject.Snap((TZ) this);
 
         PlaceSnappedObject();
     }
 
     private void OnTriggerExit(Collider other)
     {
-        var snappable = other.GetComponent<T>();
+        var snappable = other.GetComponent<TS>();
         if (snappable == null)
             return;
 
@@ -62,10 +62,11 @@ public abstract class AbstractSnapZone<T> : MonoBehaviour where T : Snappable
     private void OnGrab()
     {
         _snappedObject.Grabbable.OnGrab.RemoveListener(OnGrab);
+        _snappedObject.Unsnap();
         _snappedObject = null;
     }
 
-    private void ShowPreview(T snappable)
+    private void ShowPreview(TS snappable)
     {
         if (_preview != null)
             return;
@@ -89,10 +90,7 @@ public abstract class AbstractSnapZone<T> : MonoBehaviour where T : Snappable
     private void LateUpdate()
     {
         if (_snappedObject != null && _snappedObject.IsGrabbed == false)
-        {
-            PlaceSnappedObject();   
-        }
-
+            PlaceSnappedObject();
     }
 
     private void PlaceSnappedObject()

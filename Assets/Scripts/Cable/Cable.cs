@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class Cable : MonoBehaviour
+public class Cable : MonoBehaviour, IConductor
 {
     [SerializeField] 
-    private OVRGrabbableExtension input;
+    private CableInputConnector input;
     
     [SerializeField] 
-    private OVRGrabbableExtension output;
+    private CableOutputConnector output;
 
     [SerializeField] 
     private OVRGrabbableExtension handle;
@@ -25,6 +25,11 @@ public class Cable : MonoBehaviour
 
     private Vector3 _initialScaleInput2Handle;
     private Vector3 _initialScaleOutput2Handle;
+
+    public EnergyType GetEnergy()
+    {
+        return output.GetEnergy();
+    }
 
     private void Awake()
     {
@@ -91,25 +96,25 @@ public class Cable : MonoBehaviour
         var inputPosition = input.transform.position;
         var outputPosition = output.transform.position;
         var handlePosition = handle.transform.position;
-        
+
         var distanceInput2Handle = Vector3.Distance(inputPosition, handlePosition);
         var distanceOutput2Handle = Vector3.Distance(outputPosition, handlePosition);
-        
-        connectionInput2Handle.localScale = 
+
+        connectionInput2Handle.localScale =
             new Vector3(_initialScaleInput2Handle.x, distanceInput2Handle / 2f, _initialScaleInput2Handle.z);
-        
+
         connectionOutput2Handle.localScale =
             new Vector3(_initialScaleOutput2Handle.x, distanceOutput2Handle / 2f, _initialScaleOutput2Handle.z);
 
         var middleInput2Handle = (inputPosition + handlePosition) / 2f;
         connectionInput2Handle.position = middleInput2Handle;
-        
+
         var middleOutput2Handle = (outputPosition + handlePosition) / 2f;
         connectionOutput2Handle.position = middleOutput2Handle;
-        
+
         var directionInput2Handle = handlePosition - inputPosition;
         connectionInput2Handle.up = directionInput2Handle;
-        
+
         var directionOutput2Handle = handlePosition - outputPosition;
         connectionOutput2Handle.up = directionOutput2Handle;
     }

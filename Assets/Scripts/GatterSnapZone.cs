@@ -1,3 +1,5 @@
-﻿public class GatterSnapZone : AbstractSnapZone<Gatter>
+﻿
+public class GatterSnapZone : AbstractSnapZone<Gatter, GatterSnapZone>
 {
+    
 }

@@ -190,3 +190,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   preview: {fileID: 7104780081823570608, guid: 83dfd1a3e82650b4cb99d0913f2d1fd6, type: 3}
+  grabbable: {fileID: 6816329709303986387}
+  rigidbody: {fileID: 6832022067539637756}

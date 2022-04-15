@@ -202,3 +202,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   preview: {fileID: 572799144844869081, guid: 7d7e30e4de800a34f8d010c6a7cf5a62, type: 3}
+  grabbable: {fileID: 4891083744936407711}
+  rigidbody: {fileID: 3353951828108103112}

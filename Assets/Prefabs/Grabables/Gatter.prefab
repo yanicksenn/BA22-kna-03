@@ -310,3 +310,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   preview: {fileID: 8645041549545549641, guid: d27bc81f02efb4967be28706f7fc59a3, type: 3}
+  grabbable: {fileID: 8538786596544315827}
+  rigidbody: {fileID: 8858228607007394422}
+  inputSnapZones:
+  - {fileID: 7619588314309522662}
+  outputSnapZones: {fileID: 6524745071691747393}
