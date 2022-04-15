@@ -1,15 +1,14 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Renderer))]
-[RequireComponent(typeof(Rigidbody))]
-public class Grabbable : MonoBehaviour
+public class Highlightable : MonoBehaviour
 {
     [SerializeField] 
-    private Material isGrabbableMaterial;
-    public Material IsGrabbableMaterial
+    private Material highlightMaterial;
+    public Material HighlightMaterial
     {
-        get => isGrabbableMaterial;
-        set => isGrabbableMaterial = value;
+        get => highlightMaterial;
+        set => highlightMaterial = value;
     }
 
     private Material originalMaterial;
@@ -25,6 +24,6 @@ public class Grabbable : MonoBehaviour
         originalMaterial = renderer.material;
     }
     
-    public void Grab() => renderer.material = isGrabbableMaterial;
+    public void Grab() => renderer.material = highlightMaterial;
     public void Release() => renderer.material = originalMaterial;
 }

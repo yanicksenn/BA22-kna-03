@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2610821001289201580}
   - component: {fileID: 6524745071691747393}
   m_Layer: 0
-  m_Name: OutPutSnapZone
+  m_Name: OutputSnapZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,6 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snapReference: {fileID: 8351720158807880884}
+  gatter: {fileID: 4953444209758612662}
 --- !u!1 &2603632552978306344
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,6 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snapReference: {fileID: 7988570079188369294}
+  gatter: {fileID: 0}
 --- !u!1 &8645041549545549641
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,7 +298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbaa8770482d244bb01c5f89e1acbab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isGrabbableMaterial: {fileID: 2100000, guid: 17f72639f8852f84ba37738afcf3a3dd, type: 2}
+  highlightMaterial: {fileID: 2100000, guid: 253a0b7773a446d4fa893db334cdf027, type: 2}
 --- !u!114 &4953444209758612662
 MonoBehaviour:
   m_ObjectHideFlags: 0
