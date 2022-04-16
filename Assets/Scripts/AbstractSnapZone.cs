@@ -5,7 +5,7 @@ public abstract class AbstractSnapZone<TS, TZ> : MonoBehaviour
     where TS : Snappable<TS, TZ> 
     where TZ : AbstractSnapZone<TS, TZ>
 {
-    [SerializeField] 
+     [SerializeField] 
     private Transform snapReference;
     public Transform SnapReference
     {
@@ -18,6 +18,12 @@ public abstract class AbstractSnapZone<TS, TZ> : MonoBehaviour
     
     private GameObject _preview;
 
+
+    public bool Accepts(TS snappable)
+    {
+        return SnappedObject == null;
+    }
+    
     private void OnTriggerEnter(Collider other)
     {
         OnTriggerStay(other);

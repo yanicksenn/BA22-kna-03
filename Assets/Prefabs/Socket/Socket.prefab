@@ -59,6 +59,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snapReference: {fileID: 4287133966577938617}
+  previewMeshFilter: {fileID: 3093706621451936308, guid: d27bc81f02efb4967be28706f7fc59a3, type: 3}
+  previewRenderer: {fileID: 7436456483059377195, guid: d27bc81f02efb4967be28706f7fc59a3, type: 3}
 --- !u!1 &4086141663363020874
 GameObject:
   m_ObjectHideFlags: 0

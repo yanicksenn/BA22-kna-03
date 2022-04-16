@@ -1,9 +1,10 @@
 using UnityEngine;
 
+[ExecuteAlways]
 public class Cable : MonoBehaviour, IConductor
 {
     [SerializeField] 
-    private CableInputConnector input;
+    private Transform input;
     
     [SerializeField] 
     private CableOutputConnector output;
@@ -50,13 +51,14 @@ public class Cable : MonoBehaviour, IConductor
 
     private void Update()
     {
-        if (IsEverythingUnmoved()) 
-            return;
-        
-        if (!handle.isGrabbed)
-            PlaceHandleBetweenInputAndOutput();
-
+        UpdateOutputPosition();
         UpdateConnections();
+    }
+
+    private void UpdateOutputPosition()
+    {
+        if (!output.IsGrabbed && !output.IsSnapped && !output.CouldBeSnapped)
+            ResetPositionOfOutput();
     }
 
     private void OnReleaseHandle()
@@ -80,20 +82,22 @@ public class Cable : MonoBehaviour, IConductor
 
     private Vector3 GetDesiredHandlePosition()
     {
-        var inputPosition = input.transform.position;
+        var inputPosition = input.position;
         var outputPosition = output.transform.position;
         var handlePosition = (inputPosition + outputPosition) / 2f;
         return handlePosition;
     }
 
-    private bool IsEverythingUnmoved()
-    {
-        return !input.transform.hasChanged && !output.transform.hasChanged && !handle.transform.hasChanged;
-    }
-
     private void UpdateConnections()
     {
-        var inputPosition = input.transform.position;
+        var isEverythingUnmoved = !input.hasChanged && !output.transform.hasChanged && !handle.transform.hasChanged;
+        if (isEverythingUnmoved) 
+            return;
+        
+        if (!handle.isGrabbed)
+            PlaceHandleBetweenInputAndOutput();
+        
+        var inputPosition = input.position;
         var outputPosition = output.transform.position;
         var handlePosition = handle.transform.position;
 
@@ -117,5 +121,10 @@ public class Cable : MonoBehaviour, IConductor
 
         var directionOutput2Handle = handlePosition - outputPosition;
         connectionOutput2Handle.up = directionOutput2Handle;
+    }
+
+    private void ResetPositionOfOutput()
+    {
+        output.transform.position = input.position;
     }
 }

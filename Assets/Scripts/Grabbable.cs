@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,6 +11,8 @@ public class Grabbable : OVRGrabbable
     [SerializeField]
     private UnityEvent onRelease = new UnityEvent();
     public UnityEvent OnRelease => onRelease;
+
+    public bool IsGrabbed => isGrabbed || Selection.Contains(gameObject);
 
     public override void GrabBegin(OVRGrabber hand, Collider grabPoint)
     {
