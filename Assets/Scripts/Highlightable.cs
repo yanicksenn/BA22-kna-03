@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 
+[RequireComponent(typeof(Grabbable))]
 [RequireComponent(typeof(Renderer))]
 public class Highlightable : MonoBehaviour
 {
@@ -13,10 +15,24 @@ public class Highlightable : MonoBehaviour
 
     private Material originalMaterial;
     private Renderer renderer;
+    private Grabbable grababble;
 
     private void Awake()
     {
         renderer = GetComponent<Renderer>();
+        grababble = GetComponent<Grabbable>();
+    }
+
+    private void OnEnable()
+    {
+        grababble.OnGrab.AddListener(Grab);
+        grababble.OnRelease.AddListener(Release);
+    }
+
+    private void OnDisable()
+    {
+        grababble.OnGrab.RemoveListener(Grab);
+        grababble.OnRelease.RemoveListener(Release);
     }
 
     private void Start()
@@ -24,6 +40,6 @@ public class Highlightable : MonoBehaviour
         originalMaterial = renderer.material;
     }
     
-    public void Grab() => renderer.material = highlightMaterial;
-    public void Release() => renderer.material = originalMaterial;
+    private void Grab() => renderer.material = highlightMaterial;
+    private void Release() => renderer.material = originalMaterial;
 }

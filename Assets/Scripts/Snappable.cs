@@ -1,24 +1,15 @@
 using System.Linq;
 using UnityEngine;
 
-[RequireComponent(typeof(Grabbable))]
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(CollisionCache))]
-public abstract class Snappable<TS, TZ> : MonoBehaviour 
+public abstract class Snappable<TS, TZ> : Grabbable
     where TS : Snappable<TS, TZ> 
     where TZ : AbstractSnapZone<TS, TZ>
 {
     [SerializeField]
     private GameObject preview;
     public GameObject Preview => preview;
-
-    [SerializeField]
-    private Grabbable grabbable;
-    public Grabbable Grabbable
-    {
-        get => grabbable;
-        set => grabbable = value;
-    }
 
     [SerializeField]
     private new Rigidbody rigidbody;
@@ -39,7 +30,7 @@ public abstract class Snappable<TS, TZ> : MonoBehaviour
     private TZ _snapZone;
     public TZ SnapZone => _snapZone;
 
-    public bool IsGrabbed => grabbable.IsGrabbed;
+    
     public bool IsSnapped => _snapZone != null;
 
     private bool _couldBeSnapped;

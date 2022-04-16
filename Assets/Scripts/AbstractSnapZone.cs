@@ -47,7 +47,7 @@ public abstract class AbstractSnapZone<TS, TZ> : MonoBehaviour
         HidePreview();
 
         _snappedObject = snappable;
-        _snappedObject.Grabbable.OnGrab.AddListener(OnGrab);
+        _snappedObject.OnGrab.AddListener(Unsnap);
         _snappedObject.Snap((TZ) this);
 
         PlaceSnappedObject();
@@ -65,9 +65,12 @@ public abstract class AbstractSnapZone<TS, TZ> : MonoBehaviour
         HidePreview();
     }
 
-    private void OnGrab()
+    public void Unsnap()
     {
-        _snappedObject.Grabbable.OnGrab.RemoveListener(OnGrab);
+        if (_snappedObject == null)
+            return;
+        
+        _snappedObject.OnGrab.RemoveListener(Unsnap);
         _snappedObject.Unsnap();
         _snappedObject = null;
     }

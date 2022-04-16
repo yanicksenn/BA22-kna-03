@@ -21,9 +21,6 @@ public class Cable : MonoBehaviour, IConductor
     [SerializeField, Space] 
     private float pullThreshold;
 
-    [SerializeField, Space] 
-    private CableEvent onPull = new CableEvent();
-
     private Vector3 _initialScaleInput2Handle;
     private Vector3 _initialScaleOutput2Handle;
 
@@ -53,6 +50,21 @@ public class Cable : MonoBehaviour, IConductor
     {
         UpdateOutputPosition();
         UpdateConnections();
+        UpdateGrababbles();
+    }
+
+    private void UpdateGrababbles()
+    {
+        if (output.IsSnapped)
+        {
+            output.enabled = false;
+            handle.enabled = true;
+        }
+        else
+        {
+            output.enabled = true;
+            handle.enabled = false;
+        }
     }
 
     private void UpdateOutputPosition()
@@ -66,8 +78,11 @@ public class Cable : MonoBehaviour, IConductor
         // If the distance between the handle and the desired position is greater than the
         // the threshold, then invoke the pull event.
         var distance = Vector3.Distance(handle.transform.position, GetDesiredHandlePosition());
-        if (distance >= pullThreshold)
-            onPull.Invoke(this);
+        if (!(distance >= pullThreshold)) 
+            return;
+        
+        output.SnapZone.Unsnap();
+        ResetPositionOfOutput();
     }
 
     private void PlaceHandleBetweenInputAndOutput()

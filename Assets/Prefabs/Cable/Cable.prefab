@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961501065187393001}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.49999994, y: 0, z: 0}
+  m_LocalPosition: {x: -0.50000006, y: 0, z: 0}
   m_LocalScale: {x: 0.01, y: 0, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -97,7 +97,6 @@ GameObject:
   - component: {fileID: 382147043716133172}
   - component: {fileID: 4133700142015898366}
   - component: {fileID: 8112279990464287032}
-  - component: {fileID: 6068290204470222249}
   - component: {fileID: 8698505861032415236}
   - component: {fileID: 2480238556459984500}
   m_Layer: 0
@@ -115,7 +114,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1163202779147211503}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.49999994, y: 0, z: 0}
+  m_LocalPosition: {x: -0.50000006, y: 0, z: 0}
   m_LocalScale: {x: 0.025, y: 0.025, z: 0.025}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -213,65 +212,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 163905c3e3f24314a824491ee9a18d22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6068290204470222249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1163202779147211503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e02a6d3a6de4f638188a62947c2c1e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  m_snapOffset: {fileID: 0}
-  m_grabPoints: []
-  onGrab:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8698505861032415236}
-        m_TargetAssemblyTypeName: Grabbable, Assembly-CSharp
-        m_MethodName: Grab
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Grabbable, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onRelease:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8698505861032415236}
-        m_TargetAssemblyTypeName: Grabbable, Assembly-CSharp
-        m_MethodName: Release
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &8698505861032415236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,8 +237,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 979c7dbcad0645168d6fda3bd9703883, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_allowOffhandGrab: 1
+  m_snapPosition: 0
+  m_snapOrientation: 0
+  m_snapOffset: {fileID: 0}
+  m_grabPoints: []
+  onGrab:
+    m_PersistentCalls:
+      m_Calls: []
+  onRelease:
+    m_PersistentCalls:
+      m_Calls: []
   preview: {fileID: 572799144844869081, guid: 7d7e30e4de800a34f8d010c6a7cf5a62, type: 3}
-  grabbable: {fileID: 6068290204470222249}
   rigidbody: {fileID: 4133700142015898366}
   collisionCache: {fileID: 8112279990464287032}
 --- !u!1 &1392237838502640937
@@ -327,7 +277,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1392237838502640937}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.49999994, y: 0, z: 0}
+  m_LocalPosition: {x: -0.50000006, y: 0, z: 0}
   m_LocalScale: {x: 0.01, y: 0, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -507,7 +457,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2003187576432938955}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e02a6d3a6de4f638188a62947c2c1e6, type: 3}
   m_Name: 
@@ -614,10 +564,7 @@ MonoBehaviour:
   handle: {fileID: 2019539631625152931}
   connectionInput2Handle: {fileID: 6106193900332588105}
   connectionOutput2Handle: {fileID: 7265243412449054030}
-  pullThreshold: 5
-  onPull:
-    m_PersistentCalls:
-      m_Calls: []
+  pullThreshold: 0.3
 --- !u!1 &5353059775218204190
 GameObject:
   m_ObjectHideFlags: 0
