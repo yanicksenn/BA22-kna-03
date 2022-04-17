@@ -15,4 +15,15 @@ public class EnergySource : MonoBehaviour, IConductor
     {
         return energy;
     }
+
+    public void enableCurrent()
+    {
+        energy = EnergyType.True;
+    }
+
+    public void disableCurrent()
+    {
+        energy = EnergyType.False;
+    }
+    
 }
