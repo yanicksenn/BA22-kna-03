@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CableAnchor : MonoBehaviour
+public class Anchorable : MonoBehaviour
 {
     [SerializeField] private Transform anchor;
     void LateUpdate()
