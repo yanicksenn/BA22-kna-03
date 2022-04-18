@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [ExecuteAlways]
-public class Cable : MonoBehaviour, IConductor
+public class Cable : MonoBehaviour
 {
     [SerializeField] 
     private Transform input;

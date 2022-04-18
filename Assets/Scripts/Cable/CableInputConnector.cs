@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class CableInputConnector : Snappable<CableInputConnector, CableInputSnapZone>, IConductor
+public class CableInputConnector : Snappable<CableInputConnector, CableInputSnapZone>
 {
     [SerializeField]
     private Cable cable;
