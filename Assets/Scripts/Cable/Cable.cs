@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [ExecuteAlways]
-public class Cable : MonoBehaviour, IConductor
+public class Cable : MonoBehaviour
 {
     [SerializeField] 
     private Transform input;
@@ -23,11 +23,6 @@ public class Cable : MonoBehaviour, IConductor
 
     private Vector3 _initialScaleInput2Handle;
     private Vector3 _initialScaleOutput2Handle;
-
-    public EnergyType GetEnergy()
-    {
-        return output.GetEnergy();
-    }
 
     private void Awake()
     {
