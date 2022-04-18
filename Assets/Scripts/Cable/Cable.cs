@@ -24,11 +24,6 @@ public class Cable : MonoBehaviour
     private Vector3 _initialScaleInput2Handle;
     private Vector3 _initialScaleOutput2Handle;
 
-    public EnergyType GetEnergy()
-    {
-        return output.GetEnergy();
-    }
-
     private void Awake()
     {
         _initialScaleInput2Handle = connectionInput2Handle.localScale;

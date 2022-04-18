@@ -18,15 +18,4 @@ public class Gatter : Snappable<Gatter, GatterSnapZone>
         get => outputSnapZones;
         set => outputSnapZones = value;
     }
-
-    public EnergyType GetEnergy()
-    {
-        if (inputSnapZones.Any(z => z.GetEnergy() == EnergyType.Invalid))
-            return EnergyType.Invalid;
-
-        if (inputSnapZones.All(z => z.GetEnergy() == EnergyType.True))
-            return EnergyType.True;
-
-        return EnergyType.False;
-    }
 }

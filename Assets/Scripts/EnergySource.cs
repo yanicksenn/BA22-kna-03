@@ -11,11 +11,6 @@ public class EnergySource : MonoBehaviour
         set => energy = value;
     }
 
-    public EnergyType GetEnergy()
-    {
-        return energy;
-    }
-
     public void enableCurrent()
     {
         energy = EnergyType.True;
