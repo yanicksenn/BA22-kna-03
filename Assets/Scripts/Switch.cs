@@ -17,7 +17,6 @@ public class Switch : MonoBehaviour
     public UnityEvent OnSwitchOn => onSwitchOn;
 
     [SerializeField] private UnityEvent onSwitchOff = new UnityEvent();
-   
     public UnityEvent OnSwitchOff => onSwitchOff;
 
     private void Awake()

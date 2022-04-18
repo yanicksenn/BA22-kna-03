@@ -1,17 +1,24 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Collider))]
 public abstract class AbstractSnapZone<TS, TZ> : MonoBehaviour 
     where TS : Snappable<TS, TZ> 
     where TZ : AbstractSnapZone<TS, TZ>
 {
-     [SerializeField] 
+    [SerializeField] 
     private Transform snapReference;
     public Transform SnapReference
     {
         get => snapReference;
         set => snapReference = value;
     }
+
+    [SerializeField] private UnityEvent onSnap = new UnityEvent();
+    public UnityEvent OnSnap => onSnap;
+    
+    [SerializeField] private UnityEvent onUnsnap = new UnityEvent();
+    public UnityEvent OnUnsnap => onUnsnap;
 
     private TS _snappedObject;
     public TS SnappedObject => _snappedObject;
@@ -51,6 +58,7 @@ public abstract class AbstractSnapZone<TS, TZ> : MonoBehaviour
         _snappedObject.Snap((TZ) this);
 
         PlaceSnappedObject();
+        OnSnap.Invoke();
     }
 
     private void OnTriggerExit(Collider other)
@@ -73,6 +81,7 @@ public abstract class AbstractSnapZone<TS, TZ> : MonoBehaviour
         _snappedObject.OnGrab.RemoveListener(Unsnap);
         _snappedObject.Unsnap();
         _snappedObject = null;
+        OnUnsnap.Invoke();
     }
 
     private void ShowPreview(TS snappable)
