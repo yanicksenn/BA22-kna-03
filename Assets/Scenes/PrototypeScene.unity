@@ -259,7 +259,7 @@ MonoBehaviour:
   EnableRotationDuringAim: 1
   EnableRotationDuringPreTeleport: 1
   EnableRotationDuringPostTeleport: 1
-  TeleportDestinationPrefab: {fileID: 6051654559721645888, guid: 56510630c623781429d71b88929f44de, type: 3}
+  TeleportDestinationPrefab: {fileID: 7185462471729629251, guid: 61bb29aad9d9334469fab1f7258106b1, type: 3}
   TeleportDestinationLayer: 3
   AimCollisionType: 0
   UseCharacterCollisionData: 0
