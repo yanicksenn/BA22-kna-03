@@ -9,11 +9,13 @@ public class EnergySource : MonoBehaviour, IConductor
     public void enableCurrent()
     {
         energy = EnergyType.True;
+        Debug.Log($"BA22 enableCurrent ${energy}");
     }
 
     public void disableCurrent()
     {
         energy = EnergyType.False;
+        Debug.Log($"BA22 disableCurrent ${energy}");
     }
 
     public IEnumerable<IDependable> GetDirectDependencies()

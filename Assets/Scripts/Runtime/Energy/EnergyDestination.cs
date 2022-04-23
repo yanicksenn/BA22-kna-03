@@ -15,7 +15,6 @@ public class EnergyDestination : MonoBehaviour, IConductor
     private void Update()
     {
         var energy = GetEnergy();
-        Debug.Log($"BA22 ${energy}");
         if (ShouldTurnOn(energy) || ShouldTurnOff(energy))
             lightbulb.Toggle();
     }

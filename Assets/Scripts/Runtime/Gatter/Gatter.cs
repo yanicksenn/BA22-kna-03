@@ -20,8 +20,11 @@ public class Gatter : AbstractSnappable<Gatter, GatterSnapZone>, IConductor
         if (DependableUtil.HasCyclicDependencies(this))
             return EnergyType.Invalid;
 
-        if (cableOutputSnapZones.All(d => d.GetEnergy() == EnergyType.True))
+        if (cableOutputSnapZones.All(snapZone => snapZone.GetEnergy() == EnergyType.True))
             return EnergyType.False;
+
+        if (cableOutputSnapZones.Any(snapZone => snapZone.GetEnergy() == EnergyType.Invalid))
+            return EnergyType.Invalid;
 
         return EnergyType.True;
     }
