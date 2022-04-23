@@ -14,14 +14,17 @@ public abstract class AbstractSnapZone<TS, TZ> : MonoBehaviour
         set => snapReference = value;
     }
 
-    [SerializeField] private UnityEvent onSnap = new UnityEvent();
+    [SerializeField] 
+    private UnityEvent onSnap = new UnityEvent();
     public UnityEvent OnSnap => onSnap;
     
-    [SerializeField] private UnityEvent onUnsnap = new UnityEvent();
+    [SerializeField] 
+    private UnityEvent onUnsnap = new UnityEvent();
     public UnityEvent OnUnsnap => onUnsnap;
 
     private TS _snappedObject;
     public TS SnappedObject => _snappedObject;
+    public bool IsSnapped => SnappedObject != null;
     
     private GameObject _preview;
 
@@ -42,7 +45,7 @@ public abstract class AbstractSnapZone<TS, TZ> : MonoBehaviour
         if (snappable == null)
             return;
 
-        if (_snappedObject != null)
+        if (IsSnapped)
             return;
 
         if (snappable.IsGrabbed)
@@ -75,7 +78,7 @@ public abstract class AbstractSnapZone<TS, TZ> : MonoBehaviour
 
     public void Unsnap()
     {
-        if (_snappedObject == null)
+        if (IsSnapped)
             return;
         
         _snappedObject.OnGrab.RemoveListener(Unsnap);
@@ -107,8 +110,13 @@ public abstract class AbstractSnapZone<TS, TZ> : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (_snappedObject != null && _snappedObject.IsGrabbed == false)
-            PlaceSnappedObject();
+        if (!IsSnapped)
+            return;
+
+        if (!SnappedObject.IsGrabbed)
+            return;
+        
+        PlaceSnappedObject();
     }
 
     private void PlaceSnappedObject()

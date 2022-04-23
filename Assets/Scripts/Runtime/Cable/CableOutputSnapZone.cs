@@ -5,7 +5,7 @@ public class CableOutputSnapZone : AbstractSnapZone<CableOutputConnector, CableO
 {
     public IEnumerable<IDependable> GetDirectDependencies()
     {
-        if (SnappedObject == null)
+        if (IsSnapped)
             return new List<IDependable>();
 
         return new List<IDependable> { SnappedObject };
@@ -13,7 +13,7 @@ public class CableOutputSnapZone : AbstractSnapZone<CableOutputConnector, CableO
 
     public EnergyType GetEnergy()
     {
-        if (SnappedObject == null)
+        if (IsSnapped)
             return EnergyType.Invalid;
 
         if (DependableUtil.HasCyclicDependencies(this))
