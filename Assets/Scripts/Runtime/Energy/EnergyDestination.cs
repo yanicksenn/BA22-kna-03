@@ -29,7 +29,7 @@ public class EnergyDestination : MonoBehaviour, IConductor
         return energy == EnergyType.True && !lightbulb.IsOn;
     }
 
-    public IEnumerable<IDependable> GetDirectDependencies()
+    public IEnumerable<IDependable> GetDependencies()
     {
         if (cableOutputSnapZone == null)
             return new List<IDependable>();

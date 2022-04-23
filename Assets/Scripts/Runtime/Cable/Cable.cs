@@ -32,7 +32,7 @@ public class Cable : MonoBehaviour, IConductor
     private Vector3 _initialScaleInput2Handle;
     private Vector3 _initialScaleOutput2Handle;
     
-    public IEnumerable<IDependable> GetDirectDependencies()
+    public IEnumerable<IDependable> GetDependencies()
     {
         if (gatter != null && source == null)
             return new List<IDependable> {gatter};

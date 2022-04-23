@@ -2,6 +2,5 @@ using System.Collections.Generic;
 
 public interface IDependable
 {
-    IEnumerable<IDependable> GetDirectDependencies();
-    
+    IEnumerable<IDependable> GetDependencies();
 }

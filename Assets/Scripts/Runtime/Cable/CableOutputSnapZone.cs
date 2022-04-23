@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class CableOutputSnapZone : AbstractSnapZone<CableOutputConnector, CableOutputSnapZone>, IConductor
 {
-    public IEnumerable<IDependable> GetDirectDependencies()
+    public IEnumerable<IDependable> GetDependencies()
     {
         if (IsSnapped)
             return new List<IDependable>();

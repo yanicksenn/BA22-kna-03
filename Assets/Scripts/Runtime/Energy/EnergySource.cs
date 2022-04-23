@@ -15,7 +15,7 @@ public class EnergySource : MonoBehaviour, IConductor
         energy = EnergyType.False;
     }
 
-    public IEnumerable<IDependable> GetDirectDependencies()
+    public IEnumerable<IDependable> GetDependencies()
     {
         return new List<IDependable>();
     }

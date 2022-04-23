@@ -7,7 +7,7 @@ public class Gatter : AbstractSnappable<Gatter, GatterSnapZone>, IConductor
     [SerializeField] 
     private CableOutputSnapZone[] cableOutputSnapZones;
 
-    public IEnumerable<IDependable> GetDirectDependencies()
+    public IEnumerable<IDependable> GetDependencies()
     {
         return cableOutputSnapZones;
     }

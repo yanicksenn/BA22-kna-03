@@ -60,7 +60,7 @@ namespace Tests
         public class TestDependable : IDependable
         {
             public List<IDependable> dependencies = new List<IDependable>();
-            public IEnumerable<IDependable> GetDirectDependencies()
+            public IEnumerable<IDependable> GetDependencies()
             {
                 return dependencies;
             }

@@ -6,7 +6,7 @@ public class CableOutputConnector : AbstractSnappable<CableOutputConnector, Cabl
     [SerializeField]
     private Cable cable;
 
-    public IEnumerable<IDependable> GetDirectDependencies()
+    public IEnumerable<IDependable> GetDependencies()
     {
         return new List<IDependable> { cable };
     }

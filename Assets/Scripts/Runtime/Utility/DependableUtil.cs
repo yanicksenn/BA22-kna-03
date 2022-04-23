@@ -14,7 +14,7 @@ public static class DependableUtil
             return true;
         
         cache.Add(dependable);
-        var directDependencies = dependable.GetDirectDependencies();
+        var directDependencies = dependable.GetDependencies();
         if (directDependencies == null)
             return false;
 
