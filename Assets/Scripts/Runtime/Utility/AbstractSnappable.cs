@@ -1,5 +1,6 @@
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(CollisionCache))]
@@ -27,6 +28,15 @@ public abstract class AbstractSnappable<TS, TZ> : Grabbable
         set => collisionCache = value;
     }
 
+    [SerializeField] 
+    private UnityEvent onSnap = new UnityEvent();
+    public UnityEvent OnSnap => onSnap;
+
+    [SerializeField] 
+    private UnityEvent onUnsnap = new UnityEvent();
+    public UnityEvent OnUnsnap => onUnsnap;
+
+
     private TZ _snapZone;
     public TZ SnapZone => _snapZone;
 
@@ -40,11 +50,13 @@ public abstract class AbstractSnappable<TS, TZ> : Grabbable
     {
         _snapZone = snapZone;
         rigidbody.isKinematic = true;
+        OnSnap.Invoke();
     }
 
     public void Unsnap()
     {
         _snapZone = null;
+        OnUnsnap.Invoke();
     }
 
     private void Update()
