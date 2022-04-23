@@ -8,21 +8,26 @@ public class EnergyDestination : MonoBehaviour, IConductor
     
     [SerializeField]
     private CableOutputSnapZone cableOutputSnapZone;
-    private Animator _lightbulbAnimator;
+    
+    [SerializeField]
+    private Lightbulb lightbulb;
 
-    private void Awake()
+    private void Update()
     {
-        _lightbulbAnimator = GetComponent<Animator>();
+        var energy = GetEnergy();
+        Debug.Log($"BA22 ${energy}");
+        if (ShouldTurnOn(energy) || ShouldTurnOff(energy))
+            lightbulb.Toggle();
     }
 
-    public void turnOnLightbulb()
+    private bool ShouldTurnOff(EnergyType energy)
     {
-        _lightbulbAnimator.SetTrigger(LightBulbTrigger);
+        return energy is EnergyType.False or EnergyType.Invalid && lightbulb.IsOn;
     }
 
-    public void turnOffLightbulb()
+    private bool ShouldTurnOn(EnergyType energy)
     {
-        _lightbulbAnimator.SetTrigger(LightBulbTrigger);
+        return energy == EnergyType.True && !lightbulb.IsOn;
     }
 
     public IEnumerable<IDependable> GetDirectDependencies()

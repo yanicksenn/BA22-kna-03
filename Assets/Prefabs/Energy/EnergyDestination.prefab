@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8692792758236462323}
+  - component: {fileID: 3971988150525813381}
   m_Layer: 0
   m_Name: EnergyDestination
   m_TagString: Untagged
@@ -34,6 +35,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &3971988150525813381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2526374420547835792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 822b88d2e7972354b9d06bf9a725188f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cableOutputSnapZone: {fileID: 6968019479818636976}
+  lightbulb: {fileID: 6651095594669419669}
 --- !u!1 &3265137930032971046
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,34 +110,10 @@ MonoBehaviour:
   snapReference: {fileID: 1588766516941909174}
   onSnap:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8006577322495835300}
-        m_TargetAssemblyTypeName: EnergyDestination, Assembly-CSharp
-        m_MethodName: turnOnLightbulb
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onUnsnap:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8006577322495835300}
-        m_TargetAssemblyTypeName: EnergyDestination, Assembly-CSharp
-        m_MethodName: turnOffLightbulb
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &7008568357084227061
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,40 +285,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 99570607943465002, guid: d4c3cf71f0bd2174888daffe114c41e2, type: 3}
   m_PrefabInstance: {fileID: 1615265810161836535}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2035906231939220327 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 732519231458534032, guid: d4c3cf71f0bd2174888daffe114c41e2, type: 3}
+--- !u!114 &6651095594669419669 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5343489647830371682, guid: d4c3cf71f0bd2174888daffe114c41e2, type: 3}
   m_PrefabInstance: {fileID: 1615265810161836535}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &7409407683540381531
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2035906231939220327}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3df11a02d42747e499cc3c6a60250939, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8006577322495835300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2035906231939220327}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 822b88d2e7972354b9d06bf9a725188f, type: 3}
+  m_Script: {fileID: 11500000, guid: 493b48952473406190a4b77d8ff3f5b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
