@@ -1,13 +1,10 @@
 ﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class CableOutputConnector : AbstractSnappable<CableOutputConnector, CableOutputSnapZone>, IConductor
 {
+    [SerializeField]
     private Cable cable;
-
-    private void Awake()
-    {
-        cable = GetComponentInParent<Cable>();
-    }
 
     public IEnumerable<IDependable> GetDirectDependencies()
     {
