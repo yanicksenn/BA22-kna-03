@@ -59,6 +59,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snapReference: {fileID: 7988570079188369294}
+  onSnap:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnsnap:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8645041549545549641
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,9 +222,8 @@ MonoBehaviour:
   preview: {fileID: 8645041549545549641, guid: d27bc81f02efb4967be28706f7fc59a3, type: 3}
   rigidbody: {fileID: 8858228607007394422}
   collisionCache: {fileID: 256975217003534158}
-  inputSnapZones:
-  - {fileID: 0}
-  outputSnapZones: {fileID: 0}
+  cableOutputSnapZones:
+  - {fileID: 2695397344928551042}
 --- !u!114 &256975217003534158
 MonoBehaviour:
   m_ObjectHideFlags: 0

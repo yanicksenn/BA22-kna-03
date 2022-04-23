@@ -97,8 +97,8 @@ GameObject:
   - component: {fileID: 382147043716133172}
   - component: {fileID: 4133700142015898366}
   - component: {fileID: 8112279990464287032}
-  - component: {fileID: 8698505861032415236}
-  - component: {fileID: 2480238556459984500}
+  - component: {fileID: 4309850672721888360}
+  - component: {fileID: 6191966056051243911}
   m_Layer: 0
   m_Name: Output
   m_TagString: Untagged
@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 163905c3e3f24314a824491ee9a18d22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8698505861032415236
+--- !u!114 &4309850672721888360
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightMaterial: {fileID: 2100000, guid: 253a0b7773a446d4fa893db334cdf027, type: 2}
---- !u!114 &2480238556459984500
+--- !u!114 &6191966056051243911
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -251,6 +251,7 @@ MonoBehaviour:
   preview: {fileID: 572799144844869081, guid: 7d7e30e4de800a34f8d010c6a7cf5a62, type: 3}
   rigidbody: {fileID: 4133700142015898366}
   collisionCache: {fileID: 8112279990464287032}
+  cable: {fileID: 8323038790999999981}
 --- !u!1 &1392237838502640937
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,8 +560,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1180bc7b5d6440d8ddaf8e18d666f17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gatter: {fileID: 0}
+  source: {fileID: 0}
   input: {fileID: 4087917394216616889}
-  output: {fileID: 2480238556459984500}
+  output: {fileID: 6191966056051243911}
   handle: {fileID: 2019539631625152931}
   connectionInput2Handle: {fileID: 6106193900332588105}
   connectionOutput2Handle: {fileID: 7265243412449054030}
