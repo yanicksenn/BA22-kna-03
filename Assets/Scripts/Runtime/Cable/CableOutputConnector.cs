@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-public class CableOutputConnector : Snappable<CableOutputConnector, CableOutputSnapZone>, IConductor
+public class CableOutputConnector : AbstractSnappable<CableOutputConnector, CableOutputSnapZone>, IConductor
 {
     private Cable cable;
 

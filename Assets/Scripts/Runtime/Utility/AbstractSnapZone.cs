@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 [RequireComponent(typeof(Collider))]
 public abstract class AbstractSnapZone<TS, TZ> : MonoBehaviour 
-    where TS : Snappable<TS, TZ> 
+    where TS : AbstractSnappable<TS, TZ> 
     where TZ : AbstractSnapZone<TS, TZ>
 {
     [SerializeField] 

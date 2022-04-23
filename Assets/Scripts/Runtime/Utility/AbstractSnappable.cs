@@ -3,8 +3,8 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(CollisionCache))]
-public abstract class Snappable<TS, TZ> : Grabbable
-    where TS : Snappable<TS, TZ> 
+public abstract class AbstractSnappable<TS, TZ> : Grabbable
+    where TS : AbstractSnappable<TS, TZ> 
     where TZ : AbstractSnapZone<TS, TZ>
 {
     [SerializeField]
