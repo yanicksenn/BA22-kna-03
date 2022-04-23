@@ -1,20 +1,28 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 
-public class Gatter : Snappable<Gatter, GatterSnapZone>
+public class Gatter : Snappable<Gatter, GatterSnapZone>, IConductor
 {
-    [SerializeField]
-    private CableInputSnapZone[] inputSnapZones;
-    public CableInputSnapZone[] InputSnapZones
+    [SerializeField] 
+    private CableOutputSnapZone[] cableOutputSnapZones;
+
+    public IEnumerable<IDependable> GetDirectDependencies()
     {
-        get => inputSnapZones;
-        set => inputSnapZones = value;
+        return cableOutputSnapZones;
     }
 
-    [SerializeField] 
-    private CableOutputSnapZone outputSnapZones;
-    public CableOutputSnapZone OutputSnapZones
+    public EnergyType GetEnergy()
     {
-        get => outputSnapZones;
-        set => outputSnapZones = value;
+        if (SnapZone == null)
+            return EnergyType.Invalid;
+
+        if (DependableUtil.HasCyclicDependencies(this))
+            return EnergyType.Invalid;
+
+        if (cableOutputSnapZones.All(d => d.GetEnergy() == EnergyType.True))
+            return EnergyType.False;
+
+        return EnergyType.True;
     }
 }

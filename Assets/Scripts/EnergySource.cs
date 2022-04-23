@@ -2,14 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnergySource : MonoBehaviour
+public class EnergySource : MonoBehaviour, IConductor
 {
     [SerializeField] private EnergyType energy;
-    public EnergyType Energy
-    {
-        get => energy;
-        set => energy = value;
-    }
 
     public void enableCurrent()
     {
@@ -20,5 +15,14 @@ public class EnergySource : MonoBehaviour
     {
         energy = EnergyType.False;
     }
-    
+
+    public IEnumerable<IDependable> GetDirectDependencies()
+    {
+        return new List<IDependable>();
+    }
+
+    public EnergyType GetEnergy()
+    {
+        return energy;
+    }
 }

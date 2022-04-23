@@ -1,9 +1,17 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [ExecuteAlways]
-public class Cable : MonoBehaviour
+public class Cable : MonoBehaviour, IConductor
 {
     [SerializeField] 
+    private Gatter gatter;
+
+    [SerializeField] 
+    private EnergySource source;
+    
+    [SerializeField, Space] 
     private Transform input;
     
     [SerializeField] 
@@ -23,6 +31,33 @@ public class Cable : MonoBehaviour
 
     private Vector3 _initialScaleInput2Handle;
     private Vector3 _initialScaleOutput2Handle;
+    
+    public IEnumerable<IDependable> GetDirectDependencies()
+    {
+        if (gatter != null && source == null)
+            return new List<IDependable> {gatter};
+
+        if (source != null && gatter == null)
+            return new List<IDependable> {source};
+
+        Debug.LogWarning("cable needs either a gatter or energy source", this);
+        
+        return new List<IDependable>();
+    }
+
+    public EnergyType GetEnergy()
+    {
+        if (gatter == null && source == null)
+            return EnergyType.Invalid;
+        
+        if (DependableUtil.HasCyclicDependencies(this))
+            return EnergyType.Invalid;
+
+        if (gatter != null)
+            return gatter.GetEnergy();
+        else
+            return source.GetEnergy();
+    }
 
     private void Awake()
     {

@@ -1,15 +1,15 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnergyDestination : MonoBehaviour
+public class EnergyDestination : MonoBehaviour, IConductor
 {
     private const string TriggerName = "LightBulbTrigger";
     private static readonly int LightBulbTrigger = Animator.StringToHash(TriggerName);
     
-    private Animator _lightbulbAnimator;   
-    
+    [SerializeField]
+    private CableOutputSnapZone cableOutputSnapZone;
+    private Animator _lightbulbAnimator;
+
     private void Awake()
     {
         _lightbulbAnimator = GetComponent<Animator>();
@@ -23,5 +23,21 @@ public class EnergyDestination : MonoBehaviour
     public void turnOffLightbulb()
     {
         _lightbulbAnimator.SetTrigger(LightBulbTrigger);
+    }
+
+    public IEnumerable<IDependable> GetDirectDependencies()
+    {
+        if (cableOutputSnapZone == null)
+            return new List<IDependable>();
+
+        return new List<IDependable> { cableOutputSnapZone };
+    }
+
+    public EnergyType GetEnergy()
+    {
+        if (cableOutputSnapZone == null)
+            return EnergyType.Invalid;
+
+        return cableOutputSnapZone.GetEnergy();
     }
 }
