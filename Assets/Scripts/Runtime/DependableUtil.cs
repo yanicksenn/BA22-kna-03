@@ -12,15 +12,15 @@ public static class DependableUtil
     {
         if (cache.Contains(dependable))
             return true;
-
+        
+        cache.Add(dependable);
         var directDependencies = dependable.GetDirectDependencies();
         if (directDependencies == null)
             return false;
 
         foreach (var dependency in directDependencies)
         {
-            cache.Add(dependency);
-            if (HasCyclicDependencies(dependency, cache))
+            if (HasCyclicDependencies(dependency,cache))
                 return true;
         }
 

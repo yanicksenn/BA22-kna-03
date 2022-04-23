@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class CollisionCache : MonoBehaviour
 {
     private readonly HashSet<GameObject> _gameObjects = new HashSet<GameObject>();
-    public IEnumerable<GameObject> GameObjects => _gameObjects.AsReadOnlyCollection();
+    public IEnumerable<GameObject> GameObjects => _gameObjects;
 
     private void OnTriggerEnter(Collider collision)
     {
