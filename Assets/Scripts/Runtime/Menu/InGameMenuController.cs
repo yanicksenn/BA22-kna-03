@@ -17,7 +17,7 @@ public class InGameMenuController : MonoBehaviour
 
     private void Update()
     {
-        if (OVRInput.GetDown(OVRInput.Button.Start))
+        if (OVRInput.GetDown(OVRInput.Button.Start) || OVRInput.GetDown(OVRInput.Button.One))
             ShowMenu();
     }
     
