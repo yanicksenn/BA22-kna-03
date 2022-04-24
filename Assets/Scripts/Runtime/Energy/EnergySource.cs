@@ -1,18 +1,24 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnergySource : MonoBehaviour, IConductor
 {
-    [SerializeField] private EnergyType energy;
+    [SerializeField] 
+    private EnergyType energyType = EnergyType.False;
+
+    [SerializeField, Space] 
+    private UnityEvent onEnergyChangeEvent = new UnityEvent();
+    public UnityEvent OnEnergyChangeEvent => onEnergyChangeEvent;
 
     public void enableCurrent()
     {
-        energy = EnergyType.True;
+        ChangeEnergy(EnergyType.True);
     }
 
     public void disableCurrent()
     {
-        energy = EnergyType.False;
+        ChangeEnergy(EnergyType.False);
     }
 
     public IEnumerable<IDependable> GetDependencies()
@@ -20,8 +26,22 @@ public class EnergySource : MonoBehaviour, IConductor
         return new List<IDependable>();
     }
 
+    private void ChangeEnergy(EnergyType energyType)
+    {
+        if (this.energyType == energyType) 
+            return;
+        
+        this.energyType = energyType;
+        GetEnergyChangeEvent().Invoke();
+    }
+
     public EnergyType GetEnergy()
     {
-        return energy;
+        return energyType;
+    }
+
+    public UnityEvent GetEnergyChangeEvent()
+    {
+        return onEnergyChangeEvent;
     }
 }

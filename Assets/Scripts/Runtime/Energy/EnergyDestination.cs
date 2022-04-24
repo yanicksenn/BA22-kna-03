@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnergyDestination : MonoBehaviour, IConductor
 {
@@ -11,6 +12,64 @@ public class EnergyDestination : MonoBehaviour, IConductor
     
     [SerializeField]
     private Lightbulb lightbulb;
+    
+    [SerializeField, Space]
+    private CableOutputConnectorEvent onConnect = new CableOutputConnectorEvent();
+    public CableOutputConnectorEvent OnConnect => onConnect;
+
+    [SerializeField]
+    private CableOutputConnectorEvent onDisonnect = new CableOutputConnectorEvent();
+    public CableOutputConnectorEvent OnDisonnect => onDisonnect;
+
+    [SerializeField, Space] 
+    private UnityEvent onEnergyChangeEvent = new UnityEvent();
+    public UnityEvent OnEnergyChangeEvent => onEnergyChangeEvent;
+
+    private EnergyType energyType = EnergyType.Invalid;
+
+    private void Awake()
+    {
+        if (cableOutputSnapZone == null)
+            Debug.LogError("cable output snap zone is missing", this);
+        
+        if (lightbulb == null)
+            Debug.LogError("lightbulb is missing", this);
+    }
+
+    private void OnEnable()
+    {
+        cableOutputSnapZone.OnEnergyChangeEvent.AddListener(OnEnergyChange);
+        OnEnergyChange();
+    }
+
+    private void OnDisable()
+    {
+        cableOutputSnapZone.OnEnergyChangeEvent.RemoveListener(OnEnergyChange);
+        OnEnergyChange();
+    }
+
+    private void OnEnergyChange()
+    {
+        var newEnergyType = RecalcEnergy();
+        if (newEnergyType == energyType) 
+            return;
+        
+        energyType = newEnergyType;
+        GetEnergyChangeEvent().Invoke();
+    }
+
+    private EnergyType RecalcEnergy()
+    {
+        if (!cableOutputSnapZone.IsSnapped)
+            return EnergyType.Invalid;
+
+        return cableOutputSnapZone.GetEnergy();
+    }
+
+    public IEnumerable<IDependable> GetDependencies()
+    {
+        return new List<IDependable> { cableOutputSnapZone };
+    }
 
     private void Update()
     {
@@ -29,19 +88,13 @@ public class EnergyDestination : MonoBehaviour, IConductor
         return energy == EnergyType.True && !lightbulb.IsOn;
     }
 
-    public IEnumerable<IDependable> GetDependencies()
-    {
-        if (cableOutputSnapZone == null)
-            return new List<IDependable>();
-
-        return new List<IDependable> { cableOutputSnapZone };
-    }
-
     public EnergyType GetEnergy()
     {
-        if (cableOutputSnapZone == null)
-            return EnergyType.Invalid;
+        return energyType;
+    }
 
-        return cableOutputSnapZone.GetEnergy();
+    public UnityEvent GetEnergyChangeEvent()
+    {
+        return onEnergyChangeEvent;
     }
 }

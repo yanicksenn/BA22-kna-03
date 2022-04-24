@@ -194,7 +194,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1163202779147211503}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -267,6 +267,51 @@ MonoBehaviour:
   rigidbody: {fileID: 4133700142015898366}
   collisionCache: {fileID: 8112279990464287032}
   cable: {fileID: 8323038790999999981}
+  onConnect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 99c3895a2ccdf40bfa433f0485b68721, type: 2}
+        m_TargetAssemblyTypeName: Console.Console, Console
+        m_MethodName: Log
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: BA22 Connector Connected
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDisconnect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 99c3895a2ccdf40bfa433f0485b68721, type: 2}
+        m_TargetAssemblyTypeName: Console.Console, Console
+        m_MethodName: Log
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: BA22 Connector Disconnected
+          m_BoolArgument: 0
+        m_CallState: 2
+  onEnergyChangeEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 99c3895a2ccdf40bfa433f0485b68721, type: 2}
+        m_TargetAssemblyTypeName: Console.Console, Console
+        m_MethodName: Log
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: BA22 Connector Changed
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1392237838502640937
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,7 +505,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2003187576432938955}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -598,6 +643,9 @@ MonoBehaviour:
   connectionInput2Handle: {fileID: 6106193900332588105}
   connectionOutput2Handle: {fileID: 7265243412449054030}
   pullThreshold: 0.3
+  onEnergyChangeEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5353059775218204190
 GameObject:
   m_ObjectHideFlags: 0

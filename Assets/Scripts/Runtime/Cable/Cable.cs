@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [ExecuteAlways]
 public class Cable : MonoBehaviour, IConductor
@@ -28,35 +29,14 @@ public class Cable : MonoBehaviour, IConductor
     [SerializeField, Space] 
     private float pullThreshold;
 
+    [SerializeField, Space] 
+    private UnityEvent onEnergyChangeEvent = new UnityEvent();
+    public UnityEvent OnEnergyChangeEvent => onEnergyChangeEvent;
+
+    private EnergyType energyType;
+
     private Vector3 _initialScaleInput2Handle;
     private Vector3 _initialScaleOutput2Handle;
-    
-    public IEnumerable<IDependable> GetDependencies()
-    {
-        if (gatter != null && source == null)
-            return new List<IDependable> {gatter};
-
-        if (source != null && gatter == null)
-            return new List<IDependable> {source};
-
-        Debug.LogWarning("cable needs either a gatter or energy source", this);
-        
-        return new List<IDependable>();
-    }
-
-    public EnergyType GetEnergy()
-    {
-        if (gatter == null && source == null)
-            return EnergyType.Invalid;
-        
-        if (DependableUtil.HasCyclicDependencies(this))
-            return EnergyType.Invalid;
-
-        if (gatter != null)
-            return gatter.GetEnergy();
-        else
-            return source.GetEnergy();
-    }
 
     private void Awake()
     {
@@ -71,15 +51,28 @@ public class Cable : MonoBehaviour, IConductor
     private void OnEnable()
     {
         handle.OnRelease.AddListener(OnReleaseHandle);
+        
+        if (gatter != null)
+            gatter.OnEnergyChangeEvent.AddListener(OnEnergyChange);
+        
+        if (source != null)
+            source.OnEnergyChangeEvent.AddListener(OnEnergyChange);
+        
         UpdateConnections();
     }
     
     private void OnDisable()
     {
         handle.OnRelease.RemoveListener(OnReleaseHandle);
+        
+        if (gatter != null)
+            gatter.OnEnergyChangeEvent.RemoveListener(OnEnergyChange);
+        
+        if (source != null)
+            source.OnEnergyChangeEvent.RemoveListener(OnEnergyChange);
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         UpdateOutputPosition();
         UpdateConnections();
@@ -90,13 +83,13 @@ public class Cable : MonoBehaviour, IConductor
     {
         if (output.IsSnapped)
         {
-            output.enabled = false;
-            handle.enabled = true;
+            output.IsActive = false;
+            handle.IsActive = true;
         }
         else
         {
-            output.enabled = true;
-            handle.enabled = false;
+            output.IsActive = true;
+            handle.IsActive = false;
         }
     }
 
@@ -174,5 +167,51 @@ public class Cable : MonoBehaviour, IConductor
     private void ResetPositionOfOutput()
     {
         output.transform.position = input.position;
+    }
+    public IEnumerable<IDependable> GetDependencies()
+    {
+        if (gatter != null && source == null)
+            return new List<IDependable> {gatter};
+
+        if (source != null && gatter == null)
+            return new List<IDependable> {source};
+
+        Debug.LogWarning("cable needs either a gatter or energy source", this);
+        
+        return new List<IDependable>();
+    }
+
+    private void OnEnergyChange()
+    {
+        var newEnergyType = RecalcEnergy();
+        if (newEnergyType == energyType) 
+            return;
+        
+        energyType = newEnergyType;
+        GetEnergyChangeEvent().Invoke();
+    }
+
+    private EnergyType RecalcEnergy()
+    {
+        if (gatter == null && source == null)
+            return EnergyType.Invalid;
+        
+        if (DependableUtil.HasCyclicDependencies(this))
+            return EnergyType.Invalid;
+
+        if (gatter != null)
+            return gatter.GetEnergy();
+        
+        return source.GetEnergy();
+    }
+    
+    public EnergyType GetEnergy()
+    {
+        return energyType;
+    }
+
+    public UnityEvent GetEnergyChangeEvent()
+    {
+        return onEnergyChangeEvent;
     }
 }
