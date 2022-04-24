@@ -62,6 +62,10 @@ public class Cable : MonoBehaviour, IConductor
     {
         _initialScaleInput2Handle = connectionInput2Handle.localScale;
         _initialScaleOutput2Handle = connectionOutput2Handle.localScale;
+
+        var energyHighlighters = GetComponentsInChildren<EnergyHighlighter>();
+        foreach (var energyHighlighter in energyHighlighters)
+            energyHighlighter.Conductor = this;
     }
 
     private void OnEnable()

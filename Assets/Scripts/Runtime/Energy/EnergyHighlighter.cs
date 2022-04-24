@@ -4,15 +4,19 @@ public class EnergyHighlighter : MonoBehaviour
 {
     [SerializeField] private Material trueMaterial;
     [SerializeField] private Material falseMaterial;
-    
-    private Renderer renderer;
+
     private IConductor conductor;
-    
+    public IConductor Conductor
+    {
+        get => conductor;
+        set => conductor = value;
+    }
+
+    private Renderer renderer;
     private Material originalMaterial;
     private void Awake()
     {
         renderer = GetComponent<Renderer>();
-        conductor = GetComponentInParent<IConductor>();
     }
     
     private void Start()
@@ -22,6 +26,9 @@ public class EnergyHighlighter : MonoBehaviour
 
     private void Update()
     {
+        if (conductor == null)
+            return;
+        
         var energy = conductor.GetEnergy();
         switch (energy)
         {

@@ -18,10 +18,8 @@ public static class DependableUtil
             return false;
 
         foreach (var dependency in directDependencies)
-        {
-            if (HasCyclicDependencies(dependency,cache))
+            if (HasCyclicDependencies(dependency, cache))
                 return true;
-        }
 
         return false;
     }
