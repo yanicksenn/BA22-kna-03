@@ -11,24 +11,31 @@ public class Grabbable : OVRGrabbable
     private UnityEvent onRelease = new UnityEvent();
     public UnityEvent OnRelease => onRelease;
 
-    public bool IsGrabbed => isGrabbed; // || Selection.Contains(gameObject);
+    [SerializeField] 
+    private bool isActive = true;
+    public bool IsActive
+    {
+        get => isActive;
+        set => isActive = value;
+    }
 
+    public bool IsGrabbed => isGrabbed; // || Selection.Contains(gameObject);
+    
+    
     public override void GrabBegin(OVRGrabber hand, Collider grabPoint)
     {
-        if (!enabled)
-        {
+        if (!IsActive)
             return;
-        }
+        
         base.GrabBegin(hand, grabPoint);
         OnGrab.Invoke();
     }
 
     public override void GrabEnd(Vector3 linearVelocity, Vector3 angularVelocity)
     {
-        if (!enabled)
-        {
+        if (!IsActive)
             return;
-        }
+        
         base.GrabEnd(linearVelocity, angularVelocity);
         OnRelease.Invoke();
     }

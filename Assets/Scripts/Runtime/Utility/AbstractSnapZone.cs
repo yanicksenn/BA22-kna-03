@@ -2,9 +2,11 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(Collider))]
-public abstract class AbstractSnapZone<TS, TZ> : MonoBehaviour 
-    where TS : AbstractSnappable<TS, TZ> 
-    where TZ : AbstractSnapZone<TS, TZ>
+public abstract class AbstractSnapZone<TS, TZ, TES, TEZ> : MonoBehaviour 
+    where TS : AbstractSnappable<TS, TZ, TES, TEZ> 
+    where TZ : AbstractSnapZone<TS, TZ, TES, TEZ>
+    where TES : UnityEvent<TS>
+    where TEZ : UnityEvent<TZ>
 {
     [SerializeField] 
     private Transform snapReference;
@@ -13,14 +15,6 @@ public abstract class AbstractSnapZone<TS, TZ> : MonoBehaviour
         get => snapReference;
         set => snapReference = value;
     }
-
-    [SerializeField] 
-    private UnityEvent onSnap = new UnityEvent();
-    public UnityEvent OnSnap => onSnap;
-    
-    [SerializeField] 
-    private UnityEvent onUnsnap = new UnityEvent();
-    public UnityEvent OnUnsnap => onUnsnap;
 
     private TS _snappedObject;
     public TS SnappedObject => _snappedObject;
@@ -33,6 +27,22 @@ public abstract class AbstractSnapZone<TS, TZ> : MonoBehaviour
     {
         return SnappedObject == null;
     }
+    
+    public void Unsnap()
+    {
+        if (!IsSnapped)
+            return;
+
+        var tmpSnappedObject = _snappedObject;
+        _snappedObject.OnGrab.RemoveListener(Unsnap);
+        _snappedObject.Unsnap();
+        _snappedObject = null;
+        
+        GetUnsnapEvent().Invoke(tmpSnappedObject);
+    }
+
+    public abstract TES GetSnapEvent();
+    public abstract TES GetUnsnapEvent();
     
     private void OnTriggerEnter(Collider other)
     {
@@ -61,7 +71,7 @@ public abstract class AbstractSnapZone<TS, TZ> : MonoBehaviour
         _snappedObject.Snap((TZ) this);
 
         PlaceSnappedObject();
-        OnSnap.Invoke();
+        GetSnapEvent().Invoke(_snappedObject);
     }
 
     private void OnTriggerExit(Collider other)
@@ -74,17 +84,6 @@ public abstract class AbstractSnapZone<TS, TZ> : MonoBehaviour
             return;
         
         HidePreview();
-    }
-
-    public void Unsnap()
-    {
-        if (IsSnapped)
-            return;
-        
-        _snappedObject.OnGrab.RemoveListener(Unsnap);
-        _snappedObject.Unsnap();
-        _snappedObject = null;
-        OnUnsnap.Invoke();
     }
 
     private void ShowPreview(TS snappable)
@@ -108,7 +107,7 @@ public abstract class AbstractSnapZone<TS, TZ> : MonoBehaviour
         _preview = null;
     }
 
-    private void LateUpdate()
+    private void Update()
     {
         if (!IsSnapped)
             return;

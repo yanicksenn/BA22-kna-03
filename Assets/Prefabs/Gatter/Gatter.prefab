@@ -59,12 +59,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snapReference: {fileID: 7988570079188369294}
-  onSnap:
+  onSnapEvent:
     m_PersistentCalls:
       m_Calls: []
-  onUnsnap:
+  onUnsnapEvent:
     m_PersistentCalls:
       m_Calls: []
+  onEnergyChangeEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 99c3895a2ccdf40bfa433f0485b68721, type: 2}
+        m_TargetAssemblyTypeName: Console.Console, Console
+        m_MethodName: Log
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: BA22 SnapZone Changed
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8645041549545549641
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,6 +239,21 @@ MonoBehaviour:
   collisionCache: {fileID: 256975217003534158}
   cableOutputSnapZones:
   - {fileID: 2695397344928551042}
+  onSnapToBoard:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnsnapFromBoard:
+    m_PersistentCalls:
+      m_Calls: []
+  onConnect:
+    m_PersistentCalls:
+      m_Calls: []
+  onDisonnect:
+    m_PersistentCalls:
+      m_Calls: []
+  onEnergyChangeEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &256975217003534158
 MonoBehaviour:
   m_ObjectHideFlags: 0
