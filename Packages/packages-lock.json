@@ -236,6 +236,13 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.yanicksenn.unity.console": {
+      "version": "https://github.com/yanicksenn/unity-console.git#1.1.0",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "17ba394b77d0cc1fbd1f3e209d0c949b66cbacee"
+    },
     "com.unity.modules.ai": {
       "version": "1.0.0",
       "depth": 0,
