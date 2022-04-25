@@ -1,15 +1,25 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class EnergySource : MonoBehaviour, IConductor
 {
+    [SerializeField] private string text;
+    [SerializeField] private TMP_Text label;
+    
     [SerializeField, Space] 
     private UnityEvent onEnergyChangeEvent = new UnityEvent();
     public UnityEvent OnEnergyChangeEvent => onEnergyChangeEvent;
-    
+
     private EnergyType energyType = EnergyType.False;
+
+    private void Awake()
+    {
+        if (label != null)
+            label.text = text;
+    }
 
     public void enableCurrent()
     {
@@ -19,6 +29,16 @@ public class EnergySource : MonoBehaviour, IConductor
     public void disableCurrent()
     {
         ChangeEnergy(EnergyType.False);
+    }
+    
+    public void setCurrent(int energy)
+    {
+        if(energy ==1)
+            ChangeEnergy(EnergyType.True);
+        else
+        {
+            ChangeEnergy(EnergyType.False);
+        }
     }
 
     public IEnumerable<IDependable> GetDependencies()
