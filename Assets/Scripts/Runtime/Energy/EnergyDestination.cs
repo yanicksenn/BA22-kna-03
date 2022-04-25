@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -6,6 +7,9 @@ public class EnergyDestination : MonoBehaviour, IConductor
 {
     private const string TriggerName = "LightBulbTrigger";
     private static readonly int LightBulbTrigger = Animator.StringToHash(TriggerName);
+
+    [SerializeField] private string text;
+    [SerializeField] private TMP_Text label;
     
     [SerializeField]
     private CableOutputSnapZone cableOutputSnapZone;
@@ -34,6 +38,9 @@ public class EnergyDestination : MonoBehaviour, IConductor
         
         if (lightbulb == null)
             Debug.LogError("lightbulb is missing", this);
+
+        if (label != null)
+            label.text = text;
     }
 
     private void OnEnable()

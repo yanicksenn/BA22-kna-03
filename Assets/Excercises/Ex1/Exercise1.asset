@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Exercise1
   m_EditorClassIdentifier: 
   exerciseNumber: 1
-  exerciseName: Test
-  exerciseDescription: This is a test exercise, please connect all gatters so that
-    all lights are on.
+  exerciseName: 'Task: NOT'
+  exerciseDescription: Place the gates to invert the value from the switch 0 and
+    connect it to lightbulb A.
+  truthTableFile: {fileID: 4900000, guid: 959a28627c904d740bf78176a5ac4dea, type: 3}
