@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class EnergyHighlighter : MonoBehaviour
 {
@@ -17,35 +18,34 @@ public class EnergyHighlighter : MonoBehaviour
     private void Awake()
     {
         renderer = GetComponent<Renderer>();
-    }
-    
-    private void Start()
-    {
         originalMaterial = renderer.material;
     }
 
-    private void Update()
+
+    private void EnergyUpdate()
     {
         if (conductor == null)
             return;
         
         var energy = conductor.GetEnergy();
-        switch (energy)
+
+        renderer.material = energy switch
         {
-            case EnergyType.True when renderer.material != trueMaterial:
-                renderer.material = trueMaterial;
-                break;
-            
-            case EnergyType.False when renderer.material != falseMaterial:
-                renderer.material = falseMaterial;
-                break;
-            
-            default:
-            {
-                if (renderer.material != originalMaterial)
-                    renderer.material = originalMaterial;
-                break;
-            }
-        }
+            EnergyType.True => trueMaterial,
+            EnergyType.False => falseMaterial,
+            _ => originalMaterial
+        };
+    }
+
+    private void OnEnable()
+    {
+        conductor.GetEnergyChangeEvent().AddListener(EnergyUpdate);
+        EnergyUpdate();
+    }
+
+    private void OnDisable()
+    {
+        conductor.GetEnergyChangeEvent().RemoveListener(EnergyUpdate);
+        EnergyUpdate();
     }
 }
