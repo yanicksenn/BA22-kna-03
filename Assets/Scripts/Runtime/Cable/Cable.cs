@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -42,10 +43,6 @@ public class Cable : MonoBehaviour, IConductor
     {
         _initialScaleInput2Handle = connectionInput2Handle.localScale;
         _initialScaleOutput2Handle = connectionOutput2Handle.localScale;
-
-        var energyHighlighters = GetComponentsInChildren<EnergyHighlighter>();
-        foreach (var energyHighlighter in energyHighlighters)
-            energyHighlighter.Conductor = this;
     }
 
     private void OnEnable()
@@ -58,6 +55,7 @@ public class Cable : MonoBehaviour, IConductor
         if (source != null)
             source.OnEnergyChangeEvent.AddListener(OnEnergyChange);
         
+        OnEnergyChange();
         UpdateConnections();
     }
     
@@ -70,6 +68,8 @@ public class Cable : MonoBehaviour, IConductor
         
         if (source != null)
             source.OnEnergyChangeEvent.RemoveListener(OnEnergyChange);
+        
+        OnEnergyChange();
     }
 
     private void LateUpdate()

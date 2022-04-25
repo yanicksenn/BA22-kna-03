@@ -34,22 +34,36 @@ public class Gatter : AbstractSnappable<Gatter, GatterSnapZone, GatterEvent, Gat
     {
         foreach (var cableOutputSnapZone in cableOutputSnapZones)
             cableOutputSnapZone.OnEnergyChangeEvent.AddListener(OnEnergyChange);
+        
+        OnSnapToBoard.AddListener(OnEnergyChange);
+        OnUnsnapFromBoard.AddListener(OnEnergyChange);
+        
     }
 
     private void OnDisable()
     {
         foreach (var cableOutputSnapZone in cableOutputSnapZones)
             cableOutputSnapZone.OnEnergyChangeEvent.RemoveListener(OnEnergyChange);
+        
+        OnSnapToBoard.RemoveListener(OnEnergyChange);
+        OnUnsnapFromBoard.RemoveListener(OnEnergyChange);
+        
     }
 
     private void OnEnergyChange()
     {
         var newEnergyType = RecalcEnergy();
-        if (newEnergyType == energyType) 
+        if (newEnergyType == energyType)
             return;
         
         energyType = newEnergyType;
         GetEnergyChangeEvent().Invoke();
+        
+    }
+
+    private void OnEnergyChange(GatterSnapZone gatterSnapZone)
+    {
+        OnEnergyChange();
     }
 
     public IEnumerable<IDependable> GetDependencies()

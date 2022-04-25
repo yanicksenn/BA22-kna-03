@@ -1,15 +1,15 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class EnergySource : MonoBehaviour, IConductor
 {
-    [SerializeField] 
-    private EnergyType energyType = EnergyType.False;
-
     [SerializeField, Space] 
     private UnityEvent onEnergyChangeEvent = new UnityEvent();
     public UnityEvent OnEnergyChangeEvent => onEnergyChangeEvent;
+    
+    private EnergyType energyType = EnergyType.False;
 
     public void enableCurrent()
     {
