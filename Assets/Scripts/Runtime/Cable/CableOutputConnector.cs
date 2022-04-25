@@ -31,11 +31,13 @@ public class CableOutputConnector : AbstractSnappable<CableOutputConnector, Cabl
     private void OnEnable()
     {
         cable.OnEnergyChangeEvent.AddListener(OnEnergyChange);
+        OnEnergyChange();
     }
 
     private void OnDisable()
     {
         cable.OnEnergyChangeEvent.RemoveListener(OnEnergyChange);
+        OnEnergyChange();
     }
 
     private void OnEnergyChange()

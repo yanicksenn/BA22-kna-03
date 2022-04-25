@@ -112,9 +112,12 @@ public abstract class AbstractSnapZone<TS, TZ, TES, TEZ> : MonoBehaviour
         if (!IsSnapped)
             return;
 
-        if (!SnappedObject.IsGrabbed)
+        if (SnappedObject.IsGrabbed)
             return;
-        
+
+        if (!SnapReference.hasChanged)
+            return;
+            
         PlaceSnappedObject();
     }
 
@@ -123,5 +126,9 @@ public abstract class AbstractSnapZone<TS, TZ, TES, TEZ> : MonoBehaviour
         var snappedtransform = _snappedObject.transform;
         snappedtransform.position = snapReference.position;
         snappedtransform.rotation = snapReference.rotation;
+        
+        // Set this to false manually because unity does not figure this
+        // out themselves.
+        snapReference.hasChanged = false;
     }
 }

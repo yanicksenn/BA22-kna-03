@@ -67,19 +67,7 @@ MonoBehaviour:
       m_Calls: []
   onEnergyChangeEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 99c3895a2ccdf40bfa433f0485b68721, type: 2}
-        m_TargetAssemblyTypeName: Console.Console, Console
-        m_MethodName: Log
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: BA22 SnapZone Changed
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &8645041549545549641
 GameObject:
   m_ObjectHideFlags: 0
@@ -234,6 +222,7 @@ MonoBehaviour:
   onRelease:
     m_PersistentCalls:
       m_Calls: []
+  isActive: 1
   preview: {fileID: 8645041549545549641, guid: d27bc81f02efb4967be28706f7fc59a3, type: 3}
   rigidbody: {fileID: 8858228607007394422}
   collisionCache: {fileID: 256975217003534158}

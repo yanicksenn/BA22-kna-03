@@ -26,8 +26,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961501065187393001}
-  m_LocalRotation: {x: 0.14818393, y: -0, z: -0, w: 0.98895985}
-  m_LocalPosition: {x: -0.000000024214387, y: -0.000000011175871, z: 0.000000113621354}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.000000052823452, y: 0, z: 0}
   m_LocalScale: {x: 0.01, y: 0, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4459b31f73b3443db7e64b945643d353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cable: {fileID: 8323038790999999981}
   trueMaterial: {fileID: 2100000, guid: 138b56e9c7d51d34b803b18058f9892e, type: 2}
   falseMaterial: {fileID: 2100000, guid: 77e19a72ec5a2344986d44497796f368, type: 2}
 --- !u!1 &1163202779147211503
@@ -129,7 +130,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1163202779147211503}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.000000024214387, y: -0.000000011175871, z: 0.000000113621354}
+  m_LocalPosition: {x: -0.000000052823452, y: 0, z: 0}
   m_LocalScale: {x: 0.03, y: 0.03, z: 0.03}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -270,49 +271,13 @@ MonoBehaviour:
   cable: {fileID: 8323038790999999981}
   onConnect:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 99c3895a2ccdf40bfa433f0485b68721, type: 2}
-        m_TargetAssemblyTypeName: Console.Console, Console
-        m_MethodName: Log
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: BA22 Connector Connected
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onDisconnect:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 99c3895a2ccdf40bfa433f0485b68721, type: 2}
-        m_TargetAssemblyTypeName: Console.Console, Console
-        m_MethodName: Log
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: BA22 Connector Disconnected
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onEnergyChangeEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 99c3895a2ccdf40bfa433f0485b68721, type: 2}
-        m_TargetAssemblyTypeName: Console.Console, Console
-        m_MethodName: Log
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: BA22 Connector Changed
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1392237838502640937
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,8 +304,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1392237838502640937}
-  m_LocalRotation: {x: 0.14818393, y: -0, z: -0, w: 0.98895985}
-  m_LocalPosition: {x: -0.000000024214387, y: -0.000000011175871, z: 0.000000113621354}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.000000052823452, y: 0, z: 0}
   m_LocalScale: {x: 0.01, y: 0, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -409,6 +374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4459b31f73b3443db7e64b945643d353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cable: {fileID: 8323038790999999981}
   trueMaterial: {fileID: 2100000, guid: 138b56e9c7d51d34b803b18058f9892e, type: 2}
   falseMaterial: {fileID: 2100000, guid: 77e19a72ec5a2344986d44497796f368, type: 2}
 --- !u!1 &2003187576432938955
@@ -534,7 +500,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2003187576432938955}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e02a6d3a6de4f638188a62947c2c1e6, type: 3}
   m_Name: 
@@ -647,19 +613,7 @@ MonoBehaviour:
   pullThreshold: 0.3
   onEnergyChangeEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &5353059775218204190
 GameObject:
   m_ObjectHideFlags: 0
