@@ -31,6 +31,11 @@ public class InGameMenuController : MonoBehaviour
         HideMenu();
     }
 
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene("Scenes/MainScene");   
+    }
+
     public void ShowMenu()
     {
         canvas.enabled = true;

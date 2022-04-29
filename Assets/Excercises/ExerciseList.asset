@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exerciseList:
   - {fileID: 11400000, guid: b12f2aed14f93414289bd788549a4ee5, type: 2}
+  - {fileID: 11400000, guid: 119fd3b902edd00428d7e83dcdadda48, type: 2}

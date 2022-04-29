@@ -17,7 +17,7 @@ public class ExerciseManager : MonoBehaviour
         {
             exerciseList.Continue();
             
-            if(exerciseList.HasNextExercise())
+            if(exerciseList.IsNotFinished())
                 checkButton.SetActive(true);
         }
         else
