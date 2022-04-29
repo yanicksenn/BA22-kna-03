@@ -8,7 +8,7 @@ public class ExerciseList : ScriptableObject
     private List<Exercise> exerciseList = new List<Exercise>();
 
     private int currentIndex = 0;
-    public Exercise CurrentExercise => exerciseList.Count == 0 || currentIndex > exerciseList.Count - 1 ? null : exerciseList[currentIndex];
+    public Exercise CurrentExercise => exerciseList.Count == 0 || HasNextExercise() ? null : exerciseList[currentIndex];
 
     public void Continue()
     {
@@ -18,5 +18,10 @@ public class ExerciseList : ScriptableObject
     public int Count()
     {
         return exerciseList.Count;
+    }
+
+    public bool HasNextExercise()
+    {
+       return currentIndex >= exerciseList.Count;
     }
 }

@@ -7,12 +7,25 @@ public class ExerciseManager : MonoBehaviour
     [SerializeField] private ExerciseList exerciseList;
     [SerializeField] private EnergySource[] energySources;
     [SerializeField] private EnergyDestination[] energyDestinations;
+    [SerializeField] private GameObject checkButton;
 
-    public void CheckExcerciseAndContinue()
+    public void CheckExerciseAndContinue()
     {
+        checkButton.SetActive(false);
+        
         if (CheckExercise())
+        {
             exerciseList.Continue();
+            
+            if(exerciseList.HasNextExercise())
+                checkButton.SetActive(true);
+        }
+        else
+        {
+            checkButton.SetActive(true);
+        }
     }
+            
 
     private bool CheckExercise()
     {
