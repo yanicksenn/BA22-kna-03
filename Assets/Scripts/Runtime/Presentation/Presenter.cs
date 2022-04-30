@@ -112,11 +112,11 @@ namespace Runtime.Presentation
 
             headerLabel.text = currentSlide.Title;
             
-            nextButton.gameObject.SetActive(currentSlide.AllowsNext && HasNext());
-            nextButtonLabel.text = currentSlide.NextButtonName;
+            nextButton.gameObject.SetActive(IsNextButtonEnabled(currentSlide));
+            nextButtonLabel.text = currentSlide.NextButton.LabelText;
                 
-            previousButton.gameObject.SetActive(currentSlide.AllowsPrevious && HasPrevious());
-            previousButtonLabel.text = currentSlide.PreviousButtonName;
+            previousButton.gameObject.SetActive(IsPreviousButtonEnabled(currentSlide));
+            previousButtonLabel.text = currentSlide.NextButton.LabelText;
             
             switch (currentSlide)
             {
@@ -128,6 +128,16 @@ namespace Runtime.Presentation
                     ShowImageSlide(imageSlide);
                     break;
             }
+        }
+
+        private bool IsPreviousButtonEnabled(AbstractSlide currentSlide)
+        {
+            return !currentSlide.PreviousButton.ProhibitsManualNavigation && HasPrevious();
+        }
+
+        private bool IsNextButtonEnabled(AbstractSlide currentSlide)
+        {
+            return !currentSlide.NextButton.ProhibitsManualNavigation && HasNext();
         }
 
         private void ShowTextSlide(TextSlide textSlide)
@@ -145,9 +155,7 @@ namespace Runtime.Presentation
         public void Reset()
         {
             FireHideSlideEvent();
-            
             _currentSlideIndex = 0;
-            
             FireShowSlideEvent();
         }
 
@@ -161,9 +169,7 @@ namespace Runtime.Presentation
                 return;
             
             FireHideSlideEvent();
-
             _currentSlideIndex++;
-            
             FireShowSlideEvent();
         }
         
@@ -174,22 +180,26 @@ namespace Runtime.Presentation
                 return;
             
             FireHideSlideEvent();
-
             _currentSlideIndex--;
-            
             FireShowSlideEvent();
         }
 
         private void FireShowSlideEvent()
         {
+            var currentSlide = GetCurrentSlide();
+            currentSlide.SlideEvents.OnShowEvent.Invoke();
+
             foreach (var navigationCondition in NavigationConditions)
-                navigationCondition.OnShowSlide(GetCurrentSlide());
+                navigationCondition.OnShowSlide(currentSlide);
         }
 
         private void FireHideSlideEvent()
         {
+            var currentSlide = GetCurrentSlide();
+            currentSlide.SlideEvents.OnHideEvent.Invoke();
+            
             foreach (var navigationCondition in NavigationConditions)
-                navigationCondition.OnHideSlide(GetCurrentSlide());
+                navigationCondition.OnHideSlide(currentSlide);
         }
 
         private int GetCurrentSlideIndex()

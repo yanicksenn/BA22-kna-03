@@ -13,9 +13,18 @@ MonoBehaviour:
   m_Name: ExerciseSlide1
   m_EditorClassIdentifier: 
   title: Exercise 1
-  nextButtonName: Check
-  allowsNext: 1
-  previousButtonName: Previous
-  allowsPrevious: 1
+  nextButton:
+    labelText: Check
+    prohibitsManualNavigation: 0
+  previousButton:
+    labelText: Previous
+    prohibitsManualNavigation: 0
+  slideEvents:
+    onShowEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    onHideEvent:
+      m_PersistentCalls:
+        m_Calls: []
   text: This is the first exercise.
   truthTableFile: {fileID: 4900000, guid: 959a28627c904d740bf78176a5ac4dea, type: 3}

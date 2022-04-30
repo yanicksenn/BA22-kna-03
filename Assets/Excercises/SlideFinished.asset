@@ -13,8 +13,17 @@ MonoBehaviour:
   m_Name: SlideFinished
   m_EditorClassIdentifier: 
   title: Congratula
-  nextButtonName: Next
-  allowsNext: 0
-  previousButtonName: Previous
-  allowsPrevious: 0
+  nextButton:
+    labelText: Next
+    prohibitsManualNavigation: 0
+  previousButton:
+    labelText: Previous
+    prohibitsManualNavigation: 1
+  slideEvents:
+    onShowEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    onHideEvent:
+      m_PersistentCalls:
+        m_Calls: []
   text: You are finished with all the exercises.

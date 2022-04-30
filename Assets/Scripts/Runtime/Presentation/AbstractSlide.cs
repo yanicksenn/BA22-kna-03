@@ -13,35 +13,15 @@ namespace Runtime.Presentation
         }
 
         [SerializeField, Space] 
-        private string nextButtonName = "Next";
-        public string NextButtonName
-        {
-            get => nextButtonName;
-            set => nextButtonName = value;
-        }
-
+        private ButtonConfiguration nextButton = new ButtonConfiguration("Next");
+        public ButtonConfiguration NextButton => nextButton;
+        
         [SerializeField] 
-        private bool allowsManualNext = true;
-        public bool AllowsNext
-        {
-            get => allowsManualNext;
-            set => allowsManualNext = value;
-        }
+        private ButtonConfiguration previousButton = new ButtonConfiguration("Previous");
+        public ButtonConfiguration PreviousButton => previousButton;
 
-        [SerializeField, Space]
-        private string previousButtonName = "Previous";
-        public string PreviousButtonName
-        {
-            get => previousButtonName;
-            set => previousButtonName = value;
-        }
-
-        [SerializeField] 
-        private bool allowsManualPrevious = false;
-        public bool AllowsPrevious
-        {
-            get => allowsManualPrevious;
-            set => allowsManualPrevious = value;
-        }
+        [SerializeField, Space] 
+        private SlideEvents slideEvents = new SlideEvents();
+        public SlideEvents SlideEvents => slideEvents;
     }
 }

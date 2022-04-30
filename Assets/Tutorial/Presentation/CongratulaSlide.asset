@@ -13,8 +13,17 @@ MonoBehaviour:
   m_Name: CongratulaSlide
   m_EditorClassIdentifier: 
   title: Con Gra Tu La
-  nextButtonName: Next
-  allowsNext: 1
-  previousButtonName: Previous
-  allowsPrevious: 0
+  nextButton:
+    labelText: Next
+    prohibitsManualNavigation: 0
+  previousButton:
+    labelText: Previous
+    prohibitsManualNavigation: 1
+  slideEvents:
+    onShowEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    onHideEvent:
+      m_PersistentCalls:
+        m_Calls: []
   text: Congratulations

@@ -5,7 +5,7 @@ namespace Runtime.Presentation.BasicSlides
     [CreateAssetMenu(fileName = "ImageSlide", menuName = "BA22/Slide/Create new image slide")]
     public class ImageSlide : AbstractSlide
     {
-        [SerializeField]
+        [SerializeField, Space]
         private Sprite image;
         public Sprite Image
         {
