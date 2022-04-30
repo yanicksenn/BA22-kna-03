@@ -9,12 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: feea7839d00c499b8527ccb4252a4d5d, type: 3}
-  m_Name: SlideExercise1
+  m_Script: {fileID: 11500000, guid: 96adae46c0484ce89fefaad588ab38dd, type: 3}
+  m_Name: ExerciseSlide1
   m_EditorClassIdentifier: 
   title: Exercise 1
-  nextButtonName: Next
+  nextButtonName: Check
   allowsNext: 1
   previousButtonName: Previous
-  allowsPrevious: 0
-  text: This is the first exercise
+  allowsPrevious: 1
+  text: This is the first exercise.
+  truthTableFile: {fileID: 4900000, guid: 959a28627c904d740bf78176a5ac4dea, type: 3}

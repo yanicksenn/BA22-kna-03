@@ -16,5 +16,5 @@ MonoBehaviour:
   nextButtonName: Next
   allowsNext: 1
   previousButtonName: Previous
-  allowsPrevious: 0
+  allowsPrevious: 1
   image: {fileID: 21300000, guid: abd55c2ec2c4343d3ae7be9c6170a312, type: 3}

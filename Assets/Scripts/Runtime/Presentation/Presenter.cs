@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -72,6 +74,13 @@ namespace Runtime.Presentation
             set => previousButtonLabel = value;
         }
 
+        private HashSet<INavigationCondidition> navigationConditions = new HashSet<INavigationCondidition>();
+        public HashSet<INavigationCondidition> NavigationConditions
+        {
+            get => navigationConditions;
+            set => navigationConditions = value;
+        }
+
         private int _currentSlideIndex;
 
         private AbstractSlide GetCurrentSlide()
@@ -97,10 +106,10 @@ namespace Runtime.Presentation
 
             headerLabel.text = currentSlide.Title;
             
-            nextButton.gameObject.SetActive(currentSlide.AllowsNext);
+            nextButton.gameObject.SetActive(currentSlide.AllowsNext && HasNext());
             nextButtonLabel.text = currentSlide.NextButtonName;
                 
-            previousButton.gameObject.SetActive(currentSlide.AllowsPrevious);
+            previousButton.gameObject.SetActive(currentSlide.AllowsPrevious && HasPrevious());
             previousButtonLabel.text = currentSlide.PreviousButtonName;
             
             switch (currentSlide)
@@ -136,6 +145,10 @@ namespace Runtime.Presentation
         {
             if (presentation == null)
                 return;
+
+            if (NavigationConditions.Count > 0 &&
+                NavigationConditions.Any(e => e.AllowsNext(GetCurrentSlide())) == false)
+                return;
             
             _currentSlideIndex++;
         }
@@ -144,6 +157,10 @@ namespace Runtime.Presentation
         public void Previous()
         {
             if (presentation == null)
+                return;
+
+            if (NavigationConditions.Count > 0 &&
+                NavigationConditions.Any(e => e.AllowsPrevious(GetCurrentSlide())) == false)
                 return;
             
             _currentSlideIndex--;
@@ -155,6 +172,19 @@ namespace Runtime.Presentation
                 return 0;
             
             return Math.Clamp(_currentSlideIndex, 0, presentation.Slides.Count - 1);
+        }
+
+        private bool HasPrevious()
+        {
+            return GetCurrentSlideIndex() > 0;
+        }
+
+        private bool HasNext()
+        {
+            if (presentation == null)
+                return false;
+            
+            return GetCurrentSlideIndex() < presentation.Slides.Count - 1;
         }
         
     }

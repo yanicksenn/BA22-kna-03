@@ -1,39 +1,55 @@
 ﻿
+using System;
 using System.Linq;
+using Runtime.Presentation;
 using UnityEngine;
 
-public class ExerciseManager : MonoBehaviour
+public class ExerciseManager : MonoBehaviour, INavigationCondidition
 {
-    [SerializeField] private ExerciseList exerciseList;
-    [SerializeField] private EnergySource[] energySources;
+    [SerializeField] private Presenter presenter;
+    
+    [SerializeField, Space] private EnergySource[] energySources;
     [SerializeField] private EnergyDestination[] energyDestinations;
     [SerializeField] private GameObject checkButton;
 
-    public void CheckExerciseAndContinue()
+    public bool AllowsNext(AbstractSlide slide)
     {
-        checkButton.SetActive(false);
-        
-        if (CheckExercise())
-        {
-            // display success slide with redo and next button
-            exerciseList.Continue();
-            
-            if(exerciseList.IsNotFinished())
-                checkButton.SetActive(true);
-        }
-        else
-        {
-            checkButton.SetActive(true);
-        }
-    }
-            
+        if (slide is not ExerciseSlide exerciseSlide)
+            return true;
 
-    private bool CheckExercise()
+        return CheckExercise(exerciseSlide);
+    }
+
+    public bool AllowsPrevious(AbstractSlide slide)
     {
-        var currentExercise = exerciseList.CurrentExercise;
+        return true;
+    }
+
+    private void OnEnable()
+    {
+        presenter.NavigationConditions.Add(this);
+    }
+    
+    private void OnDisable()
+    {
+        presenter.NavigationConditions.Remove(this);
+    }
+    
+
+
+    private bool CheckExercise(ExerciseSlide exerciseSlide)
+    {
+        var originalEnergy0 = energySources[0].GetEnergy();
+        var originalEnergy1 = energySources[1].GetEnergy();
+        var originalEnergy2 = energySources[2].GetEnergy();
+        var originalEnergy3 = energySources[3].GetEnergy();
+        
+        var truthTable = exerciseSlide.TruthTable;
+        var result = true;
+        
         for (var i = 0; i < 16; i++)
         {
-            var testCase = GetRow(currentExercise.TruthTable, i);
+            var testCase = GetRow(truthTable, i);
             
             var source0 = testCase[0];
             var source1 = testCase[1];
@@ -50,15 +66,22 @@ public class ExerciseManager : MonoBehaviour
             energySources[2].setCurrent(source2);
             energySources[3].setCurrent(source3);
 
-            if (!(CheckDestinationEnergy(energyDestinations[0], destinationA)
-                  && CheckDestinationEnergy(energyDestinations[1], destinationB)
-                  && CheckDestinationEnergy(energyDestinations[2], destinationC)
-                  && CheckDestinationEnergy(energyDestinations[3], destinationD)))
-            {
-                return false;
-            }
+            if (CheckDestinationEnergy(energyDestinations[0], destinationA)
+                && CheckDestinationEnergy(energyDestinations[1], destinationB)
+                && CheckDestinationEnergy(energyDestinations[2], destinationC)
+                && CheckDestinationEnergy(energyDestinations[3], destinationD)) 
+                continue;
+            
+            result = false;
+            break;
         }
-        return true;
+        
+        // energySources[0].setCurrent(originalEnergy0);
+        // energySources[1].setCurrent(originalEnergy1);
+        // energySources[2].setCurrent(originalEnergy2);
+        // energySources[3].setCurrent(originalEnergy3);
+        
+        return result;
     }
     
     private int[] GetRow(int[,] matrix, int rowNumber)
