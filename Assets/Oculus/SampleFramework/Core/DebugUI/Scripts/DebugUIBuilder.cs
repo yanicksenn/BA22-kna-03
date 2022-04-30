@@ -65,7 +65,7 @@ public class DebugUIBuilder : MonoBehaviour
   public static DebugUIBuilder instance;
 
   public delegate void OnClick();
-  public delegate void OnToggleValueChange(Toggle t);
+  public delegate void OnToggleValueChange(UnityEngine.UI.Toggle t);
   public delegate void OnSlider(float f);
   public delegate bool ActiveUpdate();
 
@@ -346,7 +346,7 @@ public class DebugUIBuilder : MonoBehaviour
     AddRect(rt, targetCanvas);
     Text buttonText = rt.GetComponentInChildren<Text>();
     buttonText.text = label;
-    Toggle t = rt.GetComponentInChildren<Toggle>();
+    UnityEngine.UI.Toggle t = rt.GetComponentInChildren<UnityEngine.UI.Toggle>();
     t.onValueChanged.AddListener(delegate { onValueChanged(t); });
     return rt;
   }
@@ -357,7 +357,7 @@ public class DebugUIBuilder : MonoBehaviour
     AddRect(rt, targetCanvas);
     Text buttonText = rt.GetComponentInChildren<Text>();
     buttonText.text = label;
-    Toggle t = rt.GetComponentInChildren<Toggle>();
+    UnityEngine.UI.Toggle t = rt.GetComponentInChildren<UnityEngine.UI.Toggle>();
     t.isOn = defaultValue;
     t.onValueChanged.AddListener(delegate { onValueChanged(t); });
     return rt;
@@ -369,7 +369,7 @@ public class DebugUIBuilder : MonoBehaviour
     AddRect(rt, targetCanvas);
     Text buttonText = rt.GetComponentInChildren<Text>();
     buttonText.text = label;
-    Toggle tb = rt.GetComponentInChildren<Toggle>();
+    UnityEngine.UI.Toggle tb = rt.GetComponentInChildren<UnityEngine.UI.Toggle>();
     if (group == null) group = "default";
     ToggleGroup tg = null;
     bool isFirst = false;

@@ -22,22 +22,22 @@ public class DebugUISample : MonoBehaviour
         sliderText.text = sliderPrefab.GetComponentInChildren<Slider>().value.ToString();
         DebugUIBuilder.instance.AddDivider();
         DebugUIBuilder.instance.AddToggle("Toggle", TogglePressed);
-        DebugUIBuilder.instance.AddRadio("Radio1", "group", delegate(Toggle t) { RadioPressed("Radio1", "group", t); }) ;
-        DebugUIBuilder.instance.AddRadio("Radio2", "group", delegate(Toggle t) { RadioPressed("Radio2", "group", t); }) ;
+        DebugUIBuilder.instance.AddRadio("Radio1", "group", delegate(UnityEngine.UI.Toggle t) { RadioPressed("Radio1", "group", t); }) ;
+        DebugUIBuilder.instance.AddRadio("Radio2", "group", delegate(UnityEngine.UI.Toggle t) { RadioPressed("Radio2", "group", t); }) ;
         DebugUIBuilder.instance.AddLabel("Secondary Tab", 1);
 		DebugUIBuilder.instance.AddDivider(1);
-        DebugUIBuilder.instance.AddRadio("Side Radio 1", "group2", delegate(Toggle t) { RadioPressed("Side Radio 1", "group2", t); }, DebugUIBuilder.DEBUG_PANE_RIGHT);
-        DebugUIBuilder.instance.AddRadio("Side Radio 2", "group2", delegate(Toggle t) { RadioPressed("Side Radio 2", "group2", t); }, DebugUIBuilder.DEBUG_PANE_RIGHT);
+        DebugUIBuilder.instance.AddRadio("Side Radio 1", "group2", delegate(UnityEngine.UI.Toggle t) { RadioPressed("Side Radio 1", "group2", t); }, DebugUIBuilder.DEBUG_PANE_RIGHT);
+        DebugUIBuilder.instance.AddRadio("Side Radio 2", "group2", delegate(UnityEngine.UI.Toggle t) { RadioPressed("Side Radio 2", "group2", t); }, DebugUIBuilder.DEBUG_PANE_RIGHT);
 
         DebugUIBuilder.instance.Show();
         inMenu = true;
 	}
 
-    public void TogglePressed(Toggle t)
+    public void TogglePressed(UnityEngine.UI.Toggle t)
     {
         Debug.Log("Toggle pressed. Is on? "+t.isOn);
     }
-    public void RadioPressed(string radioLabel, string group, Toggle t)
+    public void RadioPressed(string radioLabel, string group, UnityEngine.UI.Toggle t)
     {
         Debug.Log("Radio value changed: "+radioLabel+", from group "+group+". New value: "+t.isOn);
     }

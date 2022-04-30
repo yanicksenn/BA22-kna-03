@@ -53,8 +53,8 @@ namespace OculusSampleFramework
         /// <summary>
         /// Toggle references
         /// </summary>
-        Toggle applicationRadioButton;
-        Toggle noneRadioButton;
+        UnityEngine.UI.Toggle applicationRadioButton;
+        UnityEngine.UI.Toggle noneRadioButton;
         
         [Header("App vs Compositor Comparison Settings")]
         /// <summary>
@@ -115,9 +115,9 @@ namespace OculusSampleFramework
             DebugUIBuilder.instance.AddButton("Destroy Cubes", TriggerUnload);
             DebugUIBuilder.instance.AddDivider();
             DebugUIBuilder.instance.AddLabel("OVROverlay vs. Application Render Comparison");
-            DebugUIBuilder.instance.AddRadio("OVROverlay", "group", delegate (Toggle t) { RadioPressed(ovrOverlayID, "group", t); }).GetComponentInChildren<Toggle>();
-            applicationRadioButton = DebugUIBuilder.instance.AddRadio("Application", "group", delegate (Toggle t) { RadioPressed(applicationID, "group", t); }).GetComponentInChildren<Toggle>();
-            noneRadioButton = DebugUIBuilder.instance.AddRadio("None", "group", delegate (Toggle t) { RadioPressed(noneID, "group", t); }).GetComponentInChildren<Toggle>();
+            DebugUIBuilder.instance.AddRadio("OVROverlay", "group", delegate (UnityEngine.UI.Toggle t) { RadioPressed(ovrOverlayID, "group", t); }).GetComponentInChildren<UnityEngine.UI.Toggle>();
+            applicationRadioButton = DebugUIBuilder.instance.AddRadio("Application", "group", delegate (UnityEngine.UI.Toggle t) { RadioPressed(applicationID, "group", t); }).GetComponentInChildren<UnityEngine.UI.Toggle>();
+            noneRadioButton = DebugUIBuilder.instance.AddRadio("None", "group", delegate (UnityEngine.UI.Toggle t) { RadioPressed(noneID, "group", t); }).GetComponentInChildren<UnityEngine.UI.Toggle>();
         
             DebugUIBuilder.instance.Show();
 
@@ -354,7 +354,7 @@ namespace OculusSampleFramework
         /// <summary>
         /// Usage: radio button handler.
         /// </summary>
-        public void RadioPressed(string radioLabel, string group, Toggle t)
+        public void RadioPressed(string radioLabel, string group, UnityEngine.UI.Toggle t)
         {
             if (string.Compare(radioLabel, ovrOverlayID) == 0)
             {

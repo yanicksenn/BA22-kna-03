@@ -152,7 +152,7 @@ public class LocomotionSampleSupport : MonoBehaviour
         return ActivateCategory<TCategory, TActivate>(lc.gameObject);
     }
 
-    protected void UpdateToggle(Toggle toggle, bool enabled)
+    protected void UpdateToggle(UnityEngine.UI.Toggle toggle, bool enabled)
     {
         if (enabled != toggle.isOn)
         {

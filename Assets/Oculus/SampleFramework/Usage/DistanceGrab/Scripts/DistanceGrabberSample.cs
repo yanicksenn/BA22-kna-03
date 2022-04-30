@@ -68,12 +68,12 @@ namespace OculusSampleFramework
 			}
         }
 
-        public void ToggleSphereCasting(Toggle t)
+        public void ToggleSphereCasting(UnityEngine.UI.Toggle t)
         {
             UseSpherecast = !UseSpherecast;
         }
 
-        public void ToggleGrabThroughWalls(Toggle t)
+        public void ToggleGrabThroughWalls(UnityEngine.UI.Toggle t)
         {
             AllowGrabThroughWalls = !AllowGrabThroughWalls;
         }
