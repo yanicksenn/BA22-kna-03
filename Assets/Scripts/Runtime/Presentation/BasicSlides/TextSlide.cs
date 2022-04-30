@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Runtime.Presentation
+namespace Runtime.Presentation.BasicSlides
 {
     [CreateAssetMenu(fileName = "TextSlide", menuName = "BA22/Slide/Create new text slide")]
     public class TextSlide : AbstractSlide
