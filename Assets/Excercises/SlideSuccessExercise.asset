@@ -9,10 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 745c34dad74c4922b4979a7bc5e24298, type: 3}
-  m_Name: Ex2_nand
+  m_Script: {fileID: 11500000, guid: feea7839d00c499b8527ccb4252a4d5d, type: 3}
+  m_Name: SlideSuccessExercise
   m_EditorClassIdentifier: 
-  exerciseNumber: 2
-  exerciseName: 'Task: NAND'
-  exerciseDescription: nand jetzt
-  truthTableFile: {fileID: 4900000, guid: 9c1382a3540d8254c8e5e679445b4e2e, type: 3}
+  title: Congratula
+  nextButtonName: Next
+  allowsNext: 1
+  previousButtonName: Previous
+  allowsPrevious: 1
+  text: Successfully finished exercise

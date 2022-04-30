@@ -9,9 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9118454917641efa7bbae6a7d1e3e54, type: 3}
-  m_Name: ExerciseList
+  m_Script: {fileID: 11500000, guid: feea7839d00c499b8527ccb4252a4d5d, type: 3}
+  m_Name: SlideExercise2
   m_EditorClassIdentifier: 
-  exerciseList:
-  - {fileID: 11400000, guid: b12f2aed14f93414289bd788549a4ee5, type: 2}
-  - {fileID: 11400000, guid: 119fd3b902edd00428d7e83dcdadda48, type: 2}
+  title: Exercise 2
+  nextButtonName: Next
+  allowsNext: 1
+  previousButtonName: Previous
+  allowsPrevious: 0
+  text: This is the second exercise
