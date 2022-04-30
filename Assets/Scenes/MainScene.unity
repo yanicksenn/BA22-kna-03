@@ -1103,14 +1103,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 601708806}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1604480712}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &617465640
 GameObject:
   m_ObjectHideFlags: 0
@@ -2818,7 +2818,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 71e8951740b2a224480948e4515f6e2f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6503,14 +6503,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.000000059604645
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: presenter
-      value: 
-      objectReference: {fileID: 1860806400}
-    - target: {fileID: 0}
-      propertyPath: checkButton
-      value: 
-      objectReference: {fileID: 930538532}
     - target: {fileID: 4992775357798722439, guid: d764f80f4af303c428b05deac4ec42cd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
