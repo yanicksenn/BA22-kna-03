@@ -15,6 +15,7 @@ public class ExerciseManager : MonoBehaviour
         
         if (CheckExercise())
         {
+            // display success slide with redo and next button
             exerciseList.Continue();
             
             if(exerciseList.IsNotFinished())

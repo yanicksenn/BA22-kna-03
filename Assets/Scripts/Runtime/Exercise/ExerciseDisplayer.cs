@@ -31,5 +31,6 @@ public class ExerciseDisplayer : MonoBehaviour
             exerciseNumber.text = $"{exercise.ExerciseNumber} / {exerciseList.Count()}";
         }
     }
+
 }
 

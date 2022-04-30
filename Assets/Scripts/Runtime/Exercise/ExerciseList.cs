@@ -29,4 +29,6 @@ public class ExerciseList : ScriptableObject
     {
         currentIndex = 0;
     }
+    
+    
 }
