@@ -5,6 +5,7 @@ namespace Runtime.Tutorial
 {
     public class TutorialManager : MonoBehaviour, INavigationCondidition
     {
+        [SerializeField] private Presenter presenter;
         public bool AllowsNext(AbstractSlide slide)
         {
             return false;
@@ -13,6 +14,16 @@ namespace Runtime.Tutorial
         public bool AllowsPrevious(AbstractSlide slide)
         {
             return false;
+        }
+        
+        private void OnEnable()
+        {
+            presenter.NavigationConditions.Add(this);
+        }
+    
+        private void OnDisable()
+        {
+            presenter.NavigationConditions.Remove(this);
         }
     }
 }
