@@ -2,7 +2,7 @@
 using Runtime.Presentation;
 using UnityEngine;
 
-public class ExerciseManager : MonoBehaviour, INavigationCondidition
+public class ExerciseManager : MonoBehaviour, INavigationInterceptor
 {
     [SerializeField] private Presenter presenter;
     
@@ -16,11 +16,6 @@ public class ExerciseManager : MonoBehaviour, INavigationCondidition
             return true;
 
         return CheckExercise(exerciseSlide);
-    }
-
-    public bool AllowsPrevious(AbstractSlide slide)
-    {
-        return true;
     }
 
     public void OnShowSlide(AbstractSlide slide) { }

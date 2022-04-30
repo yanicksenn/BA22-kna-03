@@ -75,8 +75,8 @@ namespace Runtime.Presentation
             set => previousButtonLabel = value;
         }
 
-        private HashSet<INavigationCondidition> navigationConditions = new HashSet<INavigationCondidition>();
-        public HashSet<INavigationCondidition> NavigationConditions
+        private HashSet<INavigationInterceptor> navigationConditions = new HashSet<INavigationInterceptor>();
+        public HashSet<INavigationInterceptor> NavigationConditions
         {
             get => navigationConditions;
             set => navigationConditions = value;
@@ -171,10 +171,6 @@ namespace Runtime.Presentation
         public void Previous()
         {
             if (presentation == null)
-                return;
-
-            if (NavigationConditions.Count > 0 &&
-                NavigationConditions.Any(e => e.AllowsPrevious(GetCurrentSlide())) == false)
                 return;
             
             FireHideSlideEvent();

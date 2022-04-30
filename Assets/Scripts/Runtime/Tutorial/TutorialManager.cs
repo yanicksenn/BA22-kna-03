@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Runtime.Tutorial
 {
-    public class TutorialManager : MonoBehaviour, INavigationCondidition
+    public class TutorialManager : MonoBehaviour, INavigationInterceptor
     {
         [SerializeField] private Presenter presenter;
 
@@ -14,11 +14,6 @@ namespace Runtime.Tutorial
             if (slide is TutorialSlide)
                 return _canContinue;
 
-            return true;
-        }
-
-        public bool AllowsPrevious(AbstractSlide slide)
-        {
             return true;
         }
 

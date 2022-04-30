@@ -1,9 +1,8 @@
 namespace Runtime.Presentation
 {
-    public interface INavigationCondidition
+    public interface INavigationInterceptor
     {
         bool AllowsNext(AbstractSlide slide);
-        bool AllowsPrevious(AbstractSlide slide);
 
         void OnShowSlide(AbstractSlide slide);
 
