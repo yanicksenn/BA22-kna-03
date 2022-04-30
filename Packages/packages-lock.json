@@ -243,6 +243,13 @@
       "dependencies": {},
       "hash": "17ba394b77d0cc1fbd1f3e209d0c949b66cbacee"
     },
+    "com.yanicksenn.unity.events": {
+      "version": "https://github.com/yanicksenn/unity-events.git#1.1.0",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "c6ecb3b2bbd52d97fb8df3b4c4f4502938f0fb64"
+    },
     "com.unity.modules.ai": {
       "version": "1.0.0",
       "depth": 0,

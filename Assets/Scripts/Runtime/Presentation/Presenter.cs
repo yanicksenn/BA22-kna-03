@@ -95,6 +95,11 @@ namespace Runtime.Presentation
             return presentation.Slides[currentSlideIndex];
         }
 
+        private void Awake()
+        {
+            Reset();
+        }
+
         private void Update()
         {
             var currentSlide = GetCurrentSlide();
@@ -138,7 +143,11 @@ namespace Runtime.Presentation
 
         public void Reset()
         {
+            FireHideSlideEvent();
+            
             _currentSlideIndex = 0;
+            
+            FireShowSlideEvent();
         }
 
         public void Next()
@@ -150,7 +159,11 @@ namespace Runtime.Presentation
                 NavigationConditions.Any(e => e.AllowsNext(GetCurrentSlide())) == false)
                 return;
             
+            FireHideSlideEvent();
+
             _currentSlideIndex++;
+            
+            FireShowSlideEvent();
         }
         
 
@@ -163,12 +176,31 @@ namespace Runtime.Presentation
                 NavigationConditions.Any(e => e.AllowsPrevious(GetCurrentSlide())) == false)
                 return;
             
+            FireHideSlideEvent();
+
             _currentSlideIndex--;
+            
+            FireShowSlideEvent();
+        }
+
+        private void FireShowSlideEvent()
+        {
+            foreach (var navigationCondition in NavigationConditions)
+                navigationCondition.OnShowSlide(GetCurrentSlide());
+        }
+
+        private void FireHideSlideEvent()
+        {
+            foreach (var navigationCondition in NavigationConditions)
+                navigationCondition.OnHideSlide(GetCurrentSlide());
         }
 
         private int GetCurrentSlideIndex()
         {
             if (Presentation == null)
+                return 0;
+            
+            if (Presentation.Slides.Count == 0)
                 return 0;
             
             return Math.Clamp(_currentSlideIndex, 0, presentation.Slides.Count - 1);

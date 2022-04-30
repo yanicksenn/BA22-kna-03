@@ -1,6 +1,4 @@
-﻿
-using System;
-using System.Linq;
+﻿using System.Linq;
 using Runtime.Presentation;
 using UnityEngine;
 
@@ -24,6 +22,9 @@ public class ExerciseManager : MonoBehaviour, INavigationCondidition
     {
         return true;
     }
+
+    public void OnShowSlide(AbstractSlide slide) { }
+    public void OnHideSlide(AbstractSlide slide) { }
 
     private void OnEnable()
     {
