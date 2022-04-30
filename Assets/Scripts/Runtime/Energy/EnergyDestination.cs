@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
+[ExecuteAlways]
 public class EnergyDestination : MonoBehaviour, IConductor
 {
     private const string TriggerName = "LightBulbTrigger";

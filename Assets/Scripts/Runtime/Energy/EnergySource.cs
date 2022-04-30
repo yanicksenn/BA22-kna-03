@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
+[ExecuteAlways]
 public class EnergySource : MonoBehaviour, IConductor
 {
     [SerializeField] private string text;
