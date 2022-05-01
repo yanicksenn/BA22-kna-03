@@ -34,11 +34,16 @@ public abstract class AbstractSnapZone<TS, TZ, TES, TEZ> : MonoBehaviour
             return;
 
         var tmpSnappedObject = _snappedObject;
-        _snappedObject.OnGrab.RemoveListener(Unsnap);
         _snappedObject.Unsnap();
-        _snappedObject = null;
         
+        UnsnapLocalObject();
         GetUnsnapEvent().Invoke(tmpSnappedObject);
+    }
+
+    private void UnsnapLocalObject()
+    {
+        _snappedObject.OnGrab.RemoveListener(Unsnap);
+        _snappedObject = null;
     }
 
     public abstract TES GetSnapEvent();
@@ -111,6 +116,11 @@ public abstract class AbstractSnapZone<TS, TZ, TES, TEZ> : MonoBehaviour
     {
         if (!IsSnapped)
             return;
+
+        // If two snap zones could accept the same object at the same time
+        // then both might get snapped while only one should be snapped.
+        if (SnappedObject.SnapZone != this || !SnappedObject.IsSnapped)
+            UnsnapLocalObject();
 
         if (SnappedObject.IsGrabbed)
             return;
