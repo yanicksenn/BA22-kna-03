@@ -28,21 +28,37 @@ namespace Runtime.Presentation
         }
 
         [SerializeField]
-        private Image imageSection;
-        public Image ImageSection
+        private Image fullImageSection;
+        public Image FullImageSection
         {
-            get => imageSection;
-            set => imageSection = value;
+            get => fullImageSection;
+            set => fullImageSection = value;
         }
 
         [SerializeField]
-        private TMP_Text textSection;
-        public TMP_Text TextSection
+        private TMP_Text fullTextSection;
+        public TMP_Text FullTextSection
         {
-            get => textSection;
-            set => textSection = value;
+            get => fullTextSection;
+            set => fullTextSection = value;
+        }
+        
+        [SerializeField]
+        private Image halfImageSection;
+        public Image HalfImageSection
+        {
+            get => halfImageSection;
+            set => halfImageSection = value;
         }
 
+        [SerializeField]
+        private TMP_Text halfTextSection;
+        public TMP_Text HalfTextSection
+        {
+            get => halfTextSection;
+            set => halfTextSection = value;
+        }
+        
         [SerializeField, Space]
         private Button nextButton;
         public Button NextButton
@@ -107,8 +123,11 @@ namespace Runtime.Presentation
             if (currentSlide == null)
                 return;
 
-            textSection.gameObject.SetActive(false);
-            imageSection.gameObject.SetActive(false);
+            fullTextSection.gameObject.SetActive(false);
+            fullImageSection.gameObject.SetActive(false);
+            
+            halfTextSection.gameObject.SetActive(false);
+            halfImageSection.gameObject.SetActive(false);
 
             headerLabel.text = currentSlide.Title;
             
@@ -120,14 +139,18 @@ namespace Runtime.Presentation
             
             switch (currentSlide)
             {
-                case ITextSlide textSlide:
-                    ShowTextSlide(textSlide);
+                case ITextSlide and IImageSlide:
+                    ShowTextAndImageSlide((ITextAndImageSlide) currentSlide);
                     break;
-                
+                case ITextSlide textSlide:
+                    ShowFullTextSlide(textSlide);
+                    break;
                 case IImageSlide imageSlide:
-                    ShowImageSlide(imageSlide);
+                    ShowFullImageSlide(imageSlide);
                     break;
             }
+            
+           
         }
 
         private bool IsPreviousButtonEnabled(AbstractSlide currentSlide)
@@ -140,16 +163,25 @@ namespace Runtime.Presentation
             return !currentSlide.NextButton.ProhibitsManualNavigation && HasNext();
         }
 
-        private void ShowTextSlide(ITextSlide textSlide)
+        private void ShowFullTextSlide(ITextSlide textSlide)
         {
-            textSection.gameObject.SetActive(true);
-            textSection.text = textSlide.GetText();
+            fullTextSection.gameObject.SetActive(true);
+            fullTextSection.text = textSlide.GetText();
         }
 
-        private void ShowImageSlide(IImageSlide imageSlide)
+        private void ShowFullImageSlide(IImageSlide imageSlide)
         {
-            imageSection.gameObject.SetActive(true);
-            imageSection.sprite = imageSlide.GetImage();
+            fullImageSection.gameObject.SetActive(true);
+            fullImageSection.sprite = imageSlide.GetImage();
+        }
+
+        private void ShowTextAndImageSlide(ITextAndImageSlide textAndImageSlide)
+        {
+            halfTextSection.gameObject.SetActive(true);
+            halfTextSection.text = textAndImageSlide.GetText();
+            
+            halfImageSection.gameObject.SetActive(true);
+            halfImageSection.sprite = textAndImageSlide.GetImage();
         }
 
         public void Reset()
@@ -187,6 +219,10 @@ namespace Runtime.Presentation
         private void FireShowSlideEvent()
         {
             var currentSlide = GetCurrentSlide();
+            
+            if (currentSlide == null)
+                return;
+
             currentSlide.SlideEvents.OnShowEvent.Invoke();
 
             foreach (var navigationCondition in NavigationConditions)
@@ -196,6 +232,10 @@ namespace Runtime.Presentation
         private void FireHideSlideEvent()
         {
             var currentSlide = GetCurrentSlide();
+            
+            if (currentSlide == null)
+                return;
+            
             currentSlide.SlideEvents.OnHideEvent.Invoke();
             
             foreach (var navigationCondition in NavigationConditions)

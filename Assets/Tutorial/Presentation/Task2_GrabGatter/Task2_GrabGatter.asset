@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddf80187d2314214a8defe0d68ba284e, type: 3}
-  m_Name: Task1
+  m_Script: {fileID: 11500000, guid: b815aeea2e8a4b58b5c3e914890a0bb0, type: 3}
+  m_Name: Task2_GrabGatter
   m_EditorClassIdentifier: 
-  title: Place Gatter
+  title: Grab the gatter
   nextButton:
     labelText: Next
     prohibitsManualNavigation: 1
@@ -26,5 +26,5 @@ MonoBehaviour:
     onHideEvent:
       m_PersistentCalls:
         m_Calls: []
-  text: Place the gatter on the board.
-  tutorialEvent: {fileID: 11400000, guid: 90588423c2829bb4bb561e001f35095b, type: 2}
+  tutorialEvent: {fileID: 11400000, guid: 585eaf623e8872b4a88a7d59f4109a7f, type: 2}
+  text: Grab the gatter with one of your hands.

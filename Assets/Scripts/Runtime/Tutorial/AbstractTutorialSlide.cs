@@ -1,12 +1,9 @@
 ﻿using Runtime.Presentation;
-using Runtime.Presentation.BasicSlides;
 using UnityEngine;
-
 
 namespace Runtime.Tutorial
 {
-    [CreateAssetMenu(fileName = "TutorialSlide", menuName = "BA22/Slide/Create new tutorial slide")]
-    public class TutorialSlide : TextSlide
+    public abstract class AbstractTutorialSlide: AbstractSlide
     {
         [SerializeField, Space] private Events.Event tutorialEvent;
         public Events.Event TutorialEvent => tutorialEvent;

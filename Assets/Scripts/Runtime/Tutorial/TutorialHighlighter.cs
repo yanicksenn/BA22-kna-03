@@ -14,19 +14,19 @@ namespace Runtime.Tutorial
         }
 
         [SerializeField]
-        private TutorialSlide tutorialSlide;
-        public TutorialSlide TutorialSlide
+        private AbstractTutorialSlide tutorialSlide;
+        public AbstractTutorialSlide TutorialSlide
         {
             get => tutorialSlide;
             set => tutorialSlide = value;
         }
 
         [SerializeField] 
-        private bool prohibitManualNext;
+        private bool prohibitAutomaticNext;
         public bool ProhibitManualNext
         {
-            get => prohibitManualNext;
-            set => prohibitManualNext = value;
+            get => prohibitAutomaticNext;
+            set => prohibitAutomaticNext = value;
         }
 
         private void Awake()
@@ -67,7 +67,7 @@ namespace Runtime.Tutorial
             if (presenter == null)
                 return;
             
-            if (prohibitManualNext)
+            if (prohibitAutomaticNext)
                 return;
             
             presenter.Next();

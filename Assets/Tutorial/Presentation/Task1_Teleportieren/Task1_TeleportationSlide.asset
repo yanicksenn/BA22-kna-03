@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef12e782998b4510b5eac66b86aa9de0, type: 3}
+  m_Name: Task1_TeleportationSlide
+  m_EditorClassIdentifier: 
+  title: Teleportation
+  nextButton:
+    labelText: Next
+    prohibitsManualNavigation: 1
+  previousButton:
+    labelText: Previous
+    prohibitsManualNavigation: 1
+  slideEvents:
+    onShowEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    onHideEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  tutorialEvent: {fileID: 11400000, guid: bf8cc19f55d41604cac51b3151add669, type: 2}
+  text: Get closer to the table by pressing the Primary Index Trigger on your left
+    controller
+  image: {fileID: 21300000, guid: 664ca997829b82b48ae4949d20167b27, type: 3}
