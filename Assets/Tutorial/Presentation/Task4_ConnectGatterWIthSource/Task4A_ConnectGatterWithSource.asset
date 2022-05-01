@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b815aeea2e8a4b58b5c3e914890a0bb0, type: 3}
+  m_Name: Task4A_ConnectGatterWithSource
+  m_EditorClassIdentifier: 
+  title: Connect Cable
+  nextButton:
+    labelText: Next
+    prohibitsManualNavigation: 1
+  previousButton:
+    labelText: Previous
+    prohibitsManualNavigation: 1
+  slideEvents:
+    onShowEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    onHideEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  tutorialEvent: {fileID: 11400000, guid: 8966ddf176b5e6d419c853ef304be46a, type: 2}
+  text: Connect the placed Gatter with a cable
