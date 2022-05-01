@@ -96,7 +96,7 @@ namespace Runtime.Presentation
             return presentation.Slides[currentSlideIndex];
         }
 
-        private void Awake()
+        private void Start()
         {
             Reset();
         }
