@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b815aeea2e8a4b58b5c3e914890a0bb0, type: 3}
   m_Name: Task6_TurnOnTheLightbulbSlide
   m_EditorClassIdentifier: 
-  title: Turn on th elightbulb
+  title: Turn on the lightbulb
   nextButton:
     labelText: Next
     prohibitsManualNavigation: 1
