@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b815aeea2e8a4b58b5c3e914890a0bb0, type: 3}
-  m_Name: Task3_PlaceGatterOnBoard
+  m_Name: Task5_RemoveCable
   m_EditorClassIdentifier: 
-  title: Place Gatter
+  title: 'Remove the cable '
   nextButton:
     labelText: Next
     prohibitsManualNavigation: 1
@@ -26,5 +26,5 @@ MonoBehaviour:
     onHideEvent:
       m_PersistentCalls:
         m_Calls: []
-  tutorialEvent: {fileID: 11400000, guid: 90588423c2829bb4bb561e001f35095b, type: 2}
-  text: Place the gatter on the board.
+  tutorialEvent: {fileID: 11400000, guid: 9d62db3cec1db3744ab91866082023ac, type: 2}
+  text: Grab the handle in the middle of the cable and pull it away.

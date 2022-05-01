@@ -34,6 +34,10 @@ public class Cable : MonoBehaviour, IConductor
     private UnityEvent onEnergyChangeEvent = new UnityEvent();
     public UnityEvent OnEnergyChangeEvent => onEnergyChangeEvent;
 
+    [SerializeField, Space] 
+    private UnityEvent onCablePulled = new UnityEvent();
+    public UnityEvent OnCablePulled => onCablePulled;
+
     private EnergyType energyType;
 
     private Vector3 _initialScaleInput2Handle;
@@ -109,6 +113,7 @@ public class Cable : MonoBehaviour, IConductor
         
         output.SnapZone.Unsnap();
         ResetPositionOfOutput();
+        OnCablePulled.Invoke();
     }
 
     private void PlaceHandleBetweenInputAndOutput()

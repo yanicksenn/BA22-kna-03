@@ -26,8 +26,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961501065187393001}
-  m_LocalRotation: {x: 0.14818393, y: -0, z: -0, w: 0.98895985}
-  m_LocalPosition: {x: 0.000000011175871, y: -0.000000011175871, z: 0.000000113621354}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.000000052823452, y: 0, z: 0}
   m_LocalScale: {x: 0.01, y: 0, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -130,7 +130,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1163202779147211503}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.000000011175871, y: -0.000000011175871, z: 0.000000113621354}
+  m_LocalPosition: {x: -0.000000052823452, y: 0, z: 0}
   m_LocalScale: {x: 0.03, y: 0.03, z: 0.03}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -316,8 +316,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1392237838502640937}
-  m_LocalRotation: {x: 0.14818393, y: -0, z: -0, w: 0.98895985}
-  m_LocalPosition: {x: 0.000000011175871, y: -0.000000011175871, z: 0.000000113621354}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.000000052823452, y: 0, z: 0}
   m_LocalScale: {x: 0.01, y: 0, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -622,10 +622,37 @@ MonoBehaviour:
   handle: {fileID: 2019539631625152931}
   connectionInput2Handle: {fileID: 6106193900332588105}
   connectionOutput2Handle: {fileID: 7265243412449054030}
-  pullThreshold: 0.3
+  pullThreshold: 0.2
   onEnergyChangeEvent:
     m_PersistentCalls:
       m_Calls: []
+  onCablePulled:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 9d62db3cec1db3744ab91866082023ac, type: 2}
+        m_TargetAssemblyTypeName: Events.Event, Events
+        m_MethodName: Invoke
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 99c3895a2ccdf40bfa433f0485b68721, type: 2}
+        m_TargetAssemblyTypeName: Console.Console, Console
+        m_MethodName: Log
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: BA22 Removed cable
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5353059775218204190
 GameObject:
   m_ObjectHideFlags: 0
