@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Runtime.Presentation.BasicSlides
 {
     [CreateAssetMenu(fileName = "ImageSlide", menuName = "BA22/Slide/Create new image slide")]
-    public class ImageSlide : AbstractSlide
+    public class ImageSlide : AbstractSlide, IImageSlide
     {
         [SerializeField, Space]
         private Sprite image;
@@ -11,6 +11,11 @@ namespace Runtime.Presentation.BasicSlides
         {
             get => image;
             set => image = value;
+        }
+
+        public Sprite GetImage()
+        {
+            return image;
         }
     }
 }

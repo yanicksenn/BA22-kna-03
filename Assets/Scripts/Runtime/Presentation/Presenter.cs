@@ -120,11 +120,11 @@ namespace Runtime.Presentation
             
             switch (currentSlide)
             {
-                case TextSlide textSlide:
+                case ITextSlide textSlide:
                     ShowTextSlide(textSlide);
                     break;
                 
-                case ImageSlide imageSlide:
+                case IImageSlide imageSlide:
                     ShowImageSlide(imageSlide);
                     break;
             }
@@ -140,16 +140,16 @@ namespace Runtime.Presentation
             return !currentSlide.NextButton.ProhibitsManualNavigation && HasNext();
         }
 
-        private void ShowTextSlide(TextSlide textSlide)
+        private void ShowTextSlide(ITextSlide textSlide)
         {
             textSection.gameObject.SetActive(true);
-            textSection.text = textSlide.Text;
+            textSection.text = textSlide.GetText();
         }
 
-        private void ShowImageSlide(ImageSlide imageSlide)
+        private void ShowImageSlide(IImageSlide imageSlide)
         {
             imageSection.gameObject.SetActive(true);
-            imageSection.sprite = imageSlide.Image;
+            imageSection.sprite = imageSlide.GetImage();
         }
 
         public void Reset()
