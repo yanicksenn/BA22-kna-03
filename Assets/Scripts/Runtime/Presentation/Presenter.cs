@@ -116,7 +116,7 @@ namespace Runtime.Presentation
             nextButtonLabel.text = currentSlide.NextButton.LabelText;
                 
             previousButton.gameObject.SetActive(IsPreviousButtonEnabled(currentSlide));
-            previousButtonLabel.text = currentSlide.NextButton.LabelText;
+            previousButtonLabel.text = currentSlide.PreviousButton.LabelText;
             
             switch (currentSlide)
             {
