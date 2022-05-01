@@ -1,10 +1,27 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class Gatter : AbstractSnappable<Gatter, GatterSnapZone, GatterEvent, GatterSnapZoneEvent>, IConductor
 {
+    [SerializeField] 
+    private string labelText;
+    public string LabelText
+    {
+        get => labelText;
+        set => labelText = value;
+    }
+
+    [SerializeField] 
+    private TMP_Text label;
+    public TMP_Text Label
+    {
+        get => label;
+        set => label = value;
+    }
+
     [SerializeField]
     private CableOutputSnapZone[] cableOutputSnapZones;
 
@@ -29,6 +46,14 @@ public class Gatter : AbstractSnappable<Gatter, GatterSnapZone, GatterEvent, Gat
     public UnityEvent OnEnergyChangeEvent => onEnergyChangeEvent;
 
     private EnergyType energyType = EnergyType.Invalid;
+
+    protected override void Awake()
+    {
+        base.Awake();
+
+        if (label != null)
+            label.text = labelText;
+    }
 
     private void OnEnable()
     {
