@@ -27,4 +27,4 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   tutorialEvent: {fileID: 11400000, guid: 9d62db3cec1db3744ab91866082023ac, type: 2}
-  text: Grab the handle in the middle of the cable and pull it away.
+  text: Remove a cable by pulling on the handle in the middle of it.

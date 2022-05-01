@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b815aeea2e8a4b58b5c3e914890a0bb0, type: 3}
-  m_Name: Task5_ConnectLightbulb
+  m_Name: Task8_RemoveGatter
   m_EditorClassIdentifier: 
-  title: Connect Lightbulb
+  title: Remove gatter
   nextButton:
     labelText: Next
     prohibitsManualNavigation: 1
@@ -26,5 +26,5 @@ MonoBehaviour:
     onHideEvent:
       m_PersistentCalls:
         m_Calls: []
-  tutorialEvent: {fileID: 11400000, guid: c530f358e3c9ed4469d5e1665940a089, type: 2}
-  text: Connect the lightbulb with a cable from the gatter.
+  tutorialEvent: {fileID: 11400000, guid: d393f6be625a63141bf8d0b9b73782a1, type: 2}
+  text: Grab the gatter and remove it from the board.

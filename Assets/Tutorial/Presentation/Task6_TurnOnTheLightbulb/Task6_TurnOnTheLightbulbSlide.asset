@@ -27,5 +27,4 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   tutorialEvent: {fileID: 11400000, guid: 470e1d207d131df4ba003cec43a66499, type: 2}
-  text: Remove the gatter and connect the lightbulb directly. Turn the Switch to
-    send a 1 to make the  lightbulb shine.
+  text: Turn the on the toggle to make the lightbulb shine.

@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b815aeea2e8a4b58b5c3e914890a0bb0, type: 3}
-  m_Name: Task5_ConnectLightbulb
+  m_Script: {fileID: 11500000, guid: ef12e782998b4510b5eac66b86aa9de0, type: 3}
+  m_Name: Task9_OpenMenuAndCloseTutorial
   m_EditorClassIdentifier: 
-  title: Connect Lightbulb
+  title: Open menu and exit tutorial
   nextButton:
     labelText: Next
     prohibitsManualNavigation: 1
@@ -26,5 +26,6 @@ MonoBehaviour:
     onHideEvent:
       m_PersistentCalls:
         m_Calls: []
-  tutorialEvent: {fileID: 11400000, guid: c530f358e3c9ed4469d5e1665940a089, type: 2}
-  text: Connect the lightbulb with a cable from the gatter.
+  tutorialEvent: {fileID: 0}
+  text: Press the menu button and exit the tutorial.
+  image: {fileID: 21300000, guid: 073eb43aa5cd80b439ab694be19a1c7e, type: 3}
