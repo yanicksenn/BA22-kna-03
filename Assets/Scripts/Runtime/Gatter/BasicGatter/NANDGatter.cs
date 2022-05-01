@@ -1,18 +1,18 @@
 ﻿using System.Linq;
 
-public class AndGatter : AbstractGatter
+public class NANDGatter : AbstractGatter
 {
     protected override void Awake()
     {
-        LabelText = "AND";
+        LabelText = "NAND";
         base.Awake();
     }
 
     protected override EnergyType CalculateEnergy()
     {
         if (CableOutputSnapZones.All(snapZone => snapZone.GetEnergy() == EnergyType.True))
-            return EnergyType.True;
+            return EnergyType.False;
 
-        return EnergyType.False;
+        return EnergyType.True;
     }
 }

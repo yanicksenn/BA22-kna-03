@@ -186,7 +186,7 @@ PrefabInstance:
     - target: {fileID: 8323038790999999981, guid: bbfae835f7fde4477a161257425319b2, type: 3}
       propertyPath: gatter
       value: 
-      objectReference: {fileID: 95819557396504748}
+      objectReference: {fileID: 0}
     - target: {fileID: 8803945111023077700, guid: bbfae835f7fde4477a161257425319b2, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -341,7 +341,7 @@ PrefabInstance:
     - target: {fileID: 8323038790999999981, guid: bbfae835f7fde4477a161257425319b2, type: 3}
       propertyPath: gatter
       value: 
-      objectReference: {fileID: 95819557396504748}
+      objectReference: {fileID: 0}
     - target: {fileID: 8803945111023077700, guid: bbfae835f7fde4477a161257425319b2, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -427,7 +427,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2603632552978306344, guid: 66cdc3c9453d21e46b861e6b919998c3, type: 3}
       propertyPath: m_Name
-      value: OutputSnapZone
+      value: OutputSnapZone - 1
       objectReference: {fileID: 0}
     - target: {fileID: 4581568060576398355, guid: 66cdc3c9453d21e46b861e6b919998c3, type: 3}
       propertyPath: m_RootOrder
@@ -443,17 +443,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66cdc3c9453d21e46b861e6b919998c3, type: 3}
---- !u!114 &95819557396504748 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4953444209758612662, guid: 66cdc3c9453d21e46b861e6b919998c3, type: 3}
-  m_PrefabInstance: {fileID: 5037909650361011226}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd3eabcbef784c9a813a574eab300761, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &7362401772494084852 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2577960339206346478, guid: 66cdc3c9453d21e46b861e6b919998c3, type: 3}
@@ -581,7 +570,7 @@ PrefabInstance:
     - target: {fileID: 8323038790999999981, guid: bbfae835f7fde4477a161257425319b2, type: 3}
       propertyPath: gatter
       value: 
-      objectReference: {fileID: 95819557396504748}
+      objectReference: {fileID: 0}
     - target: {fileID: 8803945111023077700, guid: bbfae835f7fde4477a161257425319b2, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -736,7 +725,7 @@ PrefabInstance:
     - target: {fileID: 8323038790999999981, guid: bbfae835f7fde4477a161257425319b2, type: 3}
       propertyPath: gatter
       value: 
-      objectReference: {fileID: 95819557396504748}
+      objectReference: {fileID: 0}
     - target: {fileID: 8803945111023077700, guid: bbfae835f7fde4477a161257425319b2, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -891,7 +880,7 @@ PrefabInstance:
     - target: {fileID: 8323038790999999981, guid: bbfae835f7fde4477a161257425319b2, type: 3}
       propertyPath: gatter
       value: 
-      objectReference: {fileID: 95819557396504748}
+      objectReference: {fileID: 0}
     - target: {fileID: 8803945111023077700, guid: bbfae835f7fde4477a161257425319b2, type: 3}
       propertyPath: m_IsTrigger
       value: 1

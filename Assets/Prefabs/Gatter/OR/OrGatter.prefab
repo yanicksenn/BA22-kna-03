@@ -362,10 +362,10 @@ GameObject:
   - component: {fileID: 2752858622674924453}
   - component: {fileID: 8858228607007394422}
   - component: {fileID: 6111606297704247857}
-  - component: {fileID: 4953444209758612662}
+  - component: {fileID: 1800279429105208694}
   - component: {fileID: 256975217003534158}
   m_Layer: 0
-  m_Name: AndGatter
+  m_Name: OrGatter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -379,7 +379,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8645041549545549641}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.837, y: 1.008, z: 2.533}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.06, y: 0.06, z: 0.06}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -481,7 +481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightMaterial: {fileID: 2100000, guid: 253a0b7773a446d4fa893db334cdf027, type: 2}
---- !u!114 &4953444209758612662
+--- !u!114 &1800279429105208694
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -490,7 +490,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8645041549545549641}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd3eabcbef784c9a813a574eab300761, type: 3}
+  m_Script: {fileID: 11500000, guid: ef1bce068e864c7cae9f3d1c12c76590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_allowOffhandGrab: 1
@@ -520,7 +520,7 @@ MonoBehaviour:
   preview: {fileID: 8645041549545549641, guid: d27bc81f02efb4967be28706f7fc59a3, type: 3}
   rigidbody: {fileID: 8858228607007394422}
   collisionCache: {fileID: 256975217003534158}
-  labelText: =
+  labelText: OR
   label: {fileID: 7959178505219452474}
   cableOutputSnapZones:
   - {fileID: 2695397344928551042}
@@ -529,12 +529,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: 90588423c2829bb4bb561e001f35095b, type: 2}
-        m_TargetAssemblyTypeName: Events.Event, Events
-        m_MethodName: Invoke
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -544,12 +544,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: d393f6be625a63141bf8d0b9b73782a1, type: 2}
-        m_TargetAssemblyTypeName: Events.Event, Events
-        m_MethodName: Invoke
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -642,7 +642,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: AND
+  m_text: OR
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
