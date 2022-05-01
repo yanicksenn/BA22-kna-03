@@ -873,7 +873,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1137825673805853812, guid: 531ed3f2c0b02459695ad79a2f53336a, type: 3}
       propertyPath: m_Name
-      value: Task6_ConnectLightbulb
+      value: Task5_ConnectLightbulb
       objectReference: {fileID: 0}
     - target: {fileID: 3809455222980492997, guid: 531ed3f2c0b02459695ad79a2f53336a, type: 3}
       propertyPath: presenter
@@ -2891,7 +2891,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1137825673805853812, guid: 531ed3f2c0b02459695ad79a2f53336a, type: 3}
       propertyPath: m_Name
-      value: Task7_TurnOnTheLightbulb
+      value: Task6_TurnOnTheLightbulb
       objectReference: {fileID: 0}
     - target: {fileID: 3809455222980492997, guid: 531ed3f2c0b02459695ad79a2f53336a, type: 3}
       propertyPath: presenter
@@ -3794,7 +3794,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1137825673805853812, guid: 531ed3f2c0b02459695ad79a2f53336a, type: 3}
       propertyPath: m_Name
-      value: Task5_RemoveCable
+      value: Task7_RemoveCable
       objectReference: {fileID: 0}
     - target: {fileID: 3809455222980492997, guid: 531ed3f2c0b02459695ad79a2f53336a, type: 3}
       propertyPath: presenter

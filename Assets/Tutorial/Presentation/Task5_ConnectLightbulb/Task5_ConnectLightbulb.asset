@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b815aeea2e8a4b58b5c3e914890a0bb0, type: 3}
-  m_Name: Task7_TurnOnTheLightbulbSlide
+  m_Name: Task5_ConnectLightbulb
   m_EditorClassIdentifier: 
-  title: Turn on th elightbulb
+  title: Connect Lightbulb
   nextButton:
     labelText: Next
     prohibitsManualNavigation: 1
@@ -26,6 +26,6 @@ MonoBehaviour:
     onHideEvent:
       m_PersistentCalls:
         m_Calls: []
-  tutorialEvent: {fileID: 11400000, guid: 470e1d207d131df4ba003cec43a66499, type: 2}
-  text: Remove the gatter and connect the lightbulb directly. Turn the Switch to
-    send a 1 to make the  lightbulb shine.
+  tutorialEvent: {fileID: 11400000, guid: c530f358e3c9ed4469d5e1665940a089, type: 2}
+  text: Place a Gatter on the board, connect it with a cable and then try to connect
+    a cable from the gatter to a lightbulb

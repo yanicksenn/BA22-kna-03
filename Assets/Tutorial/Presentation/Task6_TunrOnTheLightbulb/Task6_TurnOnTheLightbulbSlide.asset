@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b815aeea2e8a4b58b5c3e914890a0bb0, type: 3}
-  m_Name: Task5_RemoveCable
+  m_Name: Task6_TurnOnTheLightbulbSlide
   m_EditorClassIdentifier: 
-  title: 'Remove the cable '
+  title: Turn on th elightbulb
   nextButton:
     labelText: Next
     prohibitsManualNavigation: 1
@@ -26,5 +26,6 @@ MonoBehaviour:
     onHideEvent:
       m_PersistentCalls:
         m_Calls: []
-  tutorialEvent: {fileID: 11400000, guid: 9d62db3cec1db3744ab91866082023ac, type: 2}
-  text: Grab the handle in the middle of the cable and pull it away.
+  tutorialEvent: {fileID: 11400000, guid: 470e1d207d131df4ba003cec43a66499, type: 2}
+  text: Remove the gatter and connect the lightbulb directly. Turn the Switch to
+    send a 1 to make the  lightbulb shine.
