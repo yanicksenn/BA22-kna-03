@@ -15,7 +15,7 @@ MonoBehaviour:
   title: Place Gatter
   nextButton:
     labelText: Next
-    prohibitsManualNavigation: 0
+    prohibitsManualNavigation: 1
   previousButton:
     labelText: Previous
     prohibitsManualNavigation: 1
@@ -26,5 +26,5 @@ MonoBehaviour:
     onHideEvent:
       m_PersistentCalls:
         m_Calls: []
-  text: 
+  text: Place the gatter on the board.
   tutorialEvent: {fileID: 11400000, guid: 90588423c2829bb4bb561e001f35095b, type: 2}
