@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Gatter : AbstractSnappable<Gatter, GatterSnapZone, GatterEvent, GatterSnapZoneEvent>, IConductor
+public abstract class AbstractGatter : AbstractSnappable<AbstractGatter, GatterSnapZone, GatterEvent, GatterSnapZoneEvent>, IConductor
 {
     [SerializeField] 
     private string labelText;
@@ -24,6 +24,11 @@ public class Gatter : AbstractSnappable<Gatter, GatterSnapZone, GatterEvent, Gat
 
     [SerializeField]
     private CableOutputSnapZone[] cableOutputSnapZones;
+    public CableOutputSnapZone[] CableOutputSnapZones
+    {
+        get => cableOutputSnapZones;
+        set => cableOutputSnapZones = value;
+    }
 
     [SerializeField, Space]
     private GatterSnapZoneEvent onSnapToBoard = new GatterSnapZoneEvent();
@@ -106,12 +111,11 @@ public class Gatter : AbstractSnappable<Gatter, GatterSnapZone, GatterEvent, Gat
         
         if (cableOutputSnapZones.Any(snapZone => snapZone.GetEnergy() == EnergyType.Invalid))
             return EnergyType.Invalid;
-        
-        if (cableOutputSnapZones.All(snapZone => snapZone.GetEnergy() == EnergyType.True))
-            return EnergyType.True;
 
-        return EnergyType.False;
+        return CalculateEnergy();
     }
+
+    protected abstract EnergyType CalculateEnergy();
 
     public EnergyType GetEnergy()
     {

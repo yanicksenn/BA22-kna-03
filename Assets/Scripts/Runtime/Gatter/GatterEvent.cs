@@ -2,7 +2,7 @@ using System;
 using UnityEngine.Events;
 
 [Serializable]
-public class GatterEvent : UnityEvent<Gatter>
+public class GatterEvent : UnityEvent<AbstractGatter>
 {
         
 }

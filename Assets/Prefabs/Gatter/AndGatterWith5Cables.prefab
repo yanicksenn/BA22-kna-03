@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 492852068570839737}
   m_Layer: 0
-  m_Name: GatterWith10Cables
+  m_Name: AndGatterWith5Cables
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -429,9 +429,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: OutputSnapZone
       objectReference: {fileID: 0}
+    - target: {fileID: 4581568060576398355, guid: 66cdc3c9453d21e46b861e6b919998c3, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596841953800290818, guid: 66cdc3c9453d21e46b861e6b919998c3, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8645041549545549641, guid: 66cdc3c9453d21e46b861e6b919998c3, type: 3}
       propertyPath: m_Name
-      value: Gatter
+      value: AndGatter
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66cdc3c9453d21e46b861e6b919998c3, type: 3}

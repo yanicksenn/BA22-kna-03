@@ -365,7 +365,7 @@ GameObject:
   - component: {fileID: 4953444209758612662}
   - component: {fileID: 256975217003534158}
   m_Layer: 0
-  m_Name: Gatter
+  m_Name: AndGatter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
