@@ -154,6 +154,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 493b48952473406190a4b77d8ff3f5b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onLightBulbOn:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 470e1d207d131df4ba003cec43a66499, type: 2}
+        m_TargetAssemblyTypeName: Events.Event, Events
+        m_MethodName: Invoke
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onLightBulbOff:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1141236482165985197
 GameObject:
   m_ObjectHideFlags: 0
