@@ -3150,6 +3150,26 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0.042000003
       objectReference: {fileID: 0}
+    - target: {fileID: 6421249121910382052, guid: 0d8755236d0732f4f8a34052840878dd, type: 3}
+      propertyPath: onSnapToBoard.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6421249121910382052, guid: 0d8755236d0732f4f8a34052840878dd, type: 3}
+      propertyPath: onSnapToBoard.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6421249121910382052, guid: 0d8755236d0732f4f8a34052840878dd, type: 3}
+      propertyPath: onSnapToBoard.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlaySnapSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 6421249121910382052, guid: 0d8755236d0732f4f8a34052840878dd, type: 3}
+      propertyPath: onSnapToBoard.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Runtime.Utility.SFXManager, BA22Runtime
+      objectReference: {fileID: 0}
+    - target: {fileID: 6421249121910382052, guid: 0d8755236d0732f4f8a34052840878dd, type: 3}
+      propertyPath: onSnapToBoard.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6729152327713934508, guid: 0d8755236d0732f4f8a34052840878dd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.042000003
