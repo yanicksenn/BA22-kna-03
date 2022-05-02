@@ -10,9 +10,13 @@ public class GatterDispenser : MonoBehaviour
     [SerializeField] private TMP_Text gatterDisplay;
     public TMP_Text GatterDisplay => gatterDisplay;
 
+    [SerializeField] private Transform refrencePoint;
+
     [SerializeField] private List<GameObject> gatterList;
 
     private List<AbstractGatter> gatterListRefined;
+
+    private int currentIndex = 0;
 
     private void showGatterName(AbstractGatter currentGatter)
     {
@@ -33,6 +37,44 @@ public class GatterDispenser : MonoBehaviour
         if (gatterListRefined.Count == 0)
             return;
         
-        showGatterName(gatterListRefined.First());
+        updateLabel();
+    }
+
+    private void updateLabel()
+    {
+        showGatterName(GetCurentGatter());
+    }
+
+    private AbstractGatter GetCurentGatter()
+    {
+        return gatterListRefined[currentIndex];
+    }
+
+    public void NextGatter()
+    {
+        if(gatterListRefined.Count is 0 or 1)
+            return;
+
+        currentIndex++;
+        if (currentIndex > gatterListRefined.Count -1)
+            currentIndex = 0;
+        updateLabel();
+    }
+
+    public void PreviousGatter()
+    {
+        if(gatterListRefined.Count is 0 or 1)
+            return;
+
+        currentIndex--;
+        if (currentIndex < 0)
+            currentIndex = gatterListRefined.Count - 1;
+        updateLabel();
+    }
+
+    public void DispenseGatter()
+    {
+        var currentGatter = gatterList[currentIndex];
+        Instantiate(currentGatter, refrencePoint.position, refrencePoint.rotation);
     }
 }
