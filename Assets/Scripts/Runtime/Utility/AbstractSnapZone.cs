@@ -33,17 +33,16 @@ public abstract class AbstractSnapZone<TS, TZ, TES, TEZ> : MonoBehaviour
         if (!IsSnapped)
             return;
 
-        var tmpSnappedObject = _snappedObject;
         _snappedObject.Unsnap();
-        
         UnsnapLocalObject();
-        GetUnsnapEvent().Invoke(tmpSnappedObject);
     }
 
     private void UnsnapLocalObject()
     {
+        var tmpSnappedObject = _snappedObject;
         _snappedObject.OnGrab.RemoveListener(Unsnap);
         _snappedObject = null;
+        GetUnsnapEvent().Invoke(tmpSnappedObject);
     }
 
     public abstract TES GetSnapEvent();
