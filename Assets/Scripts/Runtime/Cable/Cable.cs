@@ -8,6 +8,11 @@ public class Cable : MonoBehaviour, IConductor
 {
     [SerializeField] 
     private Gatter gatter;
+    public Gatter Gatter
+    {
+        get => gatter;
+        set => gatter = value;
+    }
 
     [SerializeField] 
     private EnergySource source;

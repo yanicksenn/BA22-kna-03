@@ -244,6 +244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snapReference: {fileID: 7988570079188369294}
+  gatter: {fileID: 1800279429105208694}
   onSnapEvent:
     m_PersistentCalls:
       m_Calls:
@@ -771,6 +772,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snapReference: {fileID: 4596841953800290818}
+  gatter: {fileID: 1800279429105208694}
   onSnapEvent:
     m_PersistentCalls:
       m_Calls:

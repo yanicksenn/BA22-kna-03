@@ -23,9 +23,9 @@ public abstract class AbstractSnapZone<TS, TZ, TES, TEZ> : MonoBehaviour
     private GameObject _preview;
 
 
-    public bool Accepts(TS snappable)
+    public virtual bool Accepts(TS snappable)
     {
-        return SnappedObject == null;
+        return !IsSnapped;
     }
     
     public void Unsnap()
@@ -60,6 +60,9 @@ public abstract class AbstractSnapZone<TS, TZ, TES, TEZ> : MonoBehaviour
             return;
 
         if (IsSnapped)
+            return;
+
+        if (!Accepts(snappable))
             return;
 
         if (snappable.IsGrabbed)

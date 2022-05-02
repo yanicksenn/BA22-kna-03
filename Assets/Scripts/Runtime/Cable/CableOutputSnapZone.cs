@@ -4,6 +4,14 @@ using UnityEngine.Events;
 
 public class CableOutputSnapZone : AbstractSnapZone<CableOutputConnector, CableOutputSnapZone, CableOutputConnectorEvent, CableOutputSnapZoneEvent>, IConductor
 {
+    [SerializeField, Tooltip("This is just relevant for snap zones on gatter. It can be null on other objects.")] 
+    private Gatter gatter;
+    public Gatter Gatter
+    {
+        get => gatter;
+        set => gatter = value;
+    }
+
     [SerializeField]
     private CableOutputConnectorEvent onSnapEvent = new CableOutputConnectorEvent();
     public CableOutputConnectorEvent OnSnapEvent => onSnapEvent;
@@ -28,6 +36,17 @@ public class CableOutputSnapZone : AbstractSnapZone<CableOutputConnector, CableO
     {
         OnSnapEvent.RemoveListener(OnSnap);
         OnUnsnapEvent.RemoveListener(OnUnsnap);
+    }
+
+    public override bool Accepts(CableOutputConnector snappable)
+    {
+        if (!base.Accepts(snappable))
+            return false;
+
+        if (Gatter != null && Gatter.IsGrabbed)
+            return false;
+        
+        return snappable.Cable.Gatter != Gatter;
     }
 
     private void OnSnap(CableOutputConnector cableOutputConnector)

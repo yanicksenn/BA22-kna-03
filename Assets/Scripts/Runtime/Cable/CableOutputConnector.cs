@@ -7,6 +7,11 @@ public class CableOutputConnector : AbstractSnappable<CableOutputConnector, Cabl
 {
     [SerializeField]
     private Cable cable;
+    public Cable Cable
+    {
+        get => cable;
+        set => cable = value;
+    }
 
     [SerializeField, Space] 
     private CableOutputSnapZoneEvent onConnect = new CableOutputSnapZoneEvent();
