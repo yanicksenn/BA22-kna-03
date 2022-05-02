@@ -1,17 +1,18 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Runtime.Gatter.BasicGatter;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
-public abstract class AbstractGatter : AbstractSnappable<AbstractGatter, GatterSnapZone, GatterEvent, GatterSnapZoneEvent>, IConductor
+public class Gatter : AbstractSnappable<Gatter, GatterSnapZone, GatterEvent, GatterSnapZoneEvent>, IConductor
 {
     [SerializeField] 
-    private string labelText;
-    public string LabelText
+    private AbstractGatterLogic gatterLogic;
+    public AbstractGatterLogic GatterLogic
     {
-        get => labelText;
-        set => labelText = value;
+        get => gatterLogic;
+        set => gatterLogic = value;
     }
 
     [SerializeField] 
@@ -57,7 +58,7 @@ public abstract class AbstractGatter : AbstractSnappable<AbstractGatter, GatterS
         base.Awake();
 
         if (label != null)
-            label.text = labelText;
+            label.text = GatterLogic.LabelText;
     }
 
     private void OnEnable()
@@ -112,10 +113,9 @@ public abstract class AbstractGatter : AbstractSnappable<AbstractGatter, GatterS
         if (cableOutputSnapZones.Any(snapZone => snapZone.GetEnergy() == EnergyType.Invalid))
             return EnergyType.Invalid;
 
-        return CalculateEnergy();
+        var energyTypes = cableOutputSnapZones.Select(z => z.GetEnergy()).ToList();
+        return GatterLogic.CalculateEnergy(energyTypes);
     }
-
-    protected abstract EnergyType CalculateEnergy();
 
     public EnergyType GetEnergy()
     {

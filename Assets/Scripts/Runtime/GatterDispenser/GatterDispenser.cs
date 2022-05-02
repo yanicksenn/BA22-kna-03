@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -14,19 +12,19 @@ public class GatterDispenser : MonoBehaviour
 
     [SerializeField] private List<GameObject> gatterList;
 
-    private List<AbstractGatter> gatterListRefined;
+    private List<Gatter> gatterListRefined;
 
     private int currentIndex = 0;
 
-    private void showGatterName(AbstractGatter currentGatter)
+    private void showGatterName(Gatter currentGatter)
     {
-        gatterDisplay.text = currentGatter.LabelText;
+        gatterDisplay.text = currentGatter.GatterLogic.LabelText;
     }
 
     private void Awake()
     {
         gatterListRefined = gatterList
-            .Select(g => g.GetComponentInChildren<AbstractGatter>())
+            .Select(g => g.GetComponentInChildren<Gatter>())
             .Where(g => g != null)
             .ToList();
         
@@ -45,7 +43,7 @@ public class GatterDispenser : MonoBehaviour
         showGatterName(GetCurentGatter());
     }
 
-    private AbstractGatter GetCurentGatter()
+    private Gatter GetCurentGatter()
     {
         return gatterListRefined[currentIndex];
     }

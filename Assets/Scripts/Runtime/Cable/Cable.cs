@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class Cable : MonoBehaviour, IConductor
 {
     [SerializeField] 
-    private AbstractGatter gatter;
+    private Gatter gatter;
 
     [SerializeField] 
     private EnergySource source;

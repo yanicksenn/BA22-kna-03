@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b815aeea2e8a4b58b5c3e914890a0bb0, type: 3}
-  m_Name: Task6_TurnOnTheLightbulbSlide
+  m_Name: Task4D_ConnectGatterWithSource
   m_EditorClassIdentifier: 
-  title: Turn on the lightbulb
+  title: Connect Cable
   nextButton:
     labelText: Next
     prohibitsManualNavigation: 1
@@ -26,5 +26,5 @@ MonoBehaviour:
     onHideEvent:
       m_PersistentCalls:
         m_Calls: []
-  tutorialEvent: {fileID: 11400000, guid: 470e1d207d131df4ba003cec43a66499, type: 2}
-  text: Turn the on the toggle to make the lightbulb shine.
+  tutorialEvent: {fileID: 11400000, guid: 452852d2a54ee7048971b386fccf840f, type: 2}
+  text: Connect the placed Gatter with another cable

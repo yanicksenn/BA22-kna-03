@@ -1,7 +1,7 @@
 ﻿
 using UnityEngine;
 
-public class GatterSnapZone : AbstractSnapZone<AbstractGatter, GatterSnapZone, GatterEvent, GatterSnapZoneEvent>
+public class GatterSnapZone : AbstractSnapZone<Gatter, GatterSnapZone, GatterEvent, GatterSnapZoneEvent>
 {
     [SerializeField]
     private GatterEvent onSnapEvent = new GatterEvent();
