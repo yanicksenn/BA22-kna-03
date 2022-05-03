@@ -6,6 +6,9 @@ namespace Runtime.Utility
     {
         [SerializeField] private AudioSource snap;
         [SerializeField] private AudioSource buttonClick;
+        [SerializeField] private AudioSource toggle;
+        [SerializeField] private AudioSource cableSnap;
+        [SerializeField] private AudioSource cableUnSnap;
 
         public void PlaySnapSound()
         {
@@ -15,6 +18,21 @@ namespace Runtime.Utility
         public void PlayButtonClickSound()
         {
             buttonClick.Play();
+        }
+        
+        public void PlayToggleSound()
+        {
+            toggle.Play();
+        }
+
+        public void PlayCableSnapSound()
+        {
+            cableSnap.Play();
+        }
+
+        public void PlayCableUnsnapSound()
+        {
+            cableUnSnap.Play();
         }
     }
 }
