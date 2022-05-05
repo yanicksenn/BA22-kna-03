@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Runtime.GatterDispenser;
 using TMPro;
 using UnityEngine;
 
@@ -10,20 +11,20 @@ public class GatterDispenser : MonoBehaviour
 
     [SerializeField] private Transform refrencePoint;
 
-    [SerializeField] private List<GameObject> gatterList;
+    [SerializeField] private GatterList gatterList;
 
     private List<Gatter> gatterListRefined;
 
     private int currentIndex = 0;
 
-    private void showGatterName(Gatter currentGatter)
+    private void ShowGatterName(Gatter currentGatter)
     {
         gatterDisplay.text = currentGatter.GatterLogic.LabelText;
     }
 
     private void Awake()
     {
-        gatterListRefined = gatterList
+        gatterListRefined = gatterList.Gatters
             .Select(g => g.GetComponentInChildren<Gatter>())
             .Where(g => g != null)
             .ToList();
@@ -35,12 +36,12 @@ public class GatterDispenser : MonoBehaviour
         if (gatterListRefined.Count == 0)
             return;
         
-        updateLabel();
+        UpdateLabel();
     }
 
-    private void updateLabel()
+    private void UpdateLabel()
     {
-        showGatterName(GetCurentGatter());
+        ShowGatterName(GetCurentGatter());
     }
 
     private Gatter GetCurentGatter()
@@ -56,7 +57,7 @@ public class GatterDispenser : MonoBehaviour
         currentIndex++;
         if (currentIndex > gatterListRefined.Count -1)
             currentIndex = 0;
-        updateLabel();
+        UpdateLabel();
     }
 
     public void PreviousGatter()
@@ -67,12 +68,12 @@ public class GatterDispenser : MonoBehaviour
         currentIndex--;
         if (currentIndex < 0)
             currentIndex = gatterListRefined.Count - 1;
-        updateLabel();
+        UpdateLabel();
     }
 
     public void DispenseGatter()
     {
-        var currentGatter = gatterList[currentIndex];
+        var currentGatter = gatterList.Gatters[currentIndex];
         Instantiate(currentGatter, refrencePoint.position, refrencePoint.rotation);
     }
 }

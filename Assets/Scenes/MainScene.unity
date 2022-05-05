@@ -638,7 +638,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3161324797436309261, guid: 6ffc0a936cdf4404f9a149a36705a431, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3161324797436309261, guid: 6ffc0a936cdf4404f9a149a36705a431, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1663,7 +1663,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4897607310870066, guid: a9d2de84afb308a4796cc671d3432b4d, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4897607310870066, guid: a9d2de84afb308a4796cc671d3432b4d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1790,7 +1790,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3193,7 +3193,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5563129048841878939, guid: d566657b2bb1e6148b8da2d96cea80c7, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5563129048841878939, guid: d566657b2bb1e6148b8da2d96cea80c7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3243,6 +3243,10 @@ PrefabInstance:
       propertyPath: pointer
       value: 
       objectReference: {fileID: 979098234}
+    - target: {fileID: 8096059565318700269, guid: d566657b2bb1e6148b8da2d96cea80c7, type: 3}
+      propertyPath: gatterList
+      value: 
+      objectReference: {fileID: 11400000, guid: 8ba733b1b7fb5e94c97689bb05d78ba9, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d566657b2bb1e6148b8da2d96cea80c7, type: 3}
 --- !u!1 &5563129049967330773 stripped

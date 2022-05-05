@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e500618769e456f9b1ee9f1a7c34ea2, type: 3}
+  m_Name: GatterlistTutorial
+  m_EditorClassIdentifier: 
+  gatters:
+  - {fileID: 2458268758294025130, guid: 6ffc0a936cdf4404f9a149a36705a431, type: 3}
+  - {fileID: 2417108585134632882, guid: eebb903354f2f0e49a914e2c7b52e5a4, type: 3}
