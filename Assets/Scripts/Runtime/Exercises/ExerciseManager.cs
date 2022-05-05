@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Runtime.Exercises;
 using Runtime.Presentation;
 using UnityEngine;
 
@@ -12,7 +13,7 @@ public class ExerciseManager : MonoBehaviour, INavigationInterceptor
 
     public bool AllowsNext(AbstractSlide slide)
     {
-        if (slide is not ExerciseSlide exerciseSlide)
+        if (slide is not AbstractExerciseSlide exerciseSlide)
             return true;
 
         return CheckExercise(exerciseSlide);
@@ -33,7 +34,7 @@ public class ExerciseManager : MonoBehaviour, INavigationInterceptor
     
 
 
-    private bool CheckExercise(ExerciseSlide exerciseSlide)
+    private bool CheckExercise(AbstractExerciseSlide exerciseSlide)
     {
         var originalEnergy0 = energySources[0].GetEnergy();
         var originalEnergy1 = energySources[1].GetEnergy();

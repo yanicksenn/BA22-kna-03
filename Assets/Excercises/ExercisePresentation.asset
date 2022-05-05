@@ -13,5 +13,14 @@ MonoBehaviour:
   m_Name: ExercisePresentation
   m_EditorClassIdentifier: 
   slides:
-  - {fileID: 11400000, guid: b3e61d23a21dbdc49848744ce96b3d82, type: 2}
-  - {fileID: 11400000, guid: 3b33ca4f2a67e2849ac2de1ae64d9a32, type: 2}
+  - {fileID: 11400000, guid: ee2269e1df5a8714e991f3181387b68b, type: 2}
+  - {fileID: 11400000, guid: 064c287b89c9a084fa6f79267e429f48, type: 2}
+  - {fileID: 11400000, guid: f27567d3349579f47a0f277e4a13a8a4, type: 2}
+  - {fileID: 11400000, guid: ff756bba51d0e6f46829143832a4b445, type: 2}
+  - {fileID: 11400000, guid: f6a37c81b43bb2947947730a16afe781, type: 2}
+  - {fileID: 11400000, guid: ebbc0aa703756c747b767e38d5914418, type: 2}
+  - {fileID: 11400000, guid: 2c6e3d9096b1c3b4aac3077818132535, type: 2}
+  - {fileID: 11400000, guid: 7d1e1cf4395df9e47a318b2ced9b2c0e, type: 2}
+  - {fileID: 11400000, guid: 80ff15c348494b04184f2e427542b623, type: 2}
+  - {fileID: 11400000, guid: 7207baeee65a88b419c89b6e93880d16, type: 2}
+  - {fileID: 11400000, guid: f1f05e2c76a386c4c956f38361b93fcc, type: 2}

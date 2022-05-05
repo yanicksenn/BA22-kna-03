@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 506bdb05245743fa88db12fdd2888054, type: 3}
+  m_Name: Slide10
+  m_EditorClassIdentifier: 
+  title: Exercise 1 - NOT GATE
+  nextButton:
+    labelText: Check
+    prohibitsManualNavigation: 0
+  previousButton:
+    labelText: Previous
+    prohibitsManualNavigation: 0
+  slideEvents:
+    onShowEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    onHideEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  truthTableFile: {fileID: 4900000, guid: 24623991e0fac45489d44a6b98a96239, type: 3}
+  text: Build a NOT-Gate with the provided gates
+  image: {fileID: 21300000, guid: 39ec61f72719b6842940136b54eeaf6b, type: 3}
