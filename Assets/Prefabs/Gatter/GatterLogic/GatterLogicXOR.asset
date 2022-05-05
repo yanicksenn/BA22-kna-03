@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e500618769e456f9b1ee9f1a7c34ea2, type: 3}
-  m_Name: GatterlistExercise
+  m_Script: {fileID: 11500000, guid: 0ce2931282314cf9a78110c0a9d3d114, type: 3}
+  m_Name: GatterLogicXOR
   m_EditorClassIdentifier: 
-  addedGatterToList:
-    m_PersistentCalls:
-      m_Calls: []
+  labelText: XOR

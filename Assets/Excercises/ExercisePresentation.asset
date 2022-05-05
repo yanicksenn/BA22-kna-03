@@ -13,9 +13,5 @@ MonoBehaviour:
   m_Name: ExercisePresentation
   m_EditorClassIdentifier: 
   slides:
-  - {fileID: 11400000, guid: 3a06dceb2c2a94c07a3373270b5b9317, type: 2}
-  - {fileID: 11400000, guid: d7fd202061baf4b16be14b52f04ca3a1, type: 2}
-  - {fileID: 11400000, guid: 1829995f9bf614ac8ac3ee9ef2833cbc, type: 2}
-  - {fileID: 11400000, guid: 396d3f61fd13141739650890f56ec0b8, type: 2}
-  - {fileID: 11400000, guid: 1829995f9bf614ac8ac3ee9ef2833cbc, type: 2}
-  - {fileID: 11400000, guid: c315181b85d8f4c92a806521a9b56fa2, type: 2}
+  - {fileID: 11400000, guid: b3e61d23a21dbdc49848744ce96b3d82, type: 2}
+  - {fileID: 11400000, guid: 3b33ca4f2a67e2849ac2de1ae64d9a32, type: 2}

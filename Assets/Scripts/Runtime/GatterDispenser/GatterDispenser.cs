@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Runtime.GatterDispenser;
@@ -19,29 +20,37 @@ public class GatterDispenser : MonoBehaviour
 
     private void ShowGatterName(Gatter currentGatter)
     {
-        gatterDisplay.text = currentGatter.GatterLogic.LabelText;
+        ShowText(currentGatter.GatterLogic.LabelText);
+    }
+
+    private void ShowText(string text)
+    {
+        gatterDisplay.text = text;
     }
 
     private void Awake()
     {
-        gatterListRefined = gatterList.Gatters
-            .Select(g => g.GetComponentInChildren<Gatter>())
-            .Where(g => g != null)
-            .ToList();
-        
+        OnGatterAddedToList();
+        gatterList.AddedGatterToList.AddListener(OnGatterAddedToList);
     }
 
     private void Start()
     {
-        if (gatterListRefined.Count == 0)
-            return;
-        
         UpdateLabel();
+    }
+
+    private void OnDestroy()
+    {
+        gatterList.AddedGatterToList.RemoveListener(OnGatterAddedToList);
     }
 
     private void UpdateLabel()
     {
-        ShowGatterName(GetCurentGatter());
+        if (gatterListRefined.Count == 0)
+        {
+            ShowText("EMPTY");
+        }
+        else ShowGatterName(GetCurentGatter());
     }
 
     private Gatter GetCurentGatter()
@@ -75,5 +84,16 @@ public class GatterDispenser : MonoBehaviour
     {
         var currentGatter = gatterList.Gatters[currentIndex];
         Instantiate(currentGatter, refrencePoint.position, refrencePoint.rotation);
+    }
+
+    public void OnGatterAddedToList()
+    {
+        gatterListRefined = gatterList.Gatters
+            .Select(g => g.GetComponentInChildren<Gatter>())
+            .Where(g => g != null)
+            .ToList();
+        Debug.Log($"BA22 should update label currently in our list:{gatterListRefined.Count}");
+        UpdateLabel();
+        
     }
 }
