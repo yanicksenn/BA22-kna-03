@@ -15,14 +15,6 @@ public class Gatter : AbstractSnappable<Gatter, GatterSnapZone, GatterEvent, Gat
         set => gatterLogic = value;
     }
 
-    [SerializeField] 
-    private TMP_Text label;
-    public TMP_Text Label
-    {
-        get => label;
-        set => label = value;
-    }
-
     [SerializeField]
     private CableOutputSnapZone[] cableOutputSnapZones;
     public CableOutputSnapZone[] CableOutputSnapZones
@@ -59,9 +51,6 @@ public class Gatter : AbstractSnappable<Gatter, GatterSnapZone, GatterEvent, Gat
     protected override void Awake()
     {
         base.Awake();
-
-        if (label != null)
-            label.text = GatterLogic.LabelText;
 
         coExistingGatters = GetComponents<Gatter>();
     }

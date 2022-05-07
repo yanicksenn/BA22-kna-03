@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: XX
+  m_text: O2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -795,7 +795,6 @@ MonoBehaviour:
   rigidbody: {fileID: 8858228607007394422}
   collisionCache: {fileID: 256975217003534158}
   gatterLogic: {fileID: 0}
-  label: {fileID: 7959178505219452474}
   cableOutputSnapZones:
   - {fileID: 2695397344928551042}
   - {fileID: 5548690708708790909}
@@ -878,7 +877,6 @@ MonoBehaviour:
   rigidbody: {fileID: 8858228607007394422}
   collisionCache: {fileID: 256975217003534158}
   gatterLogic: {fileID: 0}
-  label: {fileID: 8101494921580495558}
   cableOutputSnapZones:
   - {fileID: 2695397344928551042}
   - {fileID: 5548690708708790909}
@@ -999,7 +997,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: XX
+  m_text: O1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
