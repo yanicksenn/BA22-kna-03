@@ -312,9 +312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gatterDisplay: {fileID: 4678682614992138788}
   refrencePoint: {fileID: 4223692510579324319}
-  gatterList:
-  - {fileID: 2458268758294025130, guid: 6ffc0a936cdf4404f9a149a36705a431, type: 3}
-  - {fileID: 2417108585134632882, guid: eebb903354f2f0e49a914e2c7b52e5a4, type: 3}
+  gatterList: {fileID: 0}
 --- !u!114 &573840932702992043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,6 +327,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snap: {fileID: 0}
   buttonClick: {fileID: 2273294070186250425}
+  toggle: {fileID: 0}
+  cableSnap: {fileID: 0}
+  cableUnSnap: {fileID: 0}
 --- !u!1 &2275835302413303270
 GameObject:
   m_ObjectHideFlags: 0
