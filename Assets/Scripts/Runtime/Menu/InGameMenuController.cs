@@ -33,7 +33,15 @@ public class InGameMenuController : MonoBehaviour
 
     public void ReloadScene()
     {
-        SceneManager.LoadScene("Scenes/MainScene");   
+        var currentScene = SceneManager.GetActiveScene();
+
+        SceneManager.LoadScene(currentScene.name);
+
+        // if(currentScene == SceneManager.GetSceneByName("Scenes/MainScene") )
+        //     SceneManager.LoadScene("Scenes/MainScene");
+        //
+        // else if (currentScene == SceneManager.GetSceneByName("Scenes/TutorialScene"))
+        //     SceneManager.LoadScene("Scenes/TutorialScene");
     }
 
     public void ShowMenu()
