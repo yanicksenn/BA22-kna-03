@@ -7,7 +7,7 @@ namespace Runtime.Gatter.BasicGatter
     [CreateAssetMenu(menuName = "BA22/Gatter Logic/Create XOR", fileName = "GatterLogicXOR")]
     public class GatterLogicXOR : AbstractGatterLogic
     {
-        private void Awake()
+        protected  virtual void Awake()
         {
             LabelText = "XOR";
         }

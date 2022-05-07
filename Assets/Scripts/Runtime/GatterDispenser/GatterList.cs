@@ -7,13 +7,13 @@ namespace Runtime.GatterDispenser
     [CreateAssetMenu(menuName = "BA22/Create Gatterlist", fileName = "Gatterlist")]
     public class GatterList : ScriptableObject
     {
-        private List<GameObject> gatters = new List<GameObject>();
+        private List<GatterLabel> gatters = new List<GatterLabel>();
         [SerializeField] private UnityEvent addedGatterToList = new UnityEvent();
         public UnityEvent AddedGatterToList => addedGatterToList;
 
-        public List<GameObject> Gatters => gatters;
+        public List<GatterLabel> Gatters => gatters;
 
-        public void AddGatterIfNew(GameObject gatter)
+        public void AddGatterIfNew(GatterLabel gatter)
         {
             if (!gatters.Contains(gatter))
             {

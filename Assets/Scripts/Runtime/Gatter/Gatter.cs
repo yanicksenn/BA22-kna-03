@@ -53,12 +53,17 @@ public class Gatter : AbstractSnappable<Gatter, GatterSnapZone, GatterEvent, Gat
 
     private EnergyType energyType = EnergyType.Invalid;
 
+    private Gatter[] coExistingGatters;
+    public bool HasCoExistingGatters => coExistingGatters != null && coExistingGatters.Length > 1;
+
     protected override void Awake()
     {
         base.Awake();
 
         if (label != null)
             label.text = GatterLogic.LabelText;
+
+        coExistingGatters = GetComponents<Gatter>();
     }
 
     private void OnEnable()
@@ -104,14 +109,20 @@ public class Gatter : AbstractSnappable<Gatter, GatterSnapZone, GatterEvent, Gat
 
     private EnergyType RecalcEnergy()
     {
-        if (!IsSnapped)
+        if (!IsCurrentOrCoExistingGatterSnapped())
+        {
             return EnergyType.Invalid;
+        }
 
         if (DependableUtil.HasCyclicDependencies(this))
+        {
             return EnergyType.Invalid;
-        
+        }
+
         if (cableOutputSnapZones.Any(snapZone => snapZone.GetEnergy() == EnergyType.Invalid))
+        {
             return EnergyType.Invalid;
+        }
 
         var energyTypes = cableOutputSnapZones.Select(z => z.GetEnergy()).ToList();
         return GatterLogic.CalculateEnergy(energyTypes);
@@ -135,5 +146,13 @@ public class Gatter : AbstractSnappable<Gatter, GatterSnapZone, GatterEvent, Gat
     public UnityEvent GetEnergyChangeEvent()
     {
         return onEnergyChangeEvent;
+    }
+
+    private bool IsCurrentOrCoExistingGatterSnapped()
+    {
+        if (IsSnapped)
+            return true;
+
+        return HasCoExistingGatters && coExistingGatters.Any(g => g.IsSnapped);
     }
 }

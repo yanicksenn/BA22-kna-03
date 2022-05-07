@@ -28,8 +28,8 @@ MonoBehaviour:
           m_MethodName: AddGatterIfNew
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 2417108585134632882, guid: 26485d2cd69ba784db93ca56cd23bee8, type: 3}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_ObjectArgument: {fileID: 2846637376542692173, guid: 26485d2cd69ba784db93ca56cd23bee8, type: 3}
+            m_ObjectArgumentAssemblyTypeName: GatterLabel, BA22Runtime
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
