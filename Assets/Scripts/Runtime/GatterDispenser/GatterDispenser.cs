@@ -81,9 +81,13 @@ public class GatterDispenser : MonoBehaviour
 
     public void DispenseGatter()
     {
-        var currentGatterLabel = gatterList.Gatters[currentIndex];
-        Instantiate(currentGatterLabel, refrencePoint.position, refrencePoint.rotation);
+        if (gatterList.Gatters.Count != 0)
+        {
+            var currentGatterLabel = gatterList.Gatters[currentIndex];
+            Instantiate(currentGatterLabel, refrencePoint.position, refrencePoint.rotation);
+        }
     }
+        
 
     public void OnGatterAddedToList()
     {
