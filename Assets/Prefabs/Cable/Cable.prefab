@@ -623,6 +623,7 @@ MonoBehaviour:
   connectionInput2Handle: {fileID: 6106193900332588105}
   connectionOutput2Handle: {fileID: 7265243412449054030}
   pullThreshold: 0.2
+  distanceThreshold: 0.8
   onEnergyChangeEvent:
     m_PersistentCalls:
       m_Calls: []

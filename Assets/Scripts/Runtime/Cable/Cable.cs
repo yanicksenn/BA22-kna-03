@@ -35,6 +35,8 @@ public class Cable : MonoBehaviour, IConductor
     [SerializeField, Space] 
     private float pullThreshold;
 
+    [SerializeField] private float distanceThreshold;
+
     [SerializeField, Space] 
     private UnityEvent onEnergyChangeEvent = new UnityEvent();
     public UnityEvent OnEnergyChangeEvent => onEnergyChangeEvent;
@@ -86,6 +88,7 @@ public class Cable : MonoBehaviour, IConductor
         UpdateOutputPosition();
         UpdateConnections();
         UpdateGrababbles();
+        UnsnapIfCableTooLong();
     }
 
     private void UpdateGrababbles()
@@ -172,6 +175,7 @@ public class Cable : MonoBehaviour, IConductor
 
         var directionOutput2Handle = handlePosition - outputPosition;
         connectionOutput2Handle.up = directionOutput2Handle;
+        
     }
 
     private void ResetPositionOfOutput()
@@ -223,5 +227,22 @@ public class Cable : MonoBehaviour, IConductor
     public UnityEvent GetEnergyChangeEvent()
     {
         return onEnergyChangeEvent;
+    }
+
+    private void UnsnapIfCableTooLong()
+    {
+        if (!output.IsSnapped)
+            return;
+        
+        var inputPosition = input.position;
+        var outputPosition = output.transform.position;
+
+        var distance = Vector3.Distance(outputPosition , inputPosition);
+        Debug.Log($"BA22 Distance of cable: {distance} with a threshehold of {distanceThreshold}");
+        if (distance < distanceThreshold)
+            return;
+        
+        output.Unsnap();
+        ResetPositionOfOutput();
     }
 }

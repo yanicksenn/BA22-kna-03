@@ -48,6 +48,15 @@ public abstract class AbstractSnappable<TS, TZ, TES, TEZ> : Grabbable
 
     public void Unsnap()
     {
+        if (!IsSnapped)
+            return;
+        
+        _snapZone.UnsnapSoft();
+        UnsnapSoft();
+    }
+
+    public void UnsnapSoft()
+    {
         var tmpSnapZone = _snapZone;
         _snapZone = null;
         
