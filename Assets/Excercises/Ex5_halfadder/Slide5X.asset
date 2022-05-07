@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: feea7839d00c499b8527ccb4252a4d5d, type: 3}
-  m_Name: Slide1X
+  m_Name: Slide5X
   m_EditorClassIdentifier: 
   title: Congratulations
   nextButton:
@@ -28,7 +28,7 @@ MonoBehaviour:
           m_MethodName: AddGatterIfNew
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 2846637376542692173, guid: c63ea3375f2d17f4fb8cb96a020e6bc5, type: 3}
+            m_ObjectArgument: {fileID: 1643656721597093547, guid: a546de1ce3befd348ab1969f73b5bf2e, type: 3}
             m_ObjectArgumentAssemblyTypeName: GatterLabel, BA22Runtime
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -38,5 +38,5 @@ MonoBehaviour:
     onHideEvent:
       m_PersistentCalls:
         m_Calls: []
-  text: You've completed the Exercise successfully, the NOT-Gate was added to the
-    dispenser
+  text: You've completed the Exercise successfully, the HALFADDER (HA) was added
+    to the dispenser

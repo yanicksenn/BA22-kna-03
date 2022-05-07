@@ -7,7 +7,7 @@ namespace Runtime.Gatter.BasicGatter
     [CreateAssetMenu(menuName = "BA22/Gatter Logic/Create AND", fileName = "GatterLogicAND")]
     public class GatterLogicAND : AbstractGatterLogic
     {
-        private void Awake()
+        protected virtual void Awake()
         {
             LabelText = "AND";
         }

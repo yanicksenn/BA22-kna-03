@@ -13,14 +13,13 @@ public class GatterDispenser : MonoBehaviour
     [SerializeField] private Transform refrencePoint;
 
     [SerializeField] private GatterList gatterList;
-
-    private List<Gatter> gatterListRefined;
+    
 
     private int currentIndex = 0;
 
-    private void ShowGatterName(Gatter currentGatter)
+    private void ShowGatterName(GatterLabel currentGatter)
     {
-        ShowText(currentGatter.GatterLogic.LabelText);
+        ShowText(currentGatter.GetLabel());
     }
 
     private void ShowText(string text)
@@ -46,53 +45,48 @@ public class GatterDispenser : MonoBehaviour
 
     private void UpdateLabel()
     {
-        if (gatterListRefined.Count == 0)
+        if (gatterList.Gatters.Count== 0)
         {
             ShowText("EMPTY");
         }
-        else ShowGatterName(GetCurentGatter());
+        else ShowGatterName(GetCurentGatterLabel());
     }
 
-    private Gatter GetCurentGatter()
+    private GatterLabel GetCurentGatterLabel()
     {
-        return gatterListRefined[currentIndex];
+        return gatterList.Gatters[currentIndex];
     }
 
     public void NextGatter()
     {
-        if(gatterListRefined.Count is 0 or 1)
+        if(gatterList.Gatters.Count is 0 or 1)
             return;
 
         currentIndex++;
-        if (currentIndex > gatterListRefined.Count -1)
+        if (currentIndex > gatterList.Gatters.Count -1)
             currentIndex = 0;
         UpdateLabel();
     }
 
     public void PreviousGatter()
     {
-        if(gatterListRefined.Count is 0 or 1)
+        if(gatterList.Gatters.Count is 0 or 1)
             return;
 
         currentIndex--;
         if (currentIndex < 0)
-            currentIndex = gatterListRefined.Count - 1;
+            currentIndex = gatterList.Gatters.Count - 1;
         UpdateLabel();
     }
 
     public void DispenseGatter()
     {
-        var currentGatter = gatterList.Gatters[currentIndex];
-        Instantiate(currentGatter, refrencePoint.position, refrencePoint.rotation);
+        var currentGatterLabel = gatterList.Gatters[currentIndex];
+        Instantiate(currentGatterLabel, refrencePoint.position, refrencePoint.rotation);
     }
 
     public void OnGatterAddedToList()
     {
-        gatterListRefined = gatterList.Gatters
-            .Select(g => g.GetComponentInChildren<Gatter>())
-            .Where(g => g != null)
-            .ToList();
-        Debug.Log($"BA22 should update label currently in our list:{gatterListRefined.Count}");
         UpdateLabel();
         
     }
