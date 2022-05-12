@@ -9,7 +9,6 @@ public class InGameMenuController : MonoBehaviour
     {
         canvas = GetComponent<Canvas>();
         HideMenu();
-        
     }
 
     private void Update()
@@ -31,7 +30,6 @@ public class InGameMenuController : MonoBehaviour
     public void ReloadScene()
     {
         var currentScene = SceneManager.GetActiveScene();
-
         SceneManager.LoadScene(currentScene.name);
     }
 
