@@ -7,27 +7,12 @@ namespace Runtime.Tutorial
     {
         [SerializeField] 
         private Presenter presenter;
-        public Presenter Presenter
-        {
-            get => presenter;
-            set => presenter = value;
-        }
 
         [SerializeField]
         private AbstractTutorialSlide tutorialSlide;
-        public AbstractTutorialSlide TutorialSlide
-        {
-            get => tutorialSlide;
-            set => tutorialSlide = value;
-        }
 
         [SerializeField] 
         private bool prohibitAutomaticNext;
-        public bool ProhibitManualNext
-        {
-            get => prohibitAutomaticNext;
-            set => prohibitAutomaticNext = value;
-        }
 
         private void Awake()
         {

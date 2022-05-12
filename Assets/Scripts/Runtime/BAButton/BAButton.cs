@@ -7,12 +7,12 @@ namespace Runtime.BAButton
     public class BAButton : MonoBehaviour
     {
         private static readonly int pushButton = Animator.StringToHash("OnButtonPush");
-        private Animator _buttonAnimator;
-        private bool isAnimationPlaying;
-
-
+        
         [SerializeField] private float cooldownPeriod = 1.0f;
         [SerializeField] private UnityEvent onButtonPush = new UnityEvent();
+        
+        private Animator _buttonAnimator;
+        private bool isAnimationPlaying;
 
         private void Awake()
         {

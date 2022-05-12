@@ -8,7 +8,6 @@ using UnityEngine;
 public class GatterDispenser : MonoBehaviour
 {
     [SerializeField] private TMP_Text gatterDisplay;
-    public TMP_Text GatterDisplay => gatterDisplay;
 
     [SerializeField] private Transform refrencePoint;
 

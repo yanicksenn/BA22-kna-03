@@ -9,19 +9,9 @@ namespace Runtime.Exercises
     {
         [SerializeField, Space]
         private string text;
-        public string Text
-        {
-            get => text;
-            set => text = value;
-        }
         
         [SerializeField, Space]
         private Sprite image;
-        public Sprite Image
-        {
-            get => image;
-            set => image = value;
-        }
 
         public string GetText()
         {

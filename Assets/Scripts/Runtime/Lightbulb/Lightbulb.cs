@@ -27,6 +27,4 @@ public class Lightbulb : MonoBehaviour
         
         else onLightBulbOff.Invoke();
     }
-    
-    
 }

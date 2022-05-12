@@ -6,11 +6,6 @@ public class Highlightable : MonoBehaviour
 {
     [SerializeField] 
     private Material highlightMaterial;
-    public Material HighlightMaterial
-    {
-        get => highlightMaterial;
-        set => highlightMaterial = value;
-    }
 
     private Material originalMaterial;
     private Renderer renderer;

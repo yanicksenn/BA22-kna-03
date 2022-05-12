@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 public static class DependableUtil
 {
     public static bool HasCyclicDependencies(IDependable currentDependable)

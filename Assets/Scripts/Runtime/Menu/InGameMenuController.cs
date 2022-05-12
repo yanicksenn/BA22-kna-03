@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -36,12 +33,6 @@ public class InGameMenuController : MonoBehaviour
         var currentScene = SceneManager.GetActiveScene();
 
         SceneManager.LoadScene(currentScene.name);
-
-        // if(currentScene == SceneManager.GetSceneByName("Scenes/MainScene") )
-        //     SceneManager.LoadScene("Scenes/MainScene");
-        //
-        // else if (currentScene == SceneManager.GetSceneByName("Scenes/TutorialScene"))
-        //     SceneManager.LoadScene("Scenes/TutorialScene");
     }
 
     public void ShowMenu()

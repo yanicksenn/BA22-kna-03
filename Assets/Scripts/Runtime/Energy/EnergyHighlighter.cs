@@ -8,6 +8,7 @@ public class EnergyHighlighter : MonoBehaviour
 
     private Renderer renderer;
     private Material originalMaterial;
+    
     private void Awake()
     {
         if (cable == null)

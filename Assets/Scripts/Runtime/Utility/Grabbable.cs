@@ -19,7 +19,7 @@ public class Grabbable : OVRGrabbable
         set => isActive = value;
     }
 
-    public bool IsGrabbed => isGrabbed; // || Selection.Contains(gameObject);
+    public bool IsGrabbed => isGrabbed;
     
     
     public override void GrabBegin(OVRGrabber hand, Collider grabPoint)

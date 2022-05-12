@@ -17,11 +17,6 @@ public class Gatter : AbstractSnappable<Gatter, GatterSnapZone, GatterEvent, Gat
 
     [SerializeField]
     private CableOutputSnapZone[] cableOutputSnapZones;
-    public CableOutputSnapZone[] CableOutputSnapZones
-    {
-        get => cableOutputSnapZones;
-        set => cableOutputSnapZones = value;
-    }
 
     [SerializeField, Space]
     private GatterSnapZoneEvent onSnapToBoard = new GatterSnapZoneEvent();

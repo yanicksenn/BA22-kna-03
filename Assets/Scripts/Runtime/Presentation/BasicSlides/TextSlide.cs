@@ -7,11 +7,6 @@ namespace Runtime.Presentation.BasicSlides
     {
         [SerializeField, Space]
         private string text;
-        public string Text
-        {
-            get => text;
-            set => text = value;
-        }
 
         public string GetText()
         {

@@ -5,7 +5,6 @@ using UnityEngine;
 
 namespace Runtime.Exercises
 {
-    
     public abstract class AbstractExerciseSlide : AbstractSlide
     {
         [SerializeField, Space] 

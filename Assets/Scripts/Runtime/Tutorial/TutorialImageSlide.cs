@@ -9,11 +9,6 @@ namespace Runtime.Tutorial
     {
         [SerializeField, Space]
         private Sprite image;
-        public Sprite Image
-        {
-            get => image;
-            set => image = value;
-        }
 
         public Sprite GetImage()
         {

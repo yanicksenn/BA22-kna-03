@@ -10,7 +10,6 @@ public class Toggle : MonoBehaviour
     private Animator _toggleAnimator;
     private bool isAnimationPlaying;
     private bool toggleOn;
-    public bool ToggleOn => toggleOn;
 
     [SerializeField] private float cooldownPeriod = 1.0f;
    

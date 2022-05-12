@@ -5,11 +5,9 @@ public class GatterSnapZone : AbstractSnapZone<Gatter, GatterSnapZone, GatterEve
 {
     [SerializeField]
     private GatterEvent onSnapEvent = new GatterEvent();
-    public GatterEvent OnSnapEvent => onSnapEvent;
 
     [SerializeField]
     private GatterEvent onUnsnapEvent = new GatterEvent();
-    public GatterEvent OnUnsnapEvent => onUnsnapEvent;
 
     public override GatterEvent GetSnapEvent()
     {

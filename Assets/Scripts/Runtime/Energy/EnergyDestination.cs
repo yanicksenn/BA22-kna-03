@@ -6,9 +6,6 @@ using UnityEngine.Events;
 [ExecuteAlways]
 public class EnergyDestination : MonoBehaviour, IConductor
 {
-    private const string TriggerName = "LightBulbTrigger";
-    private static readonly int LightBulbTrigger = Animator.StringToHash(TriggerName);
-
     [SerializeField] private string text;
     [SerializeField] private TMP_Text label;
     
@@ -20,15 +17,12 @@ public class EnergyDestination : MonoBehaviour, IConductor
     
     [SerializeField, Space]
     private CableOutputConnectorEvent onConnect = new CableOutputConnectorEvent();
-    public CableOutputConnectorEvent OnConnect => onConnect;
 
     [SerializeField]
     private CableOutputConnectorEvent onDisonnect = new CableOutputConnectorEvent();
-    public CableOutputConnectorEvent OnDisonnect => onDisonnect;
 
     [SerializeField, Space] 
     private UnityEvent onEnergyChangeEvent = new UnityEvent();
-    public UnityEvent OnEnergyChangeEvent => onEnergyChangeEvent;
 
     private EnergyType energyType = EnergyType.Invalid;
 
