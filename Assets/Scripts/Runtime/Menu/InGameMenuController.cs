@@ -13,8 +13,13 @@ public class InGameMenuController : MonoBehaviour
 
     private void Update()
     {
-        if (OVRInput.GetDown(OVRInput.Button.Start) || OVRInput.GetDown(OVRInput.Button.One))
-            ShowMenu();
+        if (ShouldToggleMenu())
+            ToggleMenu();
+    }
+
+    private static bool ShouldToggleMenu()
+    {
+        return OVRInput.GetDown(OVRInput.Button.Start) || OVRInput.GetDown(OVRInput.Button.One);
     }
     
     public void ExitScene()
@@ -33,12 +38,24 @@ public class InGameMenuController : MonoBehaviour
         SceneManager.LoadScene(currentScene.name);
     }
 
-    public void ShowMenu()
+    private void ToggleMenu()
+    {
+        if (canvas.enabled)
+        {
+            HideMenu();
+        } 
+        else
+        {
+            ShowMenu();
+        }
+    }
+
+    private void ShowMenu()
     {
         canvas.enabled = true;
     }
 
-    public void HideMenu()
+    private void HideMenu()
     {
         canvas.enabled = false;
     }
