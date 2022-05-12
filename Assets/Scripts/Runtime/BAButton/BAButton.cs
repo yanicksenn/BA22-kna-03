@@ -9,8 +9,9 @@ namespace Runtime.BAButton
         private static readonly int pushButton = Animator.StringToHash("OnButtonPush");
         private Animator _buttonAnimator;
         private bool isAnimationPlaying;
-        
 
+
+        [SerializeField] private float cooldownPeriod = 1.0f;
         [SerializeField] private UnityEvent onButtonPush = new UnityEvent();
 
         private void Awake()
@@ -32,7 +33,8 @@ namespace Runtime.BAButton
             yield return new WaitForSeconds(animationLength);
             
             onButtonPush.Invoke();
-        
+
+            yield return new WaitForSeconds(cooldownPeriod);
             isAnimationPlaying = false;
         }
     }
