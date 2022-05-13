@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Runtime.Gatter.BasicGatter;
-using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -28,11 +28,9 @@ public class Gatter : AbstractSnappable<Gatter, GatterSnapZone, GatterEvent, Gat
     
     [SerializeField, Space]
     private CableOutputConnectorEvent onConnect = new CableOutputConnectorEvent();
-    public CableOutputConnectorEvent OnConnect => onConnect;
 
     [SerializeField]
     private CableOutputConnectorEvent onDisonnect = new CableOutputConnectorEvent();
-    public CableOutputConnectorEvent OnDisonnect => onDisonnect;
 
     [SerializeField, Space] 
     private UnityEvent onEnergyChangeEvent = new UnityEvent();
@@ -57,7 +55,7 @@ public class Gatter : AbstractSnappable<Gatter, GatterSnapZone, GatterEvent, Gat
         
         OnSnapToBoard.AddListener(OnEnergyChange);
         OnUnsnapFromBoard.AddListener(OnEnergyChange);
-        
+        AddSnapAndUnsnapEventsOnCoExistingGatters();
     }
 
     private void OnDisable()
@@ -67,7 +65,31 @@ public class Gatter : AbstractSnappable<Gatter, GatterSnapZone, GatterEvent, Gat
         
         OnSnapToBoard.RemoveListener(OnEnergyChange);
         OnUnsnapFromBoard.RemoveListener(OnEnergyChange);
-        
+        RemoveSnapAndUnsnapEventsOnCoExistingGatters();
+    }
+
+    private void AddSnapAndUnsnapEventsOnCoExistingGatters()
+    {
+        DoForEachOtherGatter(g =>
+        {
+            g.OnSnapToBoard.AddListener(OnEnergyChange);
+            g.OnUnsnapFromBoard.AddListener(OnEnergyChange);
+        });
+    }
+
+    private void RemoveSnapAndUnsnapEventsOnCoExistingGatters()
+    {
+        DoForEachOtherGatter(g =>
+        {
+            g.OnSnapToBoard.RemoveListener(OnEnergyChange);
+            g.OnUnsnapFromBoard.RemoveListener(OnEnergyChange);
+        });
+    }
+
+    private void DoForEachOtherGatter(Action<Gatter> action)
+    {
+        foreach (var gatter in coExistingGatters.Where(g => g != this))
+            action.Invoke(gatter);
     }
 
     private void OnEnergyChange()
