@@ -40,12 +40,20 @@ public class CableOutputSnapZone : AbstractSnapZone<CableOutputConnector, CableO
 
     public override bool Accepts(CableOutputConnector snappable)
     {
+        // Accept snappables only if not snapped yet
         if (!base.Accepts(snappable))
             return false;
 
-        if (Gatter != null && Gatter.IsGrabbed)
+        // If owning element is a gatter and is not snapped
+        // then dont accept it.
+        if (Gatter != null && !Gatter.IsSnapped)
             return false;
+
+        // Cable does not belong to gatter
+        if (snappable.Cable.Gatter == null)
+            return true;
         
+        // Don't allow to snap with itself
         return snappable.Cable.Gatter != Gatter;
     }
 
