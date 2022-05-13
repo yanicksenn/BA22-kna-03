@@ -8,7 +8,7 @@ namespace Runtime.BAButton
     {
         private static readonly int pushButton = Animator.StringToHash("OnButtonPush");
         
-        [SerializeField] private float cooldownPeriod = 1.0f;
+        [SerializeField] private float cooldownPeriod = 0.5f;
         [SerializeField] private UnityEvent onButtonPush = new UnityEvent();
         
         private Animator _buttonAnimator;

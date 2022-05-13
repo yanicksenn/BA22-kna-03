@@ -11,7 +11,7 @@ public class Toggle : MonoBehaviour
     private bool isAnimationPlaying;
     private bool toggleOn;
 
-    [SerializeField] private float cooldownPeriod = 1.0f;
+    [SerializeField] private float cooldownPeriod = 0.5f;
    
     [SerializeField] private UnityEvent onToggleOn = new UnityEvent(); 
     public UnityEvent OnToggleOn => onToggleOn;

@@ -351,6 +351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb73cef6b694b6b98a2c70e97e72851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldownPeriod: 0.5
   onButtonPush:
     m_PersistentCalls:
       m_Calls: []
