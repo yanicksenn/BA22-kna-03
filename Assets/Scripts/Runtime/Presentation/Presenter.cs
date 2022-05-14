@@ -12,11 +12,11 @@ namespace Runtime.Presentation
     public class Presenter : MonoBehaviour
     {
         [SerializeField]
-        private Presentation presentation;
-        public Presentation Presentation
+        private PresenterContent presenterContent;
+        public PresenterContent PresenterContent
         {
-            get => presentation;
-            set => presentation = value;
+            get => presenterContent;
+            set => presenterContent = value;
         }
 
         [SerializeField, Space] 
@@ -102,14 +102,26 @@ namespace Runtime.Presentation
 
         private AbstractSlide GetCurrentSlide()
         {
-            if (presentation == null)
+            if (presenterContent == null || presenterContent.CurrentPresentation == null)
                 return null;
 
             var currentSlideIndex = GetCurrentSlideIndex();
-            if (currentSlideIndex < 0 || currentSlideIndex >= presentation.Slides.Count)
+            if (currentSlideIndex < 0 || currentSlideIndex >= presenterContent.CurrentPresentation.Slides.Count)
                 return null;
 
-            return presentation.Slides[currentSlideIndex];
+            return presenterContent.CurrentPresentation.Slides[currentSlideIndex];
+        }
+
+        private void OnEnable()
+        {
+            if (presenterContent != null)
+                presenterContent.OnPresentationChanged.AddListener(Reset);
+        }
+
+        private void OnDisable()
+        {
+            if (presenterContent != null)
+                presenterContent.OnPresentationChanged.RemoveListener(Reset);
         }
 
         private void Start()
@@ -193,7 +205,7 @@ namespace Runtime.Presentation
 
         public void Next()
         {
-            if (presentation == null)
+            if (presenterContent == null || presenterContent.CurrentPresentation == null)
                 return;
 
             if (NavigationConditions.Count > 0 &&
@@ -208,7 +220,7 @@ namespace Runtime.Presentation
 
         public void Previous()
         {
-            if (presentation == null)
+            if (presenterContent == null || presenterContent.CurrentPresentation == null)
                 return;
             
             FireHideSlideEvent();
@@ -244,13 +256,13 @@ namespace Runtime.Presentation
 
         private int GetCurrentSlideIndex()
         {
-            if (Presentation == null)
+            if (PresenterContent == null || presenterContent.CurrentPresentation == null)
                 return 0;
             
-            if (Presentation.Slides.Count == 0)
+            if (PresenterContent.CurrentPresentation.Slides.Count == 0)
                 return 0;
             
-            return Math.Clamp(_currentSlideIndex, 0, presentation.Slides.Count - 1);
+            return Math.Clamp(_currentSlideIndex, 0, presenterContent.CurrentPresentation.Slides.Count - 1);
         }
 
         private bool HasPrevious()
@@ -260,10 +272,10 @@ namespace Runtime.Presentation
 
         private bool HasNext()
         {
-            if (presentation == null)
+            if (presenterContent == null || presenterContent.CurrentPresentation == null)
                 return false;
             
-            return GetCurrentSlideIndex() < presentation.Slides.Count - 1;
+            return GetCurrentSlideIndex() < presenterContent.CurrentPresentation.Slides.Count - 1;
         }
         
     }

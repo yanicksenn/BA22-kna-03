@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571336, b: 0.3069219, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3983,6 +3983,18 @@ PrefabInstance:
       propertyPath: presentation
       value: 
       objectReference: {fileID: 11400000, guid: 513a44f041bd64bc0b7e8a14575463b2, type: 2}
+    - target: {fileID: 5563129048107590356, guid: d566657b2bb1e6148b8da2d96cea80c7, type: 3}
+      propertyPath: presenterContent
+      value: 
+      objectReference: {fileID: 11400000, guid: 11d8b8956d15a2b45928d0fd867e3555, type: 2}
+    - target: {fileID: 5563129048107590443, guid: d566657b2bb1e6148b8da2d96cea80c7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563129048107590443, guid: d566657b2bb1e6148b8da2d96cea80c7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.675
+      objectReference: {fileID: 0}
     - target: {fileID: 5563129048244503857, guid: d566657b2bb1e6148b8da2d96cea80c7, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -4037,6 +4049,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5563129048910059679, guid: d566657b2bb1e6148b8da2d96cea80c7, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563129049729691105, guid: d566657b2bb1e6148b8da2d96cea80c7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563129049729691105, guid: d566657b2bb1e6148b8da2d96cea80c7, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5563129049729691116, guid: d566657b2bb1e6148b8da2d96cea80c7, type: 3}
@@ -4207,6 +4227,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.000000014901161
       objectReference: {fileID: 0}
+    - target: {fileID: 7434356953167478780, guid: d566657b2bb1e6148b8da2d96cea80c7, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 781401651}
     - target: {fileID: 7934263150269434753, guid: d566657b2bb1e6148b8da2d96cea80c7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4323,6 +4347,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.000000044703484
       objectReference: {fileID: 0}
+    - target: {fileID: 9087226637143637786, guid: d566657b2bb1e6148b8da2d96cea80c7, type: 3}
+      propertyPath: pointer
+      value: 
+      objectReference: {fileID: 979098234}
     - target: {fileID: 9106188331434995335, guid: d566657b2bb1e6148b8da2d96cea80c7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
