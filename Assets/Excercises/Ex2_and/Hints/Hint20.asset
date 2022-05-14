@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0345d7c6107c45eabc8b404b227e99e2, type: 3}
   m_Name: Hint20
   m_EditorClassIdentifier: 
-  title: 'HInt for Ex2 '
+  title: Exercise 2 - First Hint
   nextButton:
-    labelText: Show Hint (-10P)
+    labelText: Show Hint
     prohibitsManualNavigation: 0
   previousButton:
     labelText: Previous Hint
@@ -26,4 +26,4 @@ MonoBehaviour:
     onHideEvent:
       m_PersistentCalls:
         m_Calls: []
-  image: {fileID: 21300000, guid: 71a85c9864ef0d14c82670f03ab12979, type: 3}
+  image: {fileID: 21300000, guid: f0bae9bc5c7a7bf4f93da4667210fbdb, type: 3}

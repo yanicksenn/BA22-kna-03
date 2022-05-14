@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: gatterLogic
       value: 
       objectReference: {fileID: 11400000, guid: cda2759e6eee2f8459f797711cdee03e, type: 2}
+    - target: {fileID: 5022359943723075594, guid: ac5655b1ed21c4a47997aacfce34a1d8, type: 3}
+      propertyPath: m_text
+      value: FA
+      objectReference: {fileID: 0}
     - target: {fileID: 5790318303905866242, guid: ac5655b1ed21c4a47997aacfce34a1d8, type: 3}
       propertyPath: gatterLogic
       value: 

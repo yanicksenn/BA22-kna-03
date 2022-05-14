@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: HintPres02
   m_EditorClassIdentifier: 
   slides:
-  - {fileID: 11400000, guid: 2255aeb13486074498956a94a3c1a27f, type: 2}
-  - {fileID: 11400000, guid: 2d287a0f3f9d8314cb0eab07b32303f6, type: 2}
+  - {fileID: 11400000, guid: 802ee90bfe0466e48ae32fb06920a75c, type: 2}
+  - {fileID: 11400000, guid: 928498227f95bf04a87ab62ebfbabd48, type: 2}
+  - {fileID: 11400000, guid: 586bd2ba62671b6408bc39fd917ff4cf, type: 2}
+  - {fileID: 11400000, guid: e17e60e8584d1664bbffc833c6a3653c, type: 2}

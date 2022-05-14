@@ -28,7 +28,7 @@ MonoBehaviour:
           m_MethodName: SetCurrentPresentation
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: f88c94973cea05a44924e01b9831dc1f, type: 2}
+            m_ObjectArgument: {fileID: 11400000, guid: 99d404c8568f9b14fa87dbf4d85effde, type: 2}
             m_ObjectArgumentAssemblyTypeName: Runtime.Presentation.Presentation,
               BA22Runtime
             m_IntArgument: 0

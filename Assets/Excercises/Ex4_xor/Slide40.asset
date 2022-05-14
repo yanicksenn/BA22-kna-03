@@ -22,7 +22,20 @@ MonoBehaviour:
   slideEvents:
     onShowEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 11400000, guid: c1b72c27f8279ba49b316b2e6cf087e7, type: 2}
+          m_TargetAssemblyTypeName: Runtime.Presentation.PresenterContent, BA22Runtime
+          m_MethodName: SetCurrentPresentation
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: 0563b3f02ab72b64488421f3a1df767a, type: 2}
+            m_ObjectArgumentAssemblyTypeName: Runtime.Presentation.Presentation,
+              BA22Runtime
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     onHideEvent:
       m_PersistentCalls:
         m_Calls: []

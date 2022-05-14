@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0345d7c6107c45eabc8b404b227e99e2, type: 3}
-  m_Name: Hint01
+  m_Name: Hint5X
   m_EditorClassIdentifier: 
-  title: First Hint
+  title: Exercise 5 - Solution
   nextButton:
-    labelText: Show Hint (-10P)
-    prohibitsManualNavigation: 0
+    labelText: Show Solution
+    prohibitsManualNavigation: 1
   previousButton:
     labelText: Previous Hint
     prohibitsManualNavigation: 0
@@ -26,4 +26,4 @@ MonoBehaviour:
     onHideEvent:
       m_PersistentCalls:
         m_Calls: []
-  image: {fileID: 21300000, guid: 39ec61f72719b6842940136b54eeaf6b, type: 3}
+  image: {fileID: 21300000, guid: 062c49d36aaa1cd4a814867a7527864b, type: 3}

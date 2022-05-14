@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feea7839d00c499b8527ccb4252a4d5d, type: 3}
   m_Name: NeedAHintXX
   m_EditorClassIdentifier: 
-  title: SHOW HINT ?
+  title: Exercise 1 - Hints
   nextButton:
-    labelText: Show Hint (-10P)
+    labelText: Show Hint
     prohibitsManualNavigation: 0
   previousButton:
     labelText: Previous
@@ -26,4 +26,4 @@ MonoBehaviour:
     onHideEvent:
       m_PersistentCalls:
         m_Calls: []
-  text: ???????
+  text: Do you need a hint?

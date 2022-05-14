@@ -55,9 +55,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: HA
       objectReference: {fileID: 0}
+    - target: {fileID: 2321398005208423504, guid: 266a175b52d3fc84ea3d5cdb8b98bf2b, type: 3}
+      propertyPath: m_text
+      value: 02
+      objectReference: {fileID: 0}
+    - target: {fileID: 2936043468971318795, guid: 266a175b52d3fc84ea3d5cdb8b98bf2b, type: 3}
+      propertyPath: text
+      value: HA
+      objectReference: {fileID: 0}
     - target: {fileID: 2936043468971318795, guid: 266a175b52d3fc84ea3d5cdb8b98bf2b, type: 3}
       propertyPath: gatterLabel
       value: HA
+      objectReference: {fileID: 0}
+    - target: {fileID: 4480421049562296492, guid: 266a175b52d3fc84ea3d5cdb8b98bf2b, type: 3}
+      propertyPath: m_text
+      value: O1
       objectReference: {fileID: 0}
     - target: {fileID: 5229800102561783220, guid: 266a175b52d3fc84ea3d5cdb8b98bf2b, type: 3}
       propertyPath: gatterLogic
@@ -67,5 +79,9 @@ PrefabInstance:
       propertyPath: gatterLogic
       value: 
       objectReference: {fileID: 11400000, guid: 046b954dd26f59e4aa8732c603f9859d, type: 2}
+    - target: {fileID: 6727345983463798371, guid: 266a175b52d3fc84ea3d5cdb8b98bf2b, type: 3}
+      propertyPath: m_text
+      value: HA
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 266a175b52d3fc84ea3d5cdb8b98bf2b, type: 3}

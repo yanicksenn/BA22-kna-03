@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b80a40091164bdaaf36d86e37f52dc5, type: 3}
+  m_Name: HintPres04
+  m_EditorClassIdentifier: 
+  slides:
+  - {fileID: 11400000, guid: e6aad75a7a78fb2499dd5600f814b028, type: 2}
+  - {fileID: 11400000, guid: e214c369b926d7d42b66398ca9fb0764, type: 2}
+  - {fileID: 11400000, guid: be30fac0b074ca54496f45dc60d2fdbe, type: 2}
+  - {fileID: 11400000, guid: 9662f5d81c3a3c84582f6e32a85ff593, type: 2}
