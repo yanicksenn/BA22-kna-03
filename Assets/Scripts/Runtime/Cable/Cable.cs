@@ -262,7 +262,6 @@ public class Cable : MonoBehaviour, IConductor
         var outputPosition = output.transform.position;
 
         var distance = Vector3.Distance(outputPosition , inputPosition);
-        Debug.Log($"BA22 Distance of cable: {distance} with a threshehold of {distanceThreshold}");
         if (distance < distanceThreshold)
             return;
         
