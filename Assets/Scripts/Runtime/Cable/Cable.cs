@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -44,6 +45,8 @@ public class Cable : MonoBehaviour, IConductor
     private UnityEvent onCablePulled = new UnityEvent();
     public UnityEvent OnCablePulled => onCablePulled;
 
+    public bool IsConnected => output.IsSnapped;
+
     private EnergyType energyType;
 
     private Vector3 _initialScaleInput2Handle;
@@ -53,32 +56,20 @@ public class Cable : MonoBehaviour, IConductor
     {
         _initialScaleInput2Handle = connectionInput2Handle.localScale;
         _initialScaleOutput2Handle = connectionOutput2Handle.localScale;
+        
+        SetToOutputMode();
     }
 
     private void OnEnable()
     {
-        handle.OnRelease.AddListener(OnReleaseHandle);
-        
-        if (gatter != null)
-            gatter.OnEnergyChangeEvent.AddListener(OnEnergyChange);
-        
-        if (source != null)
-            source.OnEnergyChangeEvent.AddListener(OnEnergyChange);
-        
+        AddListeners();
         OnEnergyChange();
         UpdateConnections();
     }
     
     private void OnDisable()
     {
-        handle.OnRelease.RemoveListener(OnReleaseHandle);
-        
-        if (gatter != null)
-            gatter.OnEnergyChangeEvent.RemoveListener(OnEnergyChange);
-        
-        if (source != null)
-            source.OnEnergyChangeEvent.RemoveListener(OnEnergyChange);
-        
+        RemoveListeners();   
         OnEnergyChange();
     }
 
@@ -86,22 +77,55 @@ public class Cable : MonoBehaviour, IConductor
     {
         UpdateOutputPosition();
         UpdateConnections();
-        UpdateGrababbles();
         UnsnapIfCableTooLong();
     }
 
-    private void UpdateGrababbles()
+    private void AddListeners()
     {
-        if (output.IsSnapped)
-        {
-            output.IsActive = false;
-            handle.IsActive = true;
-        }
-        else
-        {
-            output.IsActive = true;
-            handle.IsActive = false;
-        }
+        handle.OnRelease.AddListener(OnReleaseHandle);
+        output.OnConnect.AddListener(OnCableConnect);
+        output.OnDisconnect.AddListener(OnCableDisconnect);
+        
+        if (gatter != null)
+            gatter.OnEnergyChangeEvent.AddListener(OnEnergyChange);
+        
+        if (source != null)
+            source.OnEnergyChangeEvent.AddListener(OnEnergyChange);
+    }
+
+    private void RemoveListeners()
+    {
+        handle.OnRelease.RemoveListener(OnReleaseHandle);
+        output.OnConnect.RemoveListener(OnCableConnect);
+        output.OnDisconnect.RemoveListener(OnCableDisconnect);
+        
+        if (gatter != null)
+            gatter.OnEnergyChangeEvent.RemoveListener(OnEnergyChange);
+        
+        if (source != null)
+            source.OnEnergyChangeEvent.RemoveListener(OnEnergyChange);
+    }
+
+    private void OnCableConnect(CableOutputSnapZone snapZone)
+    {
+        SetToHandleMode();
+    }
+
+    private void OnCableDisconnect(CableOutputSnapZone snapZone)
+    {
+        SetToOutputMode();
+    }
+
+    private void SetToOutputMode()
+    {
+        output.IsActive = true;
+        handle.IsActive = false;
+    }
+
+    private void SetToHandleMode()
+    {
+        output.IsActive = false;
+        handle.IsActive = true;
     }
 
     private void UpdateOutputPosition()
@@ -115,7 +139,8 @@ public class Cable : MonoBehaviour, IConductor
         // If the distance between the handle and the desired position is greater than the
         // the threshold, then invoke the pull event.
         var distance = Vector3.Distance(handle.transform.position, GetDesiredHandlePosition());
-        if (!(distance >= pullThreshold)) 
+        var notExceedingThreshold = !(distance >= pullThreshold);
+        if (notExceedingThreshold) 
             return;
         
         output.SnapZone.Unsnap();
