@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feea7839d00c499b8527ccb4252a4d5d, type: 3}
   m_Name: Slide02
   m_EditorClassIdentifier: 
-  title: Introducion
+  title: Introduction
   nextButton:
     labelText: Next
     prohibitsManualNavigation: 0
