@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Runtime.Gatter.BasicGatter;
 using UnityEngine;
@@ -25,71 +24,52 @@ public class Gatter : AbstractSnappable<Gatter, GatterSnapZone, GatterEvent, Gat
     [SerializeField]
     private GatterSnapZoneEvent onUnsnapFromBoard = new GatterSnapZoneEvent();
     public GatterSnapZoneEvent OnUnsnapFromBoard => onUnsnapFromBoard;
-    
-    [SerializeField, Space]
-    private CableOutputConnectorEvent onConnect = new CableOutputConnectorEvent();
-
-    [SerializeField]
-    private CableOutputConnectorEvent onDisonnect = new CableOutputConnectorEvent();
 
     [SerializeField, Space] 
     private UnityEvent onEnergyChangeEvent = new UnityEvent();
     public UnityEvent OnEnergyChangeEvent => onEnergyChangeEvent;
 
     private EnergyType energyType = EnergyType.Invalid;
-
     private Gatter[] coExistingGatters;
+    
     public bool HasCoExistingGatters => coExistingGatters != null && coExistingGatters.Length > 1;
 
     protected override void Awake()
     {
         base.Awake();
-
         coExistingGatters = GetComponents<Gatter>();
     }
 
     private void OnEnable()
     {
-        foreach (var cableOutputSnapZone in cableOutputSnapZones)
-            cableOutputSnapZone.OnEnergyChangeEvent.AddListener(OnEnergyChange);
-        
-        OnSnapToBoard.AddListener(OnEnergyChange);
-        OnUnsnapFromBoard.AddListener(OnEnergyChange);
-        AddSnapAndUnsnapEventsOnCoExistingGatters();
+        AddListeners();
     }
 
     private void OnDisable()
     {
+        RemoveListeners();
+    }
+
+    private void AddListeners()
+    {
+        foreach (var cableOutputSnapZone in cableOutputSnapZones)
+            cableOutputSnapZone.OnEnergyChangeEvent.AddListener(OnEnergyChange);
+        
+        foreach (var gatter in coExistingGatters) {
+            gatter.OnSnapToBoard.AddListener(OnEnergyChange);
+            gatter.OnUnsnapFromBoard.AddListener(OnEnergyChange);
+        }
+    }
+
+    private void RemoveListeners()
+    {
         foreach (var cableOutputSnapZone in cableOutputSnapZones)
             cableOutputSnapZone.OnEnergyChangeEvent.RemoveListener(OnEnergyChange);
         
-        OnSnapToBoard.RemoveListener(OnEnergyChange);
-        OnUnsnapFromBoard.RemoveListener(OnEnergyChange);
-        RemoveSnapAndUnsnapEventsOnCoExistingGatters();
-    }
-
-    private void AddSnapAndUnsnapEventsOnCoExistingGatters()
-    {
-        DoForEachOtherGatter(g =>
-        {
-            g.OnSnapToBoard.AddListener(OnEnergyChange);
-            g.OnUnsnapFromBoard.AddListener(OnEnergyChange);
-        });
-    }
-
-    private void RemoveSnapAndUnsnapEventsOnCoExistingGatters()
-    {
-        DoForEachOtherGatter(g =>
-        {
-            g.OnSnapToBoard.RemoveListener(OnEnergyChange);
-            g.OnUnsnapFromBoard.RemoveListener(OnEnergyChange);
-        });
-    }
-
-    private void DoForEachOtherGatter(Action<Gatter> action)
-    {
-        foreach (var gatter in coExistingGatters.Where(g => g != this))
-            action.Invoke(gatter);
+        foreach (var gatter in coExistingGatters) {
+            gatter.OnSnapToBoard.RemoveListener(OnEnergyChange);
+            gatter.OnUnsnapFromBoard.RemoveListener(OnEnergyChange);
+        }
     }
 
     private void OnEnergyChange()
@@ -100,7 +80,6 @@ public class Gatter : AbstractSnappable<Gatter, GatterSnapZone, GatterEvent, Gat
         
         energyType = newEnergyType;
         GetEnergyChangeEvent().Invoke();
-        
     }
 
     private void OnEnergyChange(GatterSnapZone gatterSnapZone)
@@ -156,9 +135,6 @@ public class Gatter : AbstractSnappable<Gatter, GatterSnapZone, GatterEvent, Gat
 
     private bool IsCurrentOrCoExistingGatterSnapped()
     {
-        if (IsSnapped)
-            return true;
-
-        return HasCoExistingGatters && coExistingGatters.Any(g => g.IsSnapped);
+        return IsSnapped || HasCoExistingGatters && coExistingGatters.Any(g => g.IsSnapped);
     }
 }
