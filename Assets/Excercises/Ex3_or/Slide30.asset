@@ -26,6 +26,6 @@ MonoBehaviour:
     onHideEvent:
       m_PersistentCalls:
         m_Calls: []
-  truthTableFile: {fileID: 4900000, guid: 6dfc57b95b5db55439aef2da041f43fa, type: 3}
+  truthTableFile: {fileID: 4900000, guid: e3347d8461f52be468cc3c3e9165debb, type: 3}
   text: Build an OR-Gate with the provided gates
   image: {fileID: 21300000, guid: 5e4ccf9b64122a64cade2fb746dbaa4c, type: 3}
