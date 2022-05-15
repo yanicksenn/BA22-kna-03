@@ -73,6 +73,13 @@ public class Cable : MonoBehaviour, IConductor
         OnEnergyChange();
     }
 
+    private void OnDestroy()
+    {
+        Unsnap();
+        Destroy(handle);
+        Destroy(output);
+    }
+
     private void LateUpdate()
     {
         UpdateOutputPosition();
@@ -265,6 +272,11 @@ public class Cable : MonoBehaviour, IConductor
         if (distance < distanceThreshold)
             return;
         
+        Unsnap();
+    }
+
+    private void Unsnap()
+    {
         output.Unsnap();
         ResetPositionOfOutput();
     }

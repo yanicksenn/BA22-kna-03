@@ -30,14 +30,18 @@ public class Gatter : AbstractSnappable<Gatter, GatterSnapZone, GatterEvent, Gat
     public UnityEvent OnEnergyChangeEvent => onEnergyChangeEvent;
 
     private EnergyType energyType = EnergyType.Invalid;
+    private GatterLabel gatterLabel;
     private Gatter[] coExistingGatters;
+    private Cable[] cables;
     
     public bool HasCoExistingGatters => coExistingGatters != null && coExistingGatters.Length > 1;
 
     protected override void Awake()
     {
         base.Awake();
+        gatterLabel = GetComponentInParent<GatterLabel>();
         coExistingGatters = GetComponents<Gatter>();
+        cables = gatterLabel.GetComponentsInChildren<Cable>();
     }
 
     private void OnEnable()
@@ -48,6 +52,15 @@ public class Gatter : AbstractSnappable<Gatter, GatterSnapZone, GatterEvent, Gat
     private void OnDisable()
     {
         RemoveListeners();
+    }
+
+    protected override void OnDestroy()
+    {
+        base.OnDestroy();
+        Destroy(gatterLabel.gameObject);
+        
+        foreach (var cable in cables)
+            Destroy(cable.gameObject);
     }
 
     private void AddListeners()
