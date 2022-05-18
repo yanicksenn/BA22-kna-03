@@ -23,30 +23,25 @@ public class EnergySource : MonoBehaviour, IConductor
 
     public void enableCurrent()
     {
-        ChangeEnergy(EnergyType.True);
+        SetEnergy(EnergyType.True);
     }
 
     public void disableCurrent()
     {
-        ChangeEnergy(EnergyType.False);
-    }
-    
-    public void setCurrent(int energy)
-    {
-        if(energy ==1)
-            ChangeEnergy(EnergyType.True);
-        else
-        {
-            ChangeEnergy(EnergyType.False);
-        }
+        SetEnergy(EnergyType.False);
     }
 
     public IEnumerable<IDependable> GetDependencies()
     {
         return new List<IDependable>();
     }
+    
+    public void SetEnergy(int energy)
+    {
+        SetEnergy(energy == 1 ? EnergyType.True : EnergyType.False);
+    }
 
-    private void ChangeEnergy(EnergyType energyType)
+    public void SetEnergy(EnergyType energyType)
     {
         if (this.energyType == energyType) 
             return;

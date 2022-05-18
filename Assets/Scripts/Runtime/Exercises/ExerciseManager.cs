@@ -58,10 +58,10 @@ public class ExerciseManager : MonoBehaviour, INavigationInterceptor
             var destinationC = testCase[6];
             var destinationD = testCase[7];
 
-            energySources[0].setCurrent(source0);
-            energySources[1].setCurrent(source1);
-            energySources[2].setCurrent(source2);
-            energySources[3].setCurrent(source3);
+            energySources[0].SetEnergy(source0);
+            energySources[1].SetEnergy(source1);
+            energySources[2].SetEnergy(source2);
+            energySources[3].SetEnergy(source3);
 
             if (CheckDestinationEnergy(energyDestinations[0], destinationA)
                 && CheckDestinationEnergy(energyDestinations[1], destinationB)
@@ -73,10 +73,10 @@ public class ExerciseManager : MonoBehaviour, INavigationInterceptor
             break;
         }
         
-        // energySources[0].setCurrent(originalEnergy0);
-        // energySources[1].setCurrent(originalEnergy1);
-        // energySources[2].setCurrent(originalEnergy2);
-        // energySources[3].setCurrent(originalEnergy3);
+        energySources[0].SetEnergy(originalEnergy0);
+        energySources[1].SetEnergy(originalEnergy1);
+        energySources[2].SetEnergy(originalEnergy2);
+        energySources[3].SetEnergy(originalEnergy3);
         
         return result;
     }
