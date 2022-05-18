@@ -76,8 +76,12 @@ public class Cable : MonoBehaviour, IConductor
     private void OnDestroy()
     {
         Unsnap();
-        Destroy(handle);
-        Destroy(output);
+
+        if (!Application.isPlaying) 
+            return;
+        
+        Destroy(handle.gameObject);
+        Destroy(output.gameObject);
     }
 
     private void LateUpdate()
@@ -279,5 +283,7 @@ public class Cable : MonoBehaviour, IConductor
     {
         output.Unsnap();
         ResetPositionOfOutput();
+        PlaceHandleBetweenInputAndOutput();
+        SetToOutputMode();
     }
 }

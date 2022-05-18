@@ -73,4 +73,9 @@ public abstract class AbstractSnappable<TS, TZ, TES, TEZ> : Grabbable
             .Where(c => c != null)
             .Any(c => c.Accepts((TS) this));
     }
+
+    protected override void OnDestroy()
+    {
+        Unsnap();
+    }
 }

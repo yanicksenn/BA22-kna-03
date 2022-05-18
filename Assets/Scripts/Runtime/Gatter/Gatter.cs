@@ -28,12 +28,17 @@ public class Gatter : AbstractSnappable<Gatter, GatterSnapZone, GatterEvent, Gat
     [SerializeField, Space] 
     private UnityEvent onEnergyChangeEvent = new UnityEvent();
     public UnityEvent OnEnergyChangeEvent => onEnergyChangeEvent;
+    
+    /// <summary>
+    /// Returns of any of the co-existing gatters has been snapped.
+    /// </summary>
+    public bool IsAnySnapped => coExistingGatters.Any(g => g.IsSnapped);
 
     private EnergyType energyType = EnergyType.Invalid;
     private GatterLabel gatterLabel;
     private Gatter[] coExistingGatters;
     private Cable[] cables;
-    
+
     public bool HasCoExistingGatters => coExistingGatters != null && coExistingGatters.Length > 1;
 
     protected override void Awake()

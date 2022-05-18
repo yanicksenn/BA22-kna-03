@@ -3,7 +3,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
-[ExecuteAlways]
 public class EnergyDestination : MonoBehaviour, IConductor
 {
     [SerializeField] private string text;

@@ -49,12 +49,16 @@ public class CableOutputSnapZone : AbstractSnapZone<CableOutputConnector, CableO
         if (Gatter != null && !Gatter.IsSnapped)
             return false;
 
-        // Cable does not belong to gatter
+        // Cable does not belong to gatter (belongs to source)
         if (snappable.Cable.Gatter == null)
             return true;
         
         // Don't allow to snap with itself
-        return snappable.Cable.Gatter != Gatter;
+        if (snappable.Cable.Gatter == Gatter)
+            return false;
+
+        // Only snap if gatter is snapped as well
+        return snappable.Cable.Gatter.IsAnySnapped;
     }
 
     private void OnSnap(CableOutputConnector cableOutputConnector)

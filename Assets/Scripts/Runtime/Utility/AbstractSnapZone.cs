@@ -133,6 +133,11 @@ public abstract class AbstractSnapZone<TS, TZ, TES, TEZ> : MonoBehaviour
         PlaceSnappedObject();
     }
 
+    private void OnDestroy()
+    {
+        Unsnap();
+    }
+
     private void PlaceSnappedObject()
     {
         var snappedtransform = _snappedObject.transform;
