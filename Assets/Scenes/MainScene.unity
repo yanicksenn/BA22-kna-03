@@ -2766,6 +2766,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 8ba733b1b7fb5e94c97689bb05d78ba9, type: 2}
+        m_TargetAssemblyTypeName: Runtime.GatterDispenser.GatterList, BA22Runtime
+        m_MethodName: Reset
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1861293142
 MonoBehaviour:
   m_ObjectHideFlags: 0

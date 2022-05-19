@@ -15,11 +15,17 @@ namespace Runtime.GatterDispenser
 
         public void AddGatterIfNew(GatterLabel gatter)
         {
-            if (!gatters.Contains(gatter))
-            {
-                gatters.Add(gatter);
-                addedGatterToList.Invoke();
-            }
+            if (gatters.Contains(gatter)) 
+                return;
+            
+            gatters.Add(gatter);
+            addedGatterToList.Invoke();
+        }
+
+        public void Reset()
+        {
+            gatters.Clear();
+            addedGatterToList.Invoke();
         }
     }
 }
