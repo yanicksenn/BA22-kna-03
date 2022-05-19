@@ -7,6 +7,11 @@ public class MainMenuController : MonoBehaviour
     {
         SceneManager.LoadScene("Scenes/MainScene");
     }
+    
+    public void LoadSandboxScene()
+    {
+        SceneManager.LoadScene("Scenes/SandboxScene");
+    }
 
     public void LoadTutorialScene()
     {
