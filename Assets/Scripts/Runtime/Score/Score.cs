@@ -51,10 +51,13 @@ namespace Runtime.Score
         {
             countdownHasStarted = true;
 
+            // Set current score initially to ensure that it show
+            // the correct text on the label.
+            SetCurrentScore(currentScore);
+                
             while(currentScore > 0 && !gameIsFinished)
             {
                 yield return new WaitForSeconds(1);
-                
                 SetCurrentScore(currentScore - 1);
             }
         }
