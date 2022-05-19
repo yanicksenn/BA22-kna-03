@@ -26,4 +26,13 @@ MonoBehaviour:
     onHideEvent:
       m_PersistentCalls:
         m_Calls: []
-  text: Do you need a hint?
+    onFirstTimeShowEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  text: 'Do you need a hint?
+
+
+    - Each hint costs you 120 points.
+
+    - A solution
+    costs you 360 points.'
