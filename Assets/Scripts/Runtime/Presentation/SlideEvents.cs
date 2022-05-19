@@ -14,5 +14,8 @@ namespace Runtime.Presentation
         [SerializeField]
         private UnityEvent onHideEvent = new UnityEvent();
         public UnityEvent OnHideEvent => onHideEvent;
+
+        [SerializeField] private UnityEvent onFirstTimeShowEvent = new UnityEvent();
+        public UnityEvent OnFirstTimeShowEvent => onFirstTimeShowEvent;
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Runtime.Presentation
@@ -23,5 +24,26 @@ namespace Runtime.Presentation
         [SerializeField, Space] 
         private SlideEvents slideEvents = new SlideEvents();
         public SlideEvents SlideEvents => slideEvents;
+  
+        private bool firstTimeShowed;
+
+        private void OnEnable()
+        {
+            SlideEvents.OnShowEvent.AddListener(OnShow);
+        }
+
+        private void OnDisable()
+        {
+            SlideEvents.OnShowEvent.RemoveListener(OnShow);
+        }
+
+        private void OnShow()
+        {
+            if (firstTimeShowed == false)
+            {
+                firstTimeShowed = true;
+                SlideEvents.OnFirstTimeShowEvent.Invoke();
+            }
+        }
     }
 }
