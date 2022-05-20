@@ -61,7 +61,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1086555079385171486, guid: 3190db2daceb84be7b0fb7aa4a1cd5e9, type: 3}
       propertyPath: m_Name
-      value: GatterWith5Cables Variant
+      value: AND
       objectReference: {fileID: 0}
     - target: {fileID: 1667410524053584761, guid: 3190db2daceb84be7b0fb7aa4a1cd5e9, type: 3}
       propertyPath: m_LocalPosition.x

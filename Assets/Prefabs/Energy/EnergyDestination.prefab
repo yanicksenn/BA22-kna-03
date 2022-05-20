@@ -222,6 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snapReference: {fileID: 1588766516941909174}
+  gatter: {fileID: 0}
   onSnapEvent:
     m_PersistentCalls:
       m_Calls: []

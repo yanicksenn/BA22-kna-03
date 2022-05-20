@@ -330,6 +330,10 @@ MonoBehaviour:
   toggle: {fileID: 0}
   cableSnap: {fileID: 0}
   cableUnSnap: {fileID: 0}
+  ambient: {fileID: 0}
+  shatter: {fileID: 0}
+  rightAnswer: {fileID: 0}
+  wrongAnswer: {fileID: 0}
 --- !u!1 &2275835302413303270
 GameObject:
   m_ObjectHideFlags: 0

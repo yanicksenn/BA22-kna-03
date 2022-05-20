@@ -828,12 +828,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onConnect:
-    m_PersistentCalls:
-      m_Calls: []
-  onDisonnect:
-    m_PersistentCalls:
-      m_Calls: []
   onEnergyChangeEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -910,12 +904,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onConnect:
-    m_PersistentCalls:
-      m_Calls: []
-  onDisonnect:
-    m_PersistentCalls:
-      m_Calls: []
   onEnergyChangeEvent:
     m_PersistentCalls:
       m_Calls: []

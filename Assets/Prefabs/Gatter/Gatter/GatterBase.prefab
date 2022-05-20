@@ -522,7 +522,6 @@ MonoBehaviour:
   rigidbody: {fileID: 8858228607007394422}
   collisionCache: {fileID: 256975217003534158}
   gatterLogic: {fileID: 0}
-  label: {fileID: 7959178505219452474}
   cableOutputSnapZones:
   - {fileID: 2695397344928551042}
   - {fileID: 5548690708708790909}
@@ -556,12 +555,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onConnect:
-    m_PersistentCalls:
-      m_Calls: []
-  onDisonnect:
-    m_PersistentCalls:
-      m_Calls: []
   onEnergyChangeEvent:
     m_PersistentCalls:
       m_Calls: []
