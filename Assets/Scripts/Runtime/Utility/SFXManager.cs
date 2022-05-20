@@ -9,6 +9,10 @@ namespace Runtime.Utility
         [SerializeField] private AudioSource toggle;
         [SerializeField] private AudioSource cableSnap;
         [SerializeField] private AudioSource cableUnSnap;
+        [SerializeField] private AudioSource ambient;
+        [SerializeField] private AudioSource shatter;
+        [SerializeField] private AudioSource rightAnswer;
+        [SerializeField] private AudioSource wrongAnswer;
 
         public void PlaySnapSound()
         {
@@ -28,11 +32,38 @@ namespace Runtime.Utility
         public void PlayCableSnapSound()
         {
             cableSnap.Play();
+            Debug.Log("BA22 Cable snap sound");
         }
 
         public void PlayCableUnsnapSound()
         {
             cableUnSnap.Play();
+            Debug.Log("BA22 Cable unsnap sound");
+        }
+
+        public void PlayShatterSound()
+        {
+            shatter.Play();
+        }
+
+        public void PlayAmbientSound()
+        {
+            ambient.Play();
+        }
+
+        public void StopAmbientSound()
+        {
+            ambient.Stop();
+        }
+
+        public void PlayRightAnswer()
+        {
+            rightAnswer.Play();
+        }
+
+        public void PlayWrongAnswer()
+        {
+            wrongAnswer.Play();
         }
     }
 }

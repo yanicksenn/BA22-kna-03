@@ -2,6 +2,7 @@
 using Runtime.Exercises;
 using Runtime.Presentation;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ExerciseManager : MonoBehaviour, INavigationInterceptor
 {
@@ -11,12 +12,22 @@ public class ExerciseManager : MonoBehaviour, INavigationInterceptor
     [SerializeField] private EnergyDestination[] energyDestinations;
     [SerializeField] private GameObject checkButton;
 
+    [SerializeField] private UnityEvent onSuccesEvent = new UnityEvent();
+    [SerializeField] private UnityEvent onFailEvent = new UnityEvent();
+    
+
     public bool AllowsNext(AbstractSlide slide)
     {
         if (slide is not AbstractExerciseSlide exerciseSlide)
             return true;
 
-        return CheckExercise(exerciseSlide);
+        var exerciseSuccess = CheckExercise(exerciseSlide);
+        
+        if(exerciseSuccess)
+            onSuccesEvent.Invoke();
+        else onFailEvent.Invoke();
+
+        return exerciseSuccess;
     }
 
     public void OnShowSlide(AbstractSlide slide) { }
