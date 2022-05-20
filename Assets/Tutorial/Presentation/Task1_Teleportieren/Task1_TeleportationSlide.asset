@@ -22,8 +22,23 @@ MonoBehaviour:
   slideEvents:
     onShowEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 11400000, guid: 9cdf8be00a64be147bca0b2cc90eab3e, type: 2}
+          m_TargetAssemblyTypeName: Runtime.GatterDispenser.GatterList, BA22Runtime
+          m_MethodName: AddGatterIfNew
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2600693022196510549, guid: 6ffc0a936cdf4404f9a149a36705a431, type: 3}
+            m_ObjectArgumentAssemblyTypeName: GatterLabel, BA22Runtime
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     onHideEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    onFirstTimeShowEvent:
       m_PersistentCalls:
         m_Calls: []
   tutorialEvent: {fileID: 11400000, guid: bf8cc19f55d41604cac51b3151add669, type: 2}
