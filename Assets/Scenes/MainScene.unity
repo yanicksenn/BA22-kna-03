@@ -5846,6 +5846,10 @@ PrefabInstance:
       propertyPath: pointer
       value: 
       objectReference: {fileID: 979098234}
+    - target: {fileID: 5563129049951610942, guid: d566657b2bb1e6148b8da2d96cea80c7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5563129050160766719, guid: d566657b2bb1e6148b8da2d96cea80c7, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
