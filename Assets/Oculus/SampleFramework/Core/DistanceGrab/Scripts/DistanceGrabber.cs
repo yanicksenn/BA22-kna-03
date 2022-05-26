@@ -73,7 +73,7 @@ namespace OculusSampleFramework
         // Tracked separately from m_target, because we support child colliders of a DistanceGrabbable.
         protected Collider m_targetCollider;
 
-        protected override void Start()
+        public override void Start()
         {
             base.Start();
 

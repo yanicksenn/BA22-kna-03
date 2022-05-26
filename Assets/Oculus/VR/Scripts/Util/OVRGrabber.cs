@@ -93,7 +93,7 @@ public class OVRGrabber : MonoBehaviour
         }
     }
 
-    protected virtual void Awake()
+    public virtual void Awake()
     {
         m_anchorOffsetPosition = transform.localPosition;
         m_anchorOffsetRotation = transform.localRotation;
@@ -110,7 +110,7 @@ public class OVRGrabber : MonoBehaviour
         }
     }
 
-    protected virtual void Start()
+    public virtual void Start()
     {
         m_lastPos = transform.position;
         m_lastRot = transform.rotation;
@@ -340,7 +340,7 @@ public class OVRGrabber : MonoBehaviour
         }
     }
 
-    protected void GrabEnd()
+    public void GrabEnd()
     {
         if (m_grabbedObj != null)
         {
