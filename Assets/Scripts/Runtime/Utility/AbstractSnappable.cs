@@ -69,6 +69,7 @@ public abstract class AbstractSnappable<TS, TZ, TES, TEZ> : Grabbable
     private void Update()
     {
         _couldBeSnapped = CollisionCache.GameObjects
+            .Where(g => g != null)
             .Select(g => g.GetComponent<TZ>())
             .Where(c => c != null)
             .Any(c => c.Accepts((TS) this));

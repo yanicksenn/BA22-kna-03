@@ -44,6 +44,10 @@ public class CableOutputSnapZone : AbstractSnapZone<CableOutputConnector, CableO
         if (!base.Accepts(snappable))
             return false;
 
+        // Dont snap snappable that is already snapped somewhere else.
+        if (snappable.IsSnapped)
+            return false;
+
         // If owning element is a gatter and is not snapped
         // then dont accept it.
         if (Gatter != null && !Gatter.IsSnapped)

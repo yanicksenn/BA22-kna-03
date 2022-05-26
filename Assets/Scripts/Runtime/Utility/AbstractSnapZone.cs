@@ -122,7 +122,10 @@ public abstract class AbstractSnapZone<TS, TZ, TES, TEZ> : MonoBehaviour
         // If two snap zones could accept the same object at the same time
         // then both might get snapped while only one should be snapped.
         if (SnappedObject.SnapZone != this || !SnappedObject.IsSnapped)
+        {
             UnsnapSoft();
+            return;
+        }
 
         if (SnappedObject.IsGrabbed)
             return;
