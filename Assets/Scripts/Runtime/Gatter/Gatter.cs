@@ -63,7 +63,7 @@ public class Gatter : AbstractSnappable<Gatter, GatterSnapZone, GatterEvent, Gat
     {
         base.OnDestroy();
         Destroy(gatterLabel.gameObject);
-        
+
         foreach (var cable in cables)
             Destroy(cable.gameObject);
     }
@@ -71,8 +71,12 @@ public class Gatter : AbstractSnappable<Gatter, GatterSnapZone, GatterEvent, Gat
     private void AddListeners()
     {
         foreach (var cableOutputSnapZone in cableOutputSnapZones)
+        {
+            cableOutputSnapZone.OnSnapEvent.AddListener(OnEnergyChange);
+            cableOutputSnapZone.OnUnsnapEvent.AddListener(OnEnergyChange);
             cableOutputSnapZone.OnEnergyChangeEvent.AddListener(OnEnergyChange);
-        
+        }
+
         foreach (var gatter in coExistingGatters) {
             gatter.OnSnapToBoard.AddListener(OnEnergyChange);
             gatter.OnUnsnapFromBoard.AddListener(OnEnergyChange);
@@ -82,8 +86,13 @@ public class Gatter : AbstractSnappable<Gatter, GatterSnapZone, GatterEvent, Gat
     private void RemoveListeners()
     {
         foreach (var cableOutputSnapZone in cableOutputSnapZones)
+        {
+            cableOutputSnapZone.OnSnapEvent.RemoveListener(OnEnergyChange);
+            cableOutputSnapZone.OnUnsnapEvent.RemoveListener(OnEnergyChange);
             cableOutputSnapZone.OnEnergyChangeEvent.RemoveListener(OnEnergyChange);
-        
+            
+        }
+
         foreach (var gatter in coExistingGatters) {
             gatter.OnSnapToBoard.RemoveListener(OnEnergyChange);
             gatter.OnUnsnapFromBoard.RemoveListener(OnEnergyChange);
@@ -101,6 +110,12 @@ public class Gatter : AbstractSnappable<Gatter, GatterSnapZone, GatterEvent, Gat
     }
 
     private void OnEnergyChange(GatterSnapZone gatterSnapZone)
+    {
+        OnEnergyChange();
+    }
+    
+
+    private void OnEnergyChange(CableOutputConnector cableOutputConnector)
     {
         OnEnergyChange();
     }

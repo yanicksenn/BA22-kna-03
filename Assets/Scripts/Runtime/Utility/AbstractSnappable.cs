@@ -76,6 +76,8 @@ public abstract class AbstractSnappable<TS, TZ, TES, TEZ> : Grabbable
 
     protected override void OnDestroy()
     {
+        base.OnDestroy();
         Unsnap();
+        
     }
 }
