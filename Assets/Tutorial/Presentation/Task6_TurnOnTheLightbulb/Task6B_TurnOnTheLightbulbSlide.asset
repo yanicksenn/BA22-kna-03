@@ -26,5 +26,8 @@ MonoBehaviour:
     onHideEvent:
       m_PersistentCalls:
         m_Calls: []
+    onFirstTimeShowEvent:
+      m_PersistentCalls:
+        m_Calls: []
   tutorialEvent: {fileID: 11400000, guid: 470e1d207d131df4ba003cec43a66499, type: 2}
-  text: Turn the on the second toggle to make the lightbulb shine.
+  text: Turn on the second toggle to make the lightbulb shine.

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b815aeea2e8a4b58b5c3e914890a0bb0, type: 3}
   m_Name: Task4B_ConnectGatterWithSource
   m_EditorClassIdentifier: 
-  title: Connect Cable
+  title: Connect the cable
   nextButton:
     labelText: Next
     prohibitsManualNavigation: 1
@@ -26,5 +26,8 @@ MonoBehaviour:
     onHideEvent:
       m_PersistentCalls:
         m_Calls: []
+    onFirstTimeShowEvent:
+      m_PersistentCalls:
+        m_Calls: []
   tutorialEvent: {fileID: 11400000, guid: 452852d2a54ee7048971b386fccf840f, type: 2}
-  text: Connect the placed Gatter with a cable
+  text: Connect the placed gate with a cable

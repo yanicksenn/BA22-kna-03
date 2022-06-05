@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b815aeea2e8a4b58b5c3e914890a0bb0, type: 3}
   m_Name: Task5_ConnectLightbulb
   m_EditorClassIdentifier: 
-  title: Connect Lightbulb
+  title: Connect the lightbulb
   nextButton:
     labelText: Next
     prohibitsManualNavigation: 1
@@ -26,5 +26,8 @@ MonoBehaviour:
     onHideEvent:
       m_PersistentCalls:
         m_Calls: []
+    onFirstTimeShowEvent:
+      m_PersistentCalls:
+        m_Calls: []
   tutorialEvent: {fileID: 11400000, guid: c530f358e3c9ed4469d5e1665940a089, type: 2}
-  text: Connect the lightbulb with a cable from the gatter.
+  text: Connect the lightbulb with a cable from the gate.

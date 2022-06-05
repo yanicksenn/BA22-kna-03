@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b815aeea2e8a4b58b5c3e914890a0bb0, type: 3}
   m_Name: Task3_PlaceGatterOnBoard
   m_EditorClassIdentifier: 
-  title: Place Gatter
+  title: Place the gate
   nextButton:
     labelText: Next
     prohibitsManualNavigation: 1
@@ -26,5 +26,8 @@ MonoBehaviour:
     onHideEvent:
       m_PersistentCalls:
         m_Calls: []
+    onFirstTimeShowEvent:
+      m_PersistentCalls:
+        m_Calls: []
   tutorialEvent: {fileID: 11400000, guid: 90588423c2829bb4bb561e001f35095b, type: 2}
-  text: Place the gatter on the board.
+  text: Place the gate on the board.

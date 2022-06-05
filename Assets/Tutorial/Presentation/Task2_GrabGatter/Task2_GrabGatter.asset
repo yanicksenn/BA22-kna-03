@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b815aeea2e8a4b58b5c3e914890a0bb0, type: 3}
   m_Name: Task2_GrabGatter
   m_EditorClassIdentifier: 
-  title: Grab the gatter
+  title: Grab the gate
   nextButton:
     labelText: Next
     prohibitsManualNavigation: 1
@@ -26,5 +26,8 @@ MonoBehaviour:
     onHideEvent:
       m_PersistentCalls:
         m_Calls: []
+    onFirstTimeShowEvent:
+      m_PersistentCalls:
+        m_Calls: []
   tutorialEvent: {fileID: 11400000, guid: 585eaf623e8872b4a88a7d59f4109a7f, type: 2}
-  text: Grab the gatter with one of your hands.
+  text: Grab the gate with one of your hands.
