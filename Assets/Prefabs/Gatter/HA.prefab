@@ -57,7 +57,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2321398005208423504, guid: 266a175b52d3fc84ea3d5cdb8b98bf2b, type: 3}
       propertyPath: m_text
-      value: O2
+      value: SUM
+      objectReference: {fileID: 0}
+    - target: {fileID: 2321398005208423504, guid: 266a175b52d3fc84ea3d5cdb8b98bf2b, type: 3}
+      propertyPath: m_fontSize
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2321398005208423504, guid: 266a175b52d3fc84ea3d5cdb8b98bf2b, type: 3}
+      propertyPath: m_margin.x
+      value: -2.7323737
+      objectReference: {fileID: 0}
+    - target: {fileID: 2321398005208423504, guid: 266a175b52d3fc84ea3d5cdb8b98bf2b, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2936043468971318795, guid: 266a175b52d3fc84ea3d5cdb8b98bf2b, type: 3}
       propertyPath: text
@@ -69,7 +81,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4480421049562296492, guid: 266a175b52d3fc84ea3d5cdb8b98bf2b, type: 3}
       propertyPath: m_text
-      value: O1
+      value: CARRY
+      objectReference: {fileID: 0}
+    - target: {fileID: 4480421049562296492, guid: 266a175b52d3fc84ea3d5cdb8b98bf2b, type: 3}
+      propertyPath: m_fontSize
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4480421049562296492, guid: 266a175b52d3fc84ea3d5cdb8b98bf2b, type: 3}
+      propertyPath: m_margin.x
+      value: -9.2766905
+      objectReference: {fileID: 0}
+    - target: {fileID: 4480421049562296492, guid: 266a175b52d3fc84ea3d5cdb8b98bf2b, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5229800102561783220, guid: 266a175b52d3fc84ea3d5cdb8b98bf2b, type: 3}
       propertyPath: gatterLogic
