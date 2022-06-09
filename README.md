@@ -30,7 +30,7 @@ Die Arbeit wird betreut durch:
 # Abhängigkeiten
 
 ## Packages
-<img width="752" alt="Screenshot 2022-06-09 at 08 09 03" src="https://github.zhaw.ch/storage/user/2260/files/c409252e-4e91-4771-a615-939bbd9abcad">
+<img width="1040" alt="Screenshot 2022-06-09 at 08 16 42" src="https://github.zhaw.ch/storage/user/2260/files/3f25b299-3bd3-4e82-a85f-375c6ff93c04">
 
 _Diese Abhängigkeiten werden automatisch installiert._
 
