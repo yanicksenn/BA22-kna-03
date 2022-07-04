@@ -1,11 +1,17 @@
 # BA22 Knaa 03
 
+Der Bericht ist [hier](https://github.com/yanicksenn/BA22-knaa-03-Bericht/blob/master/BA22-knaa-03-sennyan2-weberrhi.pdf) ersichtlich.
+
 Die Arbeit wird durchgeführt von:
 - Rhiana Weber (weberrhi@students.zhaw.ch)
 - Yanick Senn (sennyan2@students.zhaw.ch)
 
 Die Arbeit wird betreut durch:
 - Reto Knaack (knaa@zhaw.ch)
+
+# Bewertung
+
+Die Arbeit wurde mit einer 5.5 bewertet.
 
 # Anforderungen
 
