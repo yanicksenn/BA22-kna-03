@@ -23,6 +23,7 @@ Die Arbeit wird betreut durch:
 2. Build Settings öffnen (File > Build Settings)
 3. Build Target wechseln (Der Wechsel kann einige Minuten dauern)
   <img width="752" alt="Screenshot 2022-06-09 at 08 09 03" src="https://github.zhaw.ch/storage/user/2260/files/e89cd10b-adfe-4c9e-a5c1-a18c838520f4">
+  
 4. Headset anschliessen und Zugriffsberechtiung erlauben
 5. In den Build Settings das Headset auswählen (Run Device)
 6. "Build And Run" betätigen (Der Build kann einige Minuten dauern -ca. 5 Minuten)
